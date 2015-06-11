@@ -1,0 +1,49 @@
+set nocompatible	"viとの互換を切る
+"NeoBundle
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#begin(expand('~/.vim/bundle'))
+	"インストールするプラグインを指定
+NeoBundleFetch 'Shugo/neobundle.vim'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'tomasr/molokai'
+call neobundle#end()
+filetype plugin indent on
+NeoBundleCheck
+"Color
+syntax on
+colorscheme molokai
+set t_Co=256
+"Encode
+set encoding=utf-8	"vimの内部文字コード
+set fileencoding=utf-8	"書き込み時のエンコード指定
+set fileencodings=iso-20220jp,euc-jp,utf-8,ucs-2,cp932,sjis
+	"読み込み時にどのファイルエンコードで開くかを指定
+	"左から順に試される
+"Indent
+set autoindent	"自動インデント
+set smartindent	"改行前の末尾に合わせてインデントを調整
+set tabstop=4	"タブサイズ
+set shiftwidth=4	"自動インデントのタブサイズ
+set noexpandtab	"タブ文字の代わりにスペースno
+set backspace=indent,eol,start	"バックスペースで改行など削除
+"View
+set number	"行番号表示
+set title	"タイトル表示
+set showmatch	"対応するかっこを表示
+set wildmenu	"補完候補を表示する
+""ステータスライン
+set laststatus=2	"ステータスラインを常に表示
+set ruler	"右下に行,列表示
+set showcmd	"タイプ途中のコマンドを表示
+set showmode	"モード表示
+"Search
+set incsearch	"即検索
+set ignorecase	"大文字小文字の区別をしない
+set smartcase	"大文字なら小文字との区別をする
+set wrapscan	"最後まで行ったら最初に戻る
+set hlsearch	"検索結果をハイライト表示
+"Swap files
+set noswapfile	"スワップファイルを作らない
+set nobackup	"バックアップを作らない
