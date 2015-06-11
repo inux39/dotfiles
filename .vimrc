@@ -18,7 +18,7 @@ set t_Co=256
 "Encode
 set encoding=utf-8	"vimの内部文字コード
 set fileencoding=utf-8	"書き込み時のエンコード指定
-set fileencodings=iso-20220jp,euc-jp,utf-8,ucs-2,cp932,sjis
+set fileencodings=utf-8,euc-jp,cp932,sjis,iso-20220jp,ucs-2
 	"読み込み時にどのファイルエンコードで開くかを指定
 	"左から順に試される
 "Indent
