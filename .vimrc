@@ -1,4 +1,8 @@
 set nocompatible	"viとの互換を切る
+"カーソル位置の保存と復元
+if has("autocmd")
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" |
+endif
 "NeoBundle
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
