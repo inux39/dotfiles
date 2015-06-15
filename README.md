@@ -2,10 +2,10 @@ dotfiles
 ===
 for Homedir
 
-#cp
+##cp
 
 .font.conf
 
-#ln
+##ln
 
 .zshrc, .vimrc
