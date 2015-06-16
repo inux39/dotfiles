@@ -12,6 +12,8 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shugo/neobundle.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tomasr/molokai'
+NeoBundle 'vim-jp/cpp-vim'
+NeoBundle 'octol/vim-cpp-enhanced-highlight'
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
