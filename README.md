@@ -1,11 +1,9 @@
-dotfiles
+homefiles
 ===
 for Homedir
 
-##cp
-
+##files
+###copy
 .font.conf
-
-##ln
-
-.zshrc, .vimrc
+###Symbolic Link
+.zshrc, .vimrc, makepdf(~/bin)
