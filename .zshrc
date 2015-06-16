@@ -1,6 +1,7 @@
 #環境設定
 ##export LANG=ja_JP.utf8
 PATH="$PATH":~/bin
+PATH="$PATH":~/Chinachu
 PROMPT="[%n@%m %~]%(!.#.$) "
 alias ls='ls -alF --color=auto'
 #補完機能系設定
