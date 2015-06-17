@@ -8,7 +8,6 @@ fi
 name=${tex//.tex/}
 dvi=${tex//tex/dvi}
 platex ${tex}
-platex ${tex}
 dvipdfmx ${dvi}
 
 rm ${name}.log ${dvi} ${name}.aux
