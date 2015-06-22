@@ -1,11 +1,11 @@
 #!/bin/sh
 home=~/
-current=$(cd $(dirname $0); pwd)
-vimrc=$current/.vimrc
-zshrc=$current/.zshrc
-fonts=$current/.fonts.conf
+cdpath=$(cd $(dirname $0); pwd)
+vimrc=$cdpath/.vimrc
+zshrc=$cdpath/.zshrc
+fonts=$cdpath/.fonts.conf
 ln -s $vimrc $home
 ln -s $zshrc $home
+ln -s $cdpath/makepdf $home/bin
 cp $fonts $home
-echo "Completed"
-echo "option : makepdf"
+echo "Complete"
