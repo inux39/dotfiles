@@ -6,6 +6,7 @@ for Homedir
 * vim
 * zsh
 * texlive
+
 ##files
 ###copy
 .font.conf
