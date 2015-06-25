@@ -11,4 +11,7 @@ if [ ! -e $home/bin]; then
 fi
 ln -s $cdpath/makepdf $home/bin
 cp $fonts $home
+if [ ! -e $home/.vim]; then
+	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+fi
 echo "Complete"
