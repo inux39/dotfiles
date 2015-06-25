@@ -1,4 +1,4 @@
-homefiles
+dotfiles
 ===
 for Homedir
 
