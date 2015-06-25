@@ -6,6 +6,9 @@ zshrc=$cdpath/.zshrc
 fonts=$cdpath/.fonts.conf
 ln -s $vimrc $home
 ln -s $zshrc $home
+if [ ! -e $home/bin]; then
+	mkdir $home/bin
+fi
 ln -s $cdpath/makepdf $home/bin
 cp $fonts $home
 echo "Complete"
