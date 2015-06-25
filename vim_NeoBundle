@@ -1,5 +1,0 @@
-#!/bin/sh
-vimdir=~/.vim
-if [ ! -e $vimdir ]; then
-	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
-fi
