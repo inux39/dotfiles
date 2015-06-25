@@ -4,14 +4,17 @@ cdpath=$(cd $(dirname $0); pwd)
 vimrc=$cdpath/.vimrc
 zshrc=$cdpath/.zshrc
 fonts=$cdpath/.fonts.conf
+bindir="${home}bin"
 ln -s $vimrc $home
 ln -s $zshrc $home
-if [ ! -e $home/bin]; then
+if [ ! -e $home/bin ]; then
 	mkdir $home/bin
 fi
-ln -s $cdpath/makepdf $home/bin
-cp $fonts $home
-if [ ! -e $home/.vim]; then
+ln -s $cdpath/makepdf $bindir
+if [ ! -e $home/$fonts ]; then
+	cp $fonts $home
+fi
+if [ ! -e $home/.vim ]; then
 	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 fi
 echo "Complete"
