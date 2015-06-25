@@ -1,37 +1,35 @@
 #!/bin/sh
-home=~/
 cdpath=$(cd $(dirname $0); pwd)
 vimrc=$cdpath/.vimrc
 zshrc=$cdpath/.zshrc
 fonts=$cdpath/.fonts.conf
-binpath="${home}bin"
 
 # vimrc
 if [ ! -e ~/.vimrc ]; then
-	ln -s $vimrc $home
+	ln -s $vimrc ~/
 fi
 
 # zshrc
 if [ ! -e ~/.zshrc ]; then
-	ln -s $zshrc $home
+	ln -s $zshrc ~/
 	source ~/.zshrc
 fi
 
 # bin
-if [ ! -e $home/bin ]; then
-	mkdir $home/bin
+if [ ! -e ~/bin ]; then
+	mkdir ~/bin
 fi
-if [ ! -e $binpath/makepdf ]; then
-	ln -s $cdpath/makepdf $binpath
+if [ ! -e ~/bin/makepdf ]; then
+	ln -s $cdpath/makepdf ~/bin 
 fi
 
 # font config
-if [ ! -e $home/$fonts ]; then
-	cp $fonts $home
+if [ ! -e ~/$fonts ]; then
+	cp $fonts ~/
 fi
 
 # vim bundle install
-if [ ! -e $home/.vim ]; then
+if [ ! -e ~/.vim ]; then
 	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 fi
 
