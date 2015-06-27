@@ -29,7 +29,7 @@ if [ ! -e ~/$fonts ]; then
 fi
 
 # vim bundle install
-if [ ! -e ~/.vim ]; then
+if [ ! -e ~/.vim/bundle ]; then
 	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 fi
 
