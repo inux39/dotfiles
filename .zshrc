@@ -2,6 +2,7 @@
 ##export LANG=ja_JP.utf8
 PATH="$PATH":~/bin
 PATH="$PATH":~/Chinachu
+PATH="$PATH":/opt/Qt/5.5/gcc_64/bin
 PROMPT="[%n@%m %~]%(!.#.$) "
 alias ls='ls -alF --color=auto'
 #補完機能系設定
