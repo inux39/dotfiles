@@ -12,6 +12,7 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shugo/neobundle.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tomasr/molokai'
+NeoBundle 'miyakogi/seiya.vim'
 NeoBundle 'vim-jp/cpp-vim'
 NeoBundle 'octol/vim-cpp-enhanced-highlight'
 call neobundle#end()
@@ -39,8 +40,9 @@ set number	"行番号表示
 set title	"タイトル表示
 set showmatch	"対応するかっこを表示
 set wildmenu	"補完候補を表示する
+let g:seiya_auto_enable = 1	"自動的にvim画面を半透明にする(miyakogi/seiya)
 ""ステータスライン
-set laststatus=2	"ステータスラインを常に表示
+set laststatus=2	"ステータスラインを常に表示
 set ruler	"右下に行,列表示
 set showcmd	"タイプ途中のコマンドを表示
 set showmode	"モード表示
