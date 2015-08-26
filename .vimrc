@@ -58,5 +58,7 @@ set noswapfile	"スワップファイルを作らない
 set nobackup	"バックアップを作らない
 
 "GVIM
+"Windows
+"set guifont=源ノ角ゴシック\ Code\ JP:h10
+"Linux/MacOS/Unix System
 set guifont=源ノ角ゴシック\ Code\ JP\ 10
-
