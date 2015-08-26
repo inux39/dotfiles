@@ -56,3 +56,7 @@ set hlsearch	"検索結果をハイライト表示
 "Swap files
 set noswapfile	"スワップファイルを作らない
 set nobackup	"バックアップを作らない
+
+"GVIM
+set guifont=源ノ角ゴシック\ Code\ JP\ 10
+
