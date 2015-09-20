@@ -6,6 +6,7 @@ PATH="$PATH":/opt/Qt/5.5/gcc_64/bin
 PROMPT="[%n@%m %~]%(!.#.$) "
 alias ls='ls -alF --color=auto'
 alias rsync='rsync -P'
+alias emacs='vim'
 #補完機能系設定
 autoload -U compinit;	compinit
 setopt auto_list
