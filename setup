@@ -1,0 +1,45 @@
+#!/bin/sh
+shellpath=$(cd $(dirname $0); pwd)
+vimrc=$shellpath/.vimrc
+zshrc=$shellpath/.zshrc
+fonts=$shellpath/.fonts.conf
+echo "Select 0:Server 1:Client"
+read -p ":" select
+
+if [ $select == 1 ]; then
+	#xprofile
+	if [ ! -e ~/.xprofile ]; then
+		ln -s $shellpath/.xprofile ~/
+	fi
+fi
+
+# vimrc
+if [ ! -e ~/.vimrc ]; then
+	ln -s $vimrc ~/
+fi
+
+# zshrc
+if [ ! -e ~/.zshrc ]; then
+	ln -s $zshrc ~/
+	source ~/.zshrc
+fi
+
+
+# bin
+if [ ! -e ~/bin ]; then
+	mkdir ~/bin
+fi
+if [ ! -e ~/bin/texpdf ]; then
+	ln -s $shellpath/texpdf ~/bin 
+fi
+
+# font config
+if [ ! -e ~/$fonts ]; then
+	cp $fonts ~/
+fi
+
+# vim bundle install
+if [ ! -e ~/.vim/bundle ]; then
+	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+fi
+
