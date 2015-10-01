@@ -2,7 +2,7 @@
 shellpath=$(cd $(dirname $0); pwd)
 vimrc=$shellpath/.vimrc
 zshrc=$shellpath/.zshrc
-fonts=$shellpath/.fonts.conf
+fonts=$shellpath/fonts.conf
 echo "Select 0:Server 1:Client"
 read -p ":" select
 
@@ -35,7 +35,7 @@ fi
 
 # font config
 if [ ! -e ~/$fonts ]; then
-	cp $fonts ~/
+	cp $fonts ~/.config/
 fi
 
 # vim bundle install
