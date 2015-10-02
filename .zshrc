@@ -1,7 +1,10 @@
 #環境設定
 ##export LANG=ja_JP.utf8
+#共通
 PATH="$PATH":~/bin
+#Server
 PATH="$PATH":~/Chinachu
+#Client
 PATH="$PATH":/opt/Qt/5.5/gcc_64/bin
 PROMPT="[%n@%m %~]%(!.#.$) "
 alias ls='ls -alF --color=auto'
