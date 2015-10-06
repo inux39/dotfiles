@@ -37,7 +37,8 @@ set noexpandtab	"タブ文字の代わりにスペースno
 set backspace=indent,eol,start	"バックスペースで改行など削除
 set cindent	"C言語スタイルの自動インデント
 "画面設定
-set scrolloff=5
+set scrolloff=5	"いい感じにスクロールしてくれるやつ
+set cursorline	"カーソルのある行をハイライト
 set number	"行番号表示
 set title	"タイトル表示
 set showmatch	"対応するかっこを表示
