@@ -6,6 +6,8 @@ PATH="$PATH":~/bin
 PATH="$PATH":~/Chinachu
 #Client
 PATH="$PATH":/opt/Qt/5.5/gcc_64/bin
+#X220
+xmodmap ~/.Xmodmap
 PROMPT="[%n@%m %~]%(!.#.$) "
 alias ls='ls -alF --color=auto'
 alias rsync='rsync -P'
