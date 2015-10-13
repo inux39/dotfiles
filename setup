@@ -24,15 +24,6 @@ if [ ! -e ~/.zshrc ]; then
 	source ~/.zshrc
 fi
 
-
-# bin
-if [ ! -e ~/bin ]; then
-	mkdir ~/bin
-fi
-if [ ! -e ~/bin/texpdf ]; then
-	ln -s $shellpath/texpdf ~/bin 
-fi
-
 # font config
 if [ ! -e ~/$fonts ]; then
 	cp $fonts ~/.config/fontconfig
