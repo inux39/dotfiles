@@ -59,6 +59,11 @@ set hlsearch	"検索結果をハイライト表示
 "Swap files
 set noswapfile	"スワップファイルを作らない
 set nobackup	"バックアップを作らない
+"自動補完
+imap { {}<LEFT>
+imap [ []<LEFT>
+imap ( ()<LEFT>
+imap < <><LEFT>
 
 "GVIM
 "Windows
