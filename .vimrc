@@ -72,3 +72,11 @@ command! -nargs=0 Wq wq	"Wq == wq
 "set guifont=源ノ角ゴシック\ Code\ JP:h10
 "Linux/MacOS/Unix System
 set guifont=源ノ角ゴシック\ Code\ JP\ 10
+
+"Vim Plugin Config
+"lightline
+let g:lightline={
+	\ 'colorsheme' : 'wombat'
+	\
+}
+
