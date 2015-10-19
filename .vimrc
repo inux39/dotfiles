@@ -64,6 +64,7 @@ imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
 imap < <><LEFT>
+command! -nargs=0 Wq wq	"Wq == wq
 
 "GVIM
 "Windows
