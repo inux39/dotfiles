@@ -76,6 +76,6 @@ set guifont=源ノ角ゴシック\ Code\ JP\ 10
 "Vim Plugin Config
 "lightline
 let g:lightline = {
-	\	'colorscheme' : 'wombat',
+	\	'colorscheme' : 'jellybeans',
 	\	}
 
