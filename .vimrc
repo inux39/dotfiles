@@ -67,6 +67,7 @@ set nobackup	"バックアップを作らない
 "imap ( ()<LEFT>
 "imap < <><LEFT>
 command! -nargs=0 Wq wq	"Wq == wq
+command! -nargs=0 Q! q!	"Q! == q!
 
 "GVIM
 "Windows
