@@ -17,6 +17,7 @@ NeoBundle 'vim-jp/cpp-vim'
 NeoBundle 'octol/vim-cpp-enhanced-highlight'
 NeoBundle 'bronson/vim-trailing-whitespace'
 "NeoBundle 'Townk/vim-autoclose'	"自動カッコ閉じ
+NeoBundle 'kana/vim-smartinput'	"自動カッコ閉じ
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
@@ -61,10 +62,10 @@ set hlsearch	"検索結果をハイライト表示
 set noswapfile	"スワップファイルを作らない
 set nobackup	"バックアップを作らない
 "自動補完
-imap { {}<LEFT>
-imap [ []<LEFT>
-imap ( ()<LEFT>
-imap < <><LEFT>
+"imap { {}<LEFT>
+"imap [ []<LEFT>
+"imap ( ()<LEFT>
+"imap < <><LEFT>
 command! -nargs=0 Wq wq	"Wq == wq
 
 "GVIM
