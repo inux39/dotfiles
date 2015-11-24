@@ -1,6 +1,6 @@
 #!/bin/sh
 shellpath=$(cd $(dirname $0); pwd)
-vimrc=$shellpath/.vimrc
+vimrc=$shellpath/vimrc
 zshrc=$shellpath/.zshrc
 fonts=$shellpath/fonts.conf
 echo "Select 0:Server 1:Client"
@@ -14,8 +14,11 @@ if [ $select == 1 ]; then
 fi
 
 # vimrc
-if [ ! -e ~/.vimrc ]; then
-	ln -s $vimrc ~/
+if [ ! -e ~/.vim/.vimrc ]; then
+	if [ ! -e ~/.vim ]; then
+		mkdir ~/.vim
+	fi
+	ln -s $vimrc ~/.vim/
 fi
 
 # zshrc
