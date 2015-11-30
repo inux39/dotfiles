@@ -29,7 +29,7 @@ fi
 
 # font config
 if [ ! -e ~/$fonts ]; then
-	cp $fonts ~/.config/fontconfig
+	ln -s $fonts ~/.config/fontconfig
 fi
 
 # vim bundle install
