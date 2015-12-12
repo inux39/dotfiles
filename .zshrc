@@ -8,6 +8,7 @@ PATH="$PATH":~/Chinachu
 PATH="$PATH":/opt/Qt/5.5/gcc_64/bin
 PROMPT="[%n@%m %~]%(!.#.$) "
 alias ls='ls -alF --color=auto'
+alias make='make -j'
 alias rsync='rsync -P'
 alias emacs='vim'
 #補完機能系設定
