@@ -25,7 +25,7 @@ if [ ! -e $HOME/.config/zsh/.zshrc ]; then
 	if [ ! -e $HOME/.config/zsh ]; then
 		mkdir $HOME/.config/zsh
 	fi
-	ln -s $ShellPath/zshrc $HOME/.config/.zshrc
+	ln -s $ShellPath/zshrc $HOME/.config/zsh/.zshrc
 	source $HOME/.config/zsh/.zshrc
 fi
 
