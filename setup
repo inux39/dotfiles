@@ -8,21 +8,21 @@ read -p ":" select
 
 if [ $select == 1 ]; then
 	#xprofile
-	if [ ! -e ~/.xprofile ]; then
+	if [ ! -e $HOME/.xprofile ]; then
 		ln -s $shellpath/.xprofile ~/
 	fi
 fi
 
 # vimrc
-if [ ! -e ~/.vim/.vimrc ]; then
-	if [ ! -e ~/.vim ]; then
-		mkdir ~/.vim
+if [ ! -e $HOME/.vim/.vimrc ]; then
+	if [ ! -e $HOME/.vim ]; then
+		mkdir $HOME/.vim
 	fi
-	ln -s $vimrc ~/.vim/
+	ln -s $vimrc $HOME/.vim/
 fi
 
 # zshrc
-if [ ! -e ~/.config/zsh/.zshrc ]; then
+if [ ! -e $HOME/.config/zsh/.zshrc ]; then
 	if [ ! -e $HOME/.config/zsh ]; then
 		mkdir $HOME/.config/zsh
 	fi
@@ -31,12 +31,12 @@ if [ ! -e ~/.config/zsh/.zshrc ]; then
 fi
 
 # font config
-if [ ! -e ~/$fonts ]; then
-	ln -s $fonts ~/.config/fontconfig
+if [ ! -e $HOME/.config/fontconfig ]; then
+	ln -s $fonts $HOME/.config/fontconfig
 fi
 
 # vim bundle install
-if [ ! -e ~/.vim/bundle ]; then
+if [ ! -e $HOME/.vim/bundle ]; then
 	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 fi
 
