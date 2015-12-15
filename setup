@@ -1,24 +1,23 @@
 #!/bin/sh
-shellpath=$(cd $(dirname $0); pwd)
-vimrc=$shellpath/vimrc
-zshrc=$shellpath/zshrc
-fonts=$shellpath/fonts.conf
+ShellPath=$(cd $(dirname $0); pwd)
 echo "Select 0:Server 1:Client"
 read -p ":" select
 
 if [ $select == 1 ]; then
 	#xprofile
 	if [ ! -e $HOME/.xprofile ]; then
-		ln -s $shellpath/.xprofile ~/
+		ln -s $ShellPath/xprofile $HOME/.xprofile
 	fi
 fi
-
+if [ ! -e $HOME/.zshenv ]; then
+	ln -s $ShellPath/zshenv $HOME/.zshenv
+fi
 # vimrc
 if [ ! -e $HOME/.vim/.vimrc ]; then
 	if [ ! -e $HOME/.vim ]; then
 		mkdir $HOME/.vim
 	fi
-	ln -s $vimrc $HOME/.vim/
+	ln -s $ShellPath/vimrc $HOME/.vim/.vimrc
 fi
 
 # zshrc
@@ -26,13 +25,13 @@ if [ ! -e $HOME/.config/zsh/.zshrc ]; then
 	if [ ! -e $HOME/.config/zsh ]; then
 		mkdir $HOME/.config/zsh
 	fi
-	ln -s $zshrc $HOME/.config/zsh
-	source $HOME/.config/zsh/zshrc
+	ln -s $ShellPath/zshrc $HOME/.config/.zshrc
+	source $HOME/.config/zsh/.zshrc
 fi
 
 # font config
 if [ ! -e $HOME/.config/fontconfig ]; then
-	ln -s $fonts $HOME/.config/fontconfig
+	ln -s $ShellPath/fontconfig $HOME/.config/fontconfig
 fi
 
 # vim bundle install
