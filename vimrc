@@ -8,7 +8,6 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 call neobundle#begin(expand('~/.vim/bundle'))
-	"インストールするプラグインを指定
 NeoBundleFetch 'Shugo/neobundle.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tomasr/molokai'
@@ -29,6 +28,7 @@ set t_Co=256
 set encoding=utf-8	"vimの内部文字コード
 set fileencoding=utf-8	"書き込み時のエンコード指定
 set fileencodings=utf-8,euc-jp,cp932,sjis,iso-20220jp,ucs-2
+set fileformats=unix,dos,mac	"改行コードの自動認識らしい
 	"読み込み時にどのファイルエンコードで開くかを指定
 	"左から順に試される
 "Indent
@@ -63,7 +63,8 @@ set noswapfile	"スワップファイルを作らない
 set nobackup	"バックアップを作らない
 command! -nargs=0 Wq wq	"Wq == wq
 "command! -nargs=0 Q! q!	"Q! == q!
-
+"検索ハイライトをEsc連打で消す
+nnoremap <ESC><ESC> :nohlsearch<CR>
 "GVIM
 "Windows
 "set guifont=源ノ角ゴシック\ Code\ JP:h10
