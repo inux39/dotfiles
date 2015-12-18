@@ -22,7 +22,7 @@ setopt print_eight_bit
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 #履歴設定
 export HISTCONTROL=ignoredunps
-HISTFILE=~/.zsh_history
+HISTFILE=~/.config/zsh/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 setopt AUTO_MENU
