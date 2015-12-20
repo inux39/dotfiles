@@ -11,7 +11,6 @@ PROMPT="[%n@%m %~]%(!.#.$) "
 alias ls='ls -alF --color=auto'
 alias make='make -j'
 alias rsync='rsync -P'
-alias emacs='vim'
 #補完機能系設定
 autoload -U compinit;	compinit
 setopt auto_list
