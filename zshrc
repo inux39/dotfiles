@@ -1,5 +1,6 @@
 #環境設定
 ##export LANG=ja_JP.utf8
+export EDITOR=vim
 #共通
 PATH="$PATH":~/bin
 #Server
