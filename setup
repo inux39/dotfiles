@@ -34,6 +34,11 @@ if [ ! -e $HOME/.config/fontconfig ]; then
 	ln -s $ShellPath/fontconfig $HOME/.config/fontconfig
 fi
 
+# gitconfig
+if [ ! -e $HOME/.gitconfig ]; then
+	ln -s $ShellPath/.gitconfig $HOME/.gitconfig
+fi
+
 # vim bundle install
 if [ ! -e $HOME/.vim/bundle ]; then
 	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
