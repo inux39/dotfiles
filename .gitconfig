@@ -5,5 +5,4 @@
 	default = simple
 [core]
 	editor = vim
-[color]
-	ui = auto
+
