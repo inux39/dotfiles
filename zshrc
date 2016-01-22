@@ -1,5 +1,10 @@
 #環境設定
-##export LANG=ja_JP.utf8
+PROMPT="[%n@%m %~]%(!.#.$) "
+alias ls='ls -alF --color=auto'
+alias make='make -j'
+alias rsync='rsync -P'
+alias clang++='clang++ -std=c++11"'
+alias g++='g++ -std=c++11'
 export EDITOR=vim
 #共通
 PATH="$PATH":~/bin
@@ -7,10 +12,6 @@ PATH="$PATH":~/bin
 PATH="$PATH":~/Chinachu
 #Client
 PATH="$PATH":/opt/Qt/5.5/gcc_64/bin
-PROMPT="[%n@%m %~]%(!.#.$) "
-alias ls='ls -alF --color=auto'
-alias make='make -j'
-alias rsync='rsync -P'
 #補完機能系設定
 autoload -U compinit;	compinit
 setopt auto_list
