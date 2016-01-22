@@ -3,7 +3,7 @@ PROMPT="[%n@%m %~]%(!.#.$) "
 alias ls='ls -alF --color=auto'
 alias make='make -j'
 alias rsync='rsync -P'
-alias clang++='clang++ -std=c++11"'
+alias clang++='clang++ -std=c++11'
 alias g++='g++ -std=c++11'
 export EDITOR=vim
 #共通
