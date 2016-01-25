@@ -6,7 +6,7 @@ read -p ":" select
 if [ $select == 1 ]; then
 	#xprofile
 	if [ ! -e $HOME/.xprofile ]; then
-		ln -s $ShellPath/xprofile $HOME/.xprofile
+		cp $ShellPath/xprofile $HOME/.xprofile
 	fi
 fi
 if [ ! -e $HOME/.zshenv ]; then
