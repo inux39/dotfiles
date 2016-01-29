@@ -4,7 +4,7 @@ echo "Select 0:Server 1:Client"
 read -p ":" select
 
 if [ $select == 1 ]; then
-	cp -f  $ShellPath/xprofile $HOME/.xprofile
+	ln -s  $ShellPath/zprofile $HOME/.config/zsh/.zprofile
 fi
 if [ ! -e $HOME/.zshenv ]; then
 	ln -s $ShellPath/zshenv $HOME/.zshenv
