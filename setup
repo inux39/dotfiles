@@ -2,7 +2,7 @@
 ShellPath=$(cd $(dirname $0); pwd)
 
 if [ ! -e $HOME/.zshenv ]; then
-	ln -s $ShellPath/zshenv $HOME/.zshenv
+	ln -s $ShellPath/zsh/zshenv $HOME/.zshenv
 fi
 # vimrc
 if [ ! -e $HOME/.vim/.vimrc ]; then
@@ -17,7 +17,7 @@ if [ ! -e $HOME/.config/zsh/.zshrc ]; then
 	if [ ! -e $HOME/.config/zsh ]; then
 		mkdir $HOME/.config/zsh
 	fi
-	ln -s $ShellPath/zshrc $HOME/.config/zsh/.zshrc
+	ln -s $ShellPath/zsh/zshrc $HOME/.config/zsh/.zshrc
 	source $HOME/.config/zsh/.zshrc
 fi
 
