@@ -26,7 +26,9 @@ if [ ! -e $zshPath/$zshrc ]; then
 	ln -sf $ShellPath/zsh/$zshrc $zshPath/$zshrc
 	source $zshPath/$zshrc
 fi
-
+if [ ! -e $HOME/.xprofile ]; then
+	ln -sf $ShellPath/.xprofile $HOME/.xprofile
+fi
 # font config
 if [ ! -e $HOME/.config/fontconfig ]; then
 	ln -sf $ShellPath/fontconfig $HOME/.config/fontconfig
