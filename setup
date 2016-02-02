@@ -1,6 +1,9 @@
 #!/bin/sh
 ShellPath=$(cd $(dirname $0); pwd)
-
+zshPath=$HOME/.config/zsh
+zshenv=.zshenv
+zshrc=.zshrc
+zprofile=.zprofile
 # vimrc
 if [ ! -e $HOME/.vim/.vimrc ]; then
 	if [ ! -e $HOME/.vim ]; then
@@ -9,18 +12,19 @@ if [ ! -e $HOME/.vim/.vimrc ]; then
 	ln -sf $ShellPath/vimrc $HOME/.vim/.vimrc
 fi
 # Zsh
-if [ ! -e $HOME/.config/zsh/zprofile ]; then
-	ln -sf $ShellPath/zsh/zprofile $HOME/.config/zsh/.zprofile
+if [ ! -e $HOME/$zshenv ]; then
+	ln -sf $ShellPath/zsh/$zshenv $HOME/$zshenv
 fi
-if [ ! -e $HOME/.zshenv ]; then
-	ln -sf $ShellPath/zsh/zshenv $HOME/.zshenv
+
+if [ ! -e $zshPath/.zprofile ]; then
+	ln -sf $ShellPath/zsh/$zprofile $zshPath/$zprofile
 fi
-if [ ! -e $HOME/.config/zsh/.zshrc ]; then
-	if [ ! -e $HOME/.config/zsh ]; then
-		mkdir $HOME/.config/zsh
+if [ ! -e $zshPath/$zshrc ]; then
+	if [ ! -e $zshPath ]; then
+		mkdir $zshPath
 	fi
-	ln -sf $ShellPath/zsh/zshrc $HOME/.config/zsh/.zshrc
-	source $HOME/.config/zsh/.zshrc
+	ln -sf $ShellPath/zsh/$zshrc $zshPath/$zshrc
+	source $zshPath/$zshrc
 fi
 
 # font config
