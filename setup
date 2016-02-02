@@ -6,36 +6,36 @@ if [ ! -e $HOME/.vim/.vimrc ]; then
 	if [ ! -e $HOME/.vim ]; then
 		mkdir $HOME/.vim
 	fi
-	ln -s $ShellPath/vimrc $HOME/.vim/.vimrc
+	ln -sf $ShellPath/vimrc $HOME/.vim/.vimrc
 fi
 # Zsh
 if [ ! -e $HOME/.config/zsh/zprofile ]; then
-	ln -s $ShellPath/zsh/zprofile $HOME/.config/zsh/zprofile
+	ln -sf $ShellPath/zsh/zprofile $HOME/.config/zsh/zprofile
 fi
 if [ ! -e $HOME/.zshenv ]; then
-	ln -s $ShellPath/zsh/zshenv $HOME/.zshenv
+	ln -sf $ShellPath/zsh/zshenv $HOME/.zshenv
 fi
 if [ ! -e $HOME/.config/zsh/.zshrc ]; then
 	if [ ! -e $HOME/.config/zsh ]; then
 		mkdir $HOME/.config/zsh
 	fi
-	ln -s $ShellPath/zsh/zshrc $HOME/.config/zsh/.zshrc
+	ln -sf $ShellPath/zsh/zshrc $HOME/.config/zsh/.zshrc
 	source $HOME/.config/zsh/.zshrc
 fi
 
 # font config
 if [ ! -e $HOME/.config/fontconfig ]; then
-	ln -s $ShellPath/fontconfig $HOME/.config/fontconfig
+	ln -sf $ShellPath/fontconfig $HOME/.config/fontconfig
 fi
 
 # gitconfig
 if [ ! -e $HOME/.gitconfig ]; then
-	ln -s $ShellPath/.gitconfig $HOME/.gitconfig
+	ln -sf $ShellPath/.gitconfig $HOME/.gitconfig
 fi
 
 # gitignore
 if [ ! -e $HOME/.gitignore ]; then
-	ln -s $ShellPath/.gitignore $HOME/.gitignore
+	ln -sf $ShellPath/.gitignore $HOME/.gitignore
 fi
 
 # vim bundle install
