@@ -5,11 +5,11 @@ zshenv=.zshenv
 zshrc=.zshrc
 zprofile=.zprofile
 # vimrc
-if [ ! -e $HOME/.vim/.vimrc ]; then
+if [ ! -e $HOME/.vim/vimrc ]; then
 	if [ ! -e $HOME/.vim ]; then
 		mkdir $HOME/.vim
 	fi
-	ln -sf $ShellPath/vimrc $HOME/.vim/.vimrc
+	ln -sf $ShellPath/vimrc $HOME/.vim/vimrc
 fi
 # Zsh
 if [ ! -e $HOME/$zshenv ]; then
