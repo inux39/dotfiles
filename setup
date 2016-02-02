@@ -10,7 +10,7 @@ if [ ! -e $HOME/.vim/.vimrc ]; then
 fi
 # Zsh
 if [ ! -e $HOME/.config/zsh/zprofile ]; then
-	ln -sf $ShellPath/zsh/zprofile $HOME/.config/zsh/zprofile
+	ln -sf $ShellPath/zsh/zprofile $HOME/.config/zsh/.zprofile
 fi
 if [ ! -e $HOME/.zshenv ]; then
 	ln -sf $ShellPath/zsh/zshenv $HOME/.zshenv
