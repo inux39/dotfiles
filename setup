@@ -16,9 +16,6 @@ if [ ! -e $HOME/$zshenv ]; then
 	ln -sf $ShellPath/zsh/$zshenv $HOME/$zshenv
 fi
 
-if [ ! -e $zshPath/.zprofile ]; then
-	ln -sf $ShellPath/zsh/$zprofile $zshPath/$zprofile
-fi
 if [ ! -e $zshPath/$zshrc ]; then
 	if [ ! -e $zshPath ]; then
 		mkdir $zshPath
