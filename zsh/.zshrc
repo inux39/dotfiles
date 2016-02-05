@@ -1,6 +1,7 @@
 #環境設定
 PROMPT="[%n@%m %~]%(!.#.$) "
 alias ls='ls -alF --color=auto'
+alias mkdir='mkdir -p'
 alias make='make -j'
 alias rsync='rsync -P'
 alias clang++='clang++ -std=c++11'
