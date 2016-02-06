@@ -1,8 +1,10 @@
+#tex
 *.pdf
 *.aux
 *.dvi
 *.log
 
+#program
 *.out
 *.o
 *~
