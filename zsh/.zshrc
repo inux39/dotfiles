@@ -18,6 +18,7 @@ setopt auto_cd
 #補完機能系設定
 autoload -U compinit;	compinit
 setopt auto_list
+setopt correct	#ミスタイプして存在しないコマンド打ってもやさしくしてくれる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 #表示系設定
 autoload -Uz colors
