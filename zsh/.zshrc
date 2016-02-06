@@ -1,4 +1,5 @@
 #環境設定
+autoload -U colors && colors
 export EDITOR=vim
 export LANG=ja_JP.UTF-8
 PROMPT="[%n@%m %~]%(!.#.$) "
@@ -22,8 +23,6 @@ setopt auto_list
 setopt correct	#ミスタイプして存在しないコマンド打ってもやさしくしてくれる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 #表示系設定
-autoload -Uz colors
-colors
 setopt print_eight_bit
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 #履歴設定
