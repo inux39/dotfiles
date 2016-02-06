@@ -66,11 +66,14 @@ command! -nargs=0 Wq wq	"Wq == wq
 "検索ハイライトをEsc連打で消す
 nnoremap <ESC><ESC> :nohlsearch<CR>
 "GVIM
-"Windows
-"set guifont=源ノ角ゴシック\ Code\ JP:h10
-"Linux/MacOS/Unix System
-set guifont=源ノ角ゴシック\ Code\ JP\ 10
-
+if has("gui_gtk") || has("gui_mac")
+	set guifont=源ノ角ゴシック\ Code\ JP\ 10
+	set guifontwide=源ノ角ゴシック\ Code\ JP\ 10
+endif
+if has("gui_win32")
+	set guifont=源ノ角ゴシック\ Code\ JP:h10
+	set guifontwide=源ノ角ゴシック\ Code\ JP:h10
+endif
 "Vim Plugin Config
 "lightline
 let g:lightline = {
