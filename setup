@@ -1,5 +1,6 @@
 #!/bin/sh
 ShellPath=$(cd $(dirname $0); pwd)
+configPath=$HOME/.config
 zshPath=$HOME/.config/zsh
 zshenv=.zshenv
 zshrc=.zshrc
@@ -27,9 +28,9 @@ if [ ! -e $HOME/.xprofile ]; then
 	ln -sf $ShellPath/.xprofile $HOME/.xprofile
 fi
 # font config
-if [ ! -e $HOME/.config/fontconfig/fonts.conf ]; then
+if [ ! -e $configPath/fontconfig/fonts.conf ]; then
 	ln -sf $ShellPath/.config/fontconfig/fonts.conf \
-		$HOME/.config/fontconfig/fonts.conf
+		$configPath/fontconfig/fonts.conf
 fi
 
 # gitconfig
