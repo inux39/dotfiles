@@ -27,7 +27,7 @@ if [ ! -e $HOME/.xprofile ]; then
 	ln -sf $ShellPath/.xprofile $HOME/.xprofile
 fi
 # font config
-if [ ! -e $HOME/.config/fontconfig ]; then
+if [ ! -e $HOME/.config/fontconfig/fonts.conf ]; then
 	ln -sf $ShellPath/.config/fontconfig/fonts.conf \
 		$HOME/.config/fontconfig/fonts.conf
 fi
