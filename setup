@@ -13,14 +13,14 @@ if [ ! -e $HOME/.vim/vimrc ]; then
 fi
 # Zsh
 if [ ! -e $HOME/$zshenv ]; then
-	ln -sf $ShellPath/zsh/$zshenv $HOME/$zshenv
+	ln -sf $ShellPath/.config/zsh/$zshenv $HOME/$zshenv
 fi
 
 if [ ! -e $zshPath/$zshrc ]; then
 	if [ ! -e $zshPath ]; then
 		mkdir $zshPath
 	fi
-	ln -sf $ShellPath/zsh/$zshrc $zshPath/$zshrc
+	ln -sf $ShellPath/.config/zsh/$zshrc $zshPath/$zshrc
 	source $zshPath/$zshrc
 fi
 if [ ! -e $HOME/.xprofile ]; then
@@ -28,7 +28,8 @@ if [ ! -e $HOME/.xprofile ]; then
 fi
 # font config
 if [ ! -e $HOME/.config/fontconfig ]; then
-	ln -sf $ShellPath/fontconfig $HOME/.config/fontconfig
+	ln -sf $ShellPath/.config/fontconfig/fonts.conf \
+		$HOME/.config/fontconfig/fonts.conf
 fi
 
 # gitconfig
