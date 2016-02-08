@@ -2,7 +2,7 @@
 autoload -U colors && colors
 export EDITOR=vim
 export LANG=ja_JP.UTF-8
-PROMPT="[%n@%m %~]%(!.#.$) "
+PROMPT="[%n@%m %~]%(!.#.$) "	#[name@host directory] %|#
 alias ls='ls -alF --color=auto'
 alias mkdir='mkdir -p'
 alias make='make -j'
@@ -14,16 +14,16 @@ PATH="$PATH":~/bin
 #Server
 PATH="$PATH":~/Chinachu
 #Client
-PATH="$PATH":/opt/Qt/5.5/gcc_64/bin
+PATH="$PATH":/opt/Qt/5.5/gcc_64/bin	#そのうち消す
 #ほか機能系
-setopt auto_cd
+setopt auto_cd	#いらない可能性
 #補完機能系設定
 autoload -U compinit;	compinit
 setopt auto_list
 setopt correct	#ミスタイプして存在しないコマンド打ってもやさしくしてくれる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 #表示系設定
-setopt print_eight_bit
+setopt print_eight_bit	#日本語ファイル名表示
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 #履歴設定
 export HISTCONTROL=ignoredunps
