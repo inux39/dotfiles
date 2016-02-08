@@ -66,6 +66,8 @@ command! -nargs=0 Wq wq	"Wq == wq
 "検索ハイライトをEsc連打で消す
 nnoremap <ESC><ESC> :nohlsearch<CR>
 "GVIM
+"GUIの種類で判別するしかない模様。とりあえずの対応
+"Win32は64bitも含まれる?
 if has("gui_gtk") || has("gui_mac")
 	set guifont=源ノ角ゴシック\ Code\ JP\ 10
 	set guifontwide=源ノ角ゴシック\ Code\ JP\ 10
