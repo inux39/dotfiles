@@ -16,7 +16,7 @@ PATH="$PATH":~/Chinachu
 #Client
 PATH="$PATH":/opt/Qt/5.5/gcc_64/bin	#そのうち消す
 #ほか機能系
-setopt auto_cd	#いらない可能性
+#setopt auto_cd	#いらない可能性	#一応無効化
 #補完機能系設定
 autoload -U compinit;	compinit
 setopt auto_list
