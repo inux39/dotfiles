@@ -19,7 +19,8 @@ PATH="$PATH":/opt/Qt/5.5/gcc_64/bin	#そのうち消す
 #setopt auto_cd	#いらない可能性	#一応無効化
 #補完機能系設定
 autoload -U compinit;	compinit
-setopt auto_list
+setopt magic_equal_subst	# =以降も補完するらしい
+setopt auto_list	#補完候補を一覧表示する
 setopt correct	#ミスタイプして存在しないコマンド打ってもやさしくしてくれる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 #表示系設定
