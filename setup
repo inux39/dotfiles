@@ -38,11 +38,6 @@ if [ ! -e $HOME/.gitconfig ]; then
 	ln -sf $ShellPath/.gitconfig $HOME/.gitconfig
 fi
 
-# gitignore
-if [ ! -e $HOME/.gitignore ]; then
-	ln -sf $ShellPath/.gitignore $HOME/.gitignore
-fi
-
 # vim bundle install
 if [ ! -e $HOME/.vim/bundle ]; then
 	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh

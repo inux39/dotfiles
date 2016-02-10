@@ -5,6 +5,5 @@
 	default = simple
 [core]
 	editor = vim
-	excludesfile = ~/.gitignore
 [help]
 	autocorrect = 20
