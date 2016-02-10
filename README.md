@@ -14,4 +14,5 @@ dotfiles
 	* JIS
 * .gitignore
 	* 適当に配置
+* .ffmpeg/
 
