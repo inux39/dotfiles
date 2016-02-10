@@ -25,6 +25,7 @@ if [ ! -e $zshPath/$zshrc ]; then
 	source $zshPath/$zshrc
 fi
 if [ ! -e $HOME/.xprofile ]; then
+	#シンボリックリンクではうまく動かないみたいなので、cpから変更しない
 	cp -f $ShellPath/.xprofile $HOME/.xprofile
 fi
 # font config
