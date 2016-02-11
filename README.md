@@ -6,6 +6,7 @@ dotfiles
 * .config/zsh
 * .gitconfig
 * .xprofile
+	* うまく動いていない模様(よくわかっていない)
 * vimrc
 
 ##manual
