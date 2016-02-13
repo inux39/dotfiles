@@ -12,6 +12,7 @@ dotfiles
 ##manual
 * .config/xfce4/terminal
 * .Xmodmap
+	* require `xorg-xmodmap`
 	* JIS
 * .gitignore
 	* 適当に配置
