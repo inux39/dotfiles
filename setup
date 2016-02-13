@@ -7,8 +7,8 @@ zshrc=.zshrc
 zprofile=.zprofile
 # vimrc
 if [ ! -e $HOME/.vim/vimrc ]; then
-	if [ ! -e $HOME/.vim ]; then
-		mkdir $HOME/.vim
+	if [ ! -e $HOME/.vim/bundle ]; then
+		curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 	fi
 	ln -sf $ShellPath/vimrc $HOME/.vim/vimrc
 fi
@@ -37,10 +37,5 @@ fi
 # gitconfig
 if [ ! -e $HOME/.gitconfig ]; then
 	ln -sf $ShellPath/.gitconfig $HOME/.gitconfig
-fi
-
-# vim bundle install
-if [ ! -e $HOME/.vim/bundle ]; then
-	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 fi
 
