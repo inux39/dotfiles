@@ -17,4 +17,6 @@ dotfiles
 * .gitignore
 	* 適当に配置
 * .ffmpeg/
+* .ssh/rc
+	* ローカル以外からのSSHでメールする
 
