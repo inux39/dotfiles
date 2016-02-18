@@ -13,9 +13,8 @@ dotfiles
 * .config/xfce4/terminal
 * .Xmodmap
 	* require `xorg-xmodmap`
-	* JIS
+	* HHKB配列ではない場合につかおう
 * .gitignore
-	* 適当に配置
 * .ffmpeg/
 * .ssh/rc
 	* ローカル以外からのSSHでメールする
