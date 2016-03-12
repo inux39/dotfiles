@@ -5,6 +5,9 @@ zshPath=$HOME/.config/zsh
 zshenv=.zshenv
 zshrc=.zshrc
 zprofile=.zprofile
+if [ ! -e $HOME/.config ]; then
+	mkdir $HOME/.config
+fi
 # vimrc
 if [ ! -e $HOME/.vim/vimrc ]; then
 	if [ ! -e $HOME/.vim/bundle ]; then
@@ -29,6 +32,9 @@ if [ ! -e $HOME/.xprofile ]; then
 	cp -f $ShellPath/.xprofile $HOME/.xprofile
 fi
 # font config
+if [ ! -e $configPath/fontconfig ]; then
+	mkdir $configPath/fontconfig
+fi
 if [ ! -e $configPath/fontconfig/fonts.conf ]; then
 	ln -sf $ShellPath/.config/fontconfig/fonts.conf \
 		$configPath/fontconfig/fonts.conf
