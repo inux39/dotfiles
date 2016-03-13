@@ -19,7 +19,6 @@ fi
 if [ ! -e $HOME/$zshenv ]; then
 	ln -sf $ShellPath/.config/zsh/$zshenv $HOME/$zshenv
 fi
-
 if [ ! -e $zshPath/$zshrc ]; then
 	if [ ! -e $zshPath ]; then
 		mkdir $zshPath
@@ -27,6 +26,7 @@ if [ ! -e $zshPath/$zshrc ]; then
 	ln -sf $ShellPath/.config/zsh/$zshrc $zshPath/$zshrc
 	source $zshPath/$zshrc
 fi
+# xprofile
 if [ ! -e $HOME/.xprofile ]; then
 	#シンボリックリンクではうまく動かないみたいなので、cpから変更しない
 	cp -f $ShellPath/.xprofile $HOME/.xprofile
@@ -39,7 +39,10 @@ if [ ! -e $configPath/fontconfig/fonts.conf ]; then
 	ln -sf $ShellPath/.config/fontconfig/fonts.conf \
 		$configPath/fontconfig/fonts.conf
 fi
-
+# ffmpeg preset files
+if [ ! -e $HOME/.ffmpeg ]; then
+	ln -s $ShellPath/.ffmpeg $HOME/.ffmpeg
+fi
 # gitconfig
 if [ ! -e $HOME/.gitconfig ]; then
 	ln -sf $ShellPath/.gitconfig $HOME/.gitconfig
