@@ -1,8 +1,8 @@
 #!/bin/sh
 ShellPath=$(cd $(dirname $0); pwd)
-cfgPath=$HOME/.config
-if [ ! -e $cfgPath ]; then
-	mkdir $cfgPath
+cfg=$HOME/.config
+if [ ! -e $cfg ]; then
+	mkdir $cfg
 fi
 # vimrc
 if [ ! -e $HOME/.vim/vimrc ]; then
@@ -15,12 +15,12 @@ fi
 if [ ! -e $HOME/.zshenv ]; then
 	ln -sf $ShellPath/.config/zsh/.zshenv $HOME/.zshenv
 fi
-if [ ! -e $cfgPath/zsh/.zshrc ]; then
-	if [ ! -e $cfgPath/zsh ]; then
-		mkdir $cfgPath/zsh
+if [ ! -e $cfg/zsh/.zshrc ]; then
+	if [ ! -e $cfg/zsh ]; then
+		mkdir $cfg/zsh
 	fi
-	ln -sf $ShellPath/.config/zsh/.zshrc $cfgPath/zsh/.zshrc
-	source $cfgPath/zsh/.zshrc
+	ln -sf $ShellPath/.config/zsh/.zshrc $cfg/zsh/.zshrc
+	source $cfg/zsh/.zshrc
 fi
 # xprofile
 if [ ! -e $HOME/.xprofile ]; then
@@ -28,12 +28,12 @@ if [ ! -e $HOME/.xprofile ]; then
 	cp -f $ShellPath/.xprofile $HOME/.xprofile
 fi
 # font config
-if [ ! -e $cfgPath/fontconfig ]; then
-	mkdir $cfgPath/fontconfig
+if [ ! -e $cfg/fontconfig ]; then
+	mkdir $cfg/fontconfig
 fi
-if [ ! -e $cfgPath/fontconfig/fonts.conf ]; then
+if [ ! -e $cfg/fontconfig/fonts.conf ]; then
 	ln -sf $ShellPath/.config/fontconfig/fonts.conf \
-		$cfgPath/fontconfig/fonts.conf
+		$cfg/fontconfig/fonts.conf
 fi
 # ffmpeg preset files
 if [ ! -e $HOME/.ffmpeg ]; then
