@@ -1,7 +1,6 @@
 #!/bin/sh
 ShellPath=$(cd $(dirname $0); pwd)
 cfgPath=$HOME/.config
-cfgPath/zsh=$HOME/.config/zsh
 if [ ! -e $cfgPath ]; then
 	mkdir $cfgPath
 fi
