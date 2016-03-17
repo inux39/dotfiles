@@ -46,6 +46,7 @@ set number	"行番号表示
 set title	"タイトル表示
 set showmatch	"対応するかっこを表示
 set wildmenu	"補完候補を表示する
+set synmaxcol=200	"1行200文字のシンタックス
 "let g:seiya_auto_enable=1	"自動的にvim画面を半透明にする(miyakogi/seiya)
 ""ステータスライン
 set laststatus=2	"ステータスラインを常に表示
