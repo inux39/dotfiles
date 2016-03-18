@@ -1,0 +1,12 @@
+#!/bin/sh
+search=$(cd $(dirname $0); pwd)/*
+for file in $search
+do
+	filename=`basename $file`
+	if [ `echo $file | grep '.ts'` ]; then
+		if [ ! -e $file.mp4 ]; then
+			ffmpeg -i $file -vcodec libx265 -vpre x265 -strict 2\
+			$file.mp4
+		fi
+	fi
+done
