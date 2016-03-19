@@ -6,6 +6,7 @@ for file in $search; do
 		files+=("$filepath")
 	fi
 done
+cd $(dirname $0); pwd
 for i in ${files[@]}; do
 	if [ `echo $i | grep '.ts'` ]; then
 		if [ ! -e ${i%ts}mp4 ]; then
