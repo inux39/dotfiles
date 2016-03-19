@@ -1,16 +1,14 @@
 #!/bin/sh
-search=$(cd $(dirname $0); pwd)/*
-for file in $search; do
-	files=`basename $search`
-	if [ -f $filepath ]; then
-		files+=("$filepath")
-	fi
-done
-cd $(dirname $0); pwd
-for i in ${files[@]}; do
-	if [ `echo $i | grep '.ts'` ]; then
-		if [ ! -e ${i%ts}mp4 ]; then
-			ffmpeg -i $file -vcodec libx265 -vpre x265 -strict 2 ${i%ts}mp4
+cd `pwd`
+search=`pwd`/*
+for filepath in $search; do
+	filename=`basename $filepath`
+	if [ -f $filename ]; then
+		if [ `echo $filename | grep '\.ts'` ]; then
+			if [ ! -e ${filename%ts}mp4 ]; then
+				ffmpeg -i $file -vcodec libx265 -vpre x265 -strict 2\
+				${filename%ts}mp4
+			fi
 		fi
 	fi
 done
