@@ -6,7 +6,7 @@ for filepath in $search; do
 	if [ -f $filename ]; then
 		if [ `echo $filename | grep '\.ts'` ]; then
 			if [ ! -e ${filename%ts}mp4 ]; then
-				ffmpeg -i $file -vcodec libx265 -vpre x265 -strict 2\
+				ffmpeg -i $filename -vcodec libx265 -vpre x265 -strict 2\
 				${filename%ts}mp4
 			fi
 		fi
