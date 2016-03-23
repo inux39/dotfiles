@@ -10,8 +10,8 @@ endif
 call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shugo/neobundle.vim'
 NeoBundle 'itchyny/lightline.vim'
-"NeoBundle 'tomasr/molokai'	"color
-NeoBundle 'aereal/vim-colors-japanesque'
+NeoBundle 'tomasr/molokai'	"color
+"NeoBundle 'aereal/vim-colors-japanesque'
 NeoBundle 'vim-jp/cpp-vim'
 NeoBundle 'octol/vim-cpp-enhanced-highlight'
 NeoBundle 'bronson/vim-trailing-whitespace'
@@ -21,8 +21,8 @@ filetype plugin indent on
 NeoBundleCheck
 "Color
 syntax on
-colorscheme japanesque
-"colorscheme molokai
+"colorscheme japanesque
+colorscheme molokai
 set t_Co=256
 "Encode
 set encoding=utf-8	"vimの内部文字コード
