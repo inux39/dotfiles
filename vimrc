@@ -10,19 +10,19 @@ endif
 call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shugo/neobundle.vim'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'tomasr/molokai'
-"NeoBundle 'miyakogi/seiya.vim'
+"NeoBundle 'tomasr/molokai'	"color
+NeoBundle 'aereal/vim-colors-japanesque'
 NeoBundle 'vim-jp/cpp-vim'
 NeoBundle 'octol/vim-cpp-enhanced-highlight'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'Townk/vim-autoclose'	"自動カッコ閉じ
-"NeoBundle 'kana/vim-smartinput'	"自動カッコ閉じ
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
 "Color
 syntax on
-colorscheme molokai
+colorscheme japanesque
+"colorscheme molokai
 set t_Co=256
 "Encode
 set encoding=utf-8	"vimの内部文字コード
