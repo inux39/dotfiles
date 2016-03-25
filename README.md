@@ -6,14 +6,12 @@ dotfiles
 * .config/zsh
 * .gitconfig
 * .xprofile
-	* うまく動いていない模様(よくわかっていない)
+	* よくわかっていない
 * vimrc
 
 ##manual
 * .config/xfce4/terminal
-* .Xmodmap
-	* require `xorg-xmodmap`
-	* HHKB配列ではない場合につかおう
+* .Xmodmap `xorg-xmodmap`
 * .gitignore
 * .ffmpeg/
 * .ssh/rc
