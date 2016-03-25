@@ -1,47 +1,29 @@
 #!/bin/sh
 ShellPath=$(cd $(dirname $0); pwd)
-cfg=$HOME/.config
-if [ ! -e $cfg ]; then
-	mkdir $cfg
+mkdir -p $HOME/.config/zsh
+ln -s $ShellPath/.ffmpeg $HOME/.ffmpeg
+ln -s $ShellPath/vimrc $HOME/.vim/vimrc
+ln -s $ShellPath/.config/zsh/.zshenv $HOME/.zshenv
+# zsh
+if [ ! -e $HOME/.config/zsh/.zshrc ]; then
+	ln -sf $ShellPath/.config/zsh/.zshrc $HOME/.config/zsh/.zshrc
+	source $HOME/.config/zsh/.zshrc
 fi
+
 # vimrc
 if [ ! -e $HOME/.vim/bundle ]; then
 	mkdir -p $HOME/.vim/bundle
 	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 fi
 
-if [ ! -e $HOME/.vim/vimrc ]; then
-	ln -sf $ShellPath/vimrc $HOME/.vim/vimrc
-fi
-# Zsh
-if [ ! -e $HOME/.zshenv ]; then
-	ln -sf $ShellPath/.config/zsh/.zshenv $HOME/.zshenv
-fi
-if [ ! -e $cfg/zsh/.zshrc ]; then
-	if [ ! -e $cfg/zsh ]; then
-		mkdir $cfg/zsh
-	fi
-	ln -sf $ShellPath/.config/zsh/.zshrc $cfg/zsh/.zshrc
-	source $cfg/zsh/.zshrc
-fi
-# xprofile
+
 if [ ! -e $HOME/.xprofile ]; then
-	#シンボリックリンクではうまく動かないみたいなので、cpから変更しない
 	cp -f $ShellPath/.xprofile $HOME/.xprofile
 fi
-# font config
-if [ ! -e $cfg/fontconfig ]; then
-	mkdir $cfg/fontconfig
-fi
-if [ ! -e $cfg/fontconfig/fonts.conf ]; then
+if [ ! -e $HOME/.config/fontconfig/fonts.conf ]; then
 	ln -sf $ShellPath/.config/fontconfig/fonts.conf \
-		$cfg/fontconfig/fonts.conf
+		$HOME/.config/fontconfig/fonts.conf
 fi
-# ffmpeg preset files
-if [ ! -e $HOME/.ffmpeg ]; then
-	ln -s $ShellPath/.ffmpeg $HOME/.ffmpeg
-fi
-# gitconfig
 if [ ! -e $HOME/.gitconfig ]; then
 	ln -sf $ShellPath/.gitconfig $HOME/.gitconfig
 fi
