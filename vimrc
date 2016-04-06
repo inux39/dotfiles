@@ -3,26 +3,25 @@ set nocompatible	"viとの互換を切る
 if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
-"Dein
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
-call dein#begin(expand('~/.vim/dein'))
-call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/context_filetype.vim')
-call dein#add('Shougo/neosnippet')
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neosnippet-snippets.vim')
-call dein#add('itchyny/lightline.vim')
-call dein#add('tomasr/molokai')
-call dein#add('vim-jp/cpp-vim')
-call dein#add('octol/vim-cpp-enhanced-highlight')
-call dein#add('bronson/vim-trailing-whitespace')
-call dein#add('Townk/vim-autoclose')
-call dein#end()
+"NeoBundle
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#begin(expand('~/.vim/bundle'))
+NeoBundleFetch 'Shugo/neobundle.vim'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'tomasr/molokai'	"color
+"NeoBundle 'aereal/vim-colors-japanesque'
+NeoBundle 'vim-jp/cpp-vim'
+NeoBundle 'octol/vim-cpp-enhanced-highlight'
+NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'Townk/vim-autoclose'	"自動カッコ閉じ
+call neobundle#end()
 filetype plugin indent on
+NeoBundleCheck
 "Color
 syntax on
+"colorscheme japanesque
 colorscheme molokai
 set t_Co=256
 "Encode
