@@ -9,6 +9,7 @@ alias make='make -j'
 alias rsync='rsync -P'
 alias clang++='clang++ -std=c++11'
 alias g++='g++ -std=c++11'
+alias sudo='sudo -E'
 #共通
 PATH="$PATH":~/bin
 #Server
