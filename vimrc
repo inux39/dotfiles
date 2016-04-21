@@ -5,23 +5,19 @@ if has("autocmd")
 endif
 "NeoBundle
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+    set runtimepath+=~/.vim/plugged/vim-plug
 endif
-call neobundle#begin(expand('~/.vim/bundle'))
-NeoBundleFetch 'Shugo/neobundle.vim'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'tomasr/molokai'	"color
-"NeoBundle 'aereal/vim-colors-japanesque'
-NeoBundle 'vim-jp/cpp-vim'
-NeoBundle 'octol/vim-cpp-enhanced-highlight'
-NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'Townk/vim-autoclose'	"自動カッコ閉じ
-call neobundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/vim-plug', {'dir' : '~/.vim/plugged/vim-plug/autoload'}
+Plug 'tomasr/molokai'
+Plug 'itchyny/lightline.vim'
+Plug 'vim-jp/cpp-vim'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'Townk/vim-autoclose'
+call plug#end()
 filetype plugin indent on
-NeoBundleCheck
 "Color
 syntax on
-"colorscheme japanesque
 colorscheme molokai
 set t_Co=256
 "Encode
