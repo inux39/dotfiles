@@ -3,7 +3,7 @@ cd `pwd`
 search=`pwd`/*
 IFS="$'\n'"
 for file in *.ts; do
-	ffmpeg -i "$file" -vcodec libx265 -vpre x265 -strict 2\
+	ffmpeg -n -i "$file" -vcodec libx265 -vpre x265 -strict 2\
 		"${file%ts}mp4"
 done
 
