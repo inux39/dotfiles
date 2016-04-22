@@ -11,11 +11,10 @@ if [ ! -e $HOME/.config/zsh/.zshrc ]; then
 fi
 
 # vimrc
-if [ ! -e $HOME/.vim/bundle ]; then
-	mkdir -p $HOME/.vim/bundle
-	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+if [ ! -e $HOME/.vim/autoload ]; then
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
-
 
 if [ ! -e $HOME/.xprofile ]; then
 	cp -f $ShellPath/.xprofile $HOME/.xprofile
