@@ -26,3 +26,6 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ###Dein
 
+##sshfs
+`sshfs user@remote:/remotedir localdir`
+
