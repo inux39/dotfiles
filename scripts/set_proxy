@@ -1,6 +1,9 @@
-#!/bin/sh
-PORT=8118
-export http_proxy=http://localhost:$PORT/
+export http_proxy=http://localhost:8118/
 export https_proxy=$http_proxy
+export socks_proxy=$http_proxy
 export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+export HTTP_PROXY=$http_proxy
+export HTTPS_PROXY=$https_proxy
+export SOCKS_PROXY=$socks_proxy
+export NO_PROXY=$no_proxy
 
