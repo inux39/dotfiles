@@ -27,5 +27,10 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ###Dein
 
 ##sshfs
+mount
+
 `sshfs user@remote:/remotedir localdir`
+
+umount
+`fusermount -u mountdir`
 
