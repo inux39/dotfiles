@@ -29,7 +29,7 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ##sshfs
 mount
 
-`sshfs user@remote:/remotedir localdir`
+`sshfs remote:/remotedir localdir`
 
 umount
 `fusermount -u mountdir`
