@@ -2,7 +2,7 @@
 ShellPath=$(cd $(dirname $0); pwd)
 mkdir -p $HOME/.config/zsh
 ln -s $ShellPath/.ffmpeg $HOME/.ffmpeg
-ln -s $ShellPath/vimrc $HOME/.vim/vimrc
+ln -s $ShellPath/.vim/vimrc $HOME/.vim/vimrc
 ln -s $ShellPath/.config/zsh/.zshenv $HOME/.zshenv
 # zsh
 if [ ! -e $HOME/.config/zsh/.zshrc ]; then
