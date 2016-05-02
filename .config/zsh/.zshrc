@@ -5,7 +5,6 @@ export LANG=ja_JP.UTF-8
 PROMPT="[%n@%m %~]%(!.#.$) "	#[name@host directory] %|#
 alias ls='ls -alF --color=auto'
 alias mkdir='mkdir -p'
-alias make='make -j'
 alias rsync='rsync --progress'
 alias clang++='clang++ -std=c++11'
 alias g++='g++ -std=c++11'
