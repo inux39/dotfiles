@@ -1,0 +1,12 @@
+#!/bin/sh
+enc=/mnt/ST250/ffmpeg/ffmpeg
+cd `pwd`
+search=`pwd`/*
+IFS="$'\n'"
+for file in *.ts; do
+	if [ ! -e ${file%ts}mp4 ]; then
+		$enc -n -i "$file" -vcodec libx265 -vpre x265 -acodec libfdk_aac \
+		"${file%ts}mp4"
+	fi
+done
+
