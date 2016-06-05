@@ -1,6 +1,6 @@
 #!/bin/sh
 cd `pwd`
-search=`pwd`/*
+search="`pwd`/*"
 IFS="$'\n'"
 for file in *.ts; do
 	if [ ! -e ${file%ts}mp4 ]; then
