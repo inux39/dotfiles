@@ -14,6 +14,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-jp/cpp-vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Townk/vim-autoclose'
+Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 filetype plugin indent on
 "Color
