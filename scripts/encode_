@@ -1,11 +1,13 @@
-#!/bin/sh
-enc=/mnt/ST250/ffmpeg/ffmpeg
-cd `pwd`
-search=`pwd`/*
+#!/bin/bash
+#enc=/mnt/ST250/ffmpeg/ffmpeg
+cd "`pwd`"
+search="`pwd`/*"
 IFS="$'\n'"
 for file in *.ts; do
 	if [ ! -e ${file%ts}mp4 ]; then
-		$enc -n -i "$file" -vcodec libx265 -vpre x265 -acodec libfdk_aac \
+		#30秒ずらし、放送に合わせる(各単位はmicro seconds)
+		edr -n  -analyzeduration 30M -probesize 30M \ 
+		-i "$file" -vcodec libx265 -vpre x265 -acodec libfdk_aac \
 		"${file%ts}mp4"
 	fi
 done
