@@ -13,7 +13,8 @@ Plug 'tomasr/molokai'
 Plug 'itchyny/lightline.vim'
 Plug 'vim-jp/cpp-vim'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'Townk/vim-autoclose'
+"Plug 'Townk/vim-autoclose'
+Plug 'kana/vim-smartinput'
 Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 filetype plugin indent on
@@ -63,6 +64,12 @@ command! -nargs=0 Wq wq	"Wq == wq
 "command! -nargs=0 Q! q!	"Q! == q!
 "検索ハイライトをEsc連打で消す
 nnoremap <ESC><ESC> :nohlsearch<CR>
+"inoremap { {}<Left>
+"inoremap {<Enter> {}<Left><CR><ESC><S-o>
+"inoremap [ []<Left>
+"inoremap [<Enter> []<Left><CR><ESC><S-o>
+"inoremap ( ()<Left>
+"inoremap (<Enter> ()<Left><CR><ESC><S-o>
 "GVIM
 "GUIの種類で判別するしかない模様。とりあえずの対応
 "gui_gtkはすべてのバージョンに対応しているらしい(未確認)
