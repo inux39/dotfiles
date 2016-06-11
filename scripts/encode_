@@ -7,9 +7,8 @@ for file in *.ts; do
 	if [ ! -e ${file%ts}mp4 ]; then
 		#30秒ずらし、放送に合わせる(各単位はmicro seconds)
 		#"$ffmpeg"
-		edr -n  -analyzeduration 30M -probesize 30M\
-		-i "$file" -vcodec libx265 -vpre x265 -acodec libfdk_aac \
-		"${file%ts}mp4"
+		ffmpeg2 -n -i "$file" -vcodec libx265 -vpre x265 \
+		-acodec libfdk_aac "${file%ts}mp4"
 	fi
 done
 
