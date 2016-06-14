@@ -3,7 +3,7 @@ autoload -U colors && colors
 export EDITOR=vim
 export LANG=ja_JP.UTF-8
 PROMPT="[%n@%m %~]%(!.#.$) "	#[name@host directory] %|#
-alias ls='ls -alF --color=auto'
+alias ls='ls -alhF --color=auto'
 alias mkdir='mkdir -p'
 alias rsync='rsync --progress'
 alias clang++='clang++ -std=c++11'
@@ -30,8 +30,8 @@ zstyle ':completion:*' list-colors "${LS_COLORS}"
 #履歴設定
 export HISTCONTROL=ignoredunps
 HISTFILE=~/.config/zsh/.zsh_history
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=1000
+SAVEHIST=1000
 setopt AUTO_MENU
 setopt APPEND_HISTORY
 setopt HIST_FIND_NO_DUPS
