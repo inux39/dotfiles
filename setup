@@ -1,11 +1,11 @@
 #!/bin/sh
 ShellPath=$(cd $(dirname $0); pwd)
 mkdir -p $HOME/.config/zsh
-ln -s $ShellPath/.ffmpeg $HOME/.ffmpeg
-ln -s $ShellPath/.vim/vimrc $HOME/.vim/vimrc
-ln -s $ShellPath/.config/zsh/.zshenv $HOME/.zshenv
+ln -fs $ShellPath/.ffmpeg $HOME/.ffmpeg
+ln -fs $ShellPath/.vim/vimrc $HOME/.vim/vimrc
+ln -fs $ShellPath/.config/zsh/.zshenv $HOME/.zshenv
 # zsh
-if [ ! -e $HOME/.config/zsh/.zshrc ]; then
+if [ -e $HOME/.config/zsh/.zshrc ]; then
 	ln -sf $ShellPath/.config/zsh/.zshrc $HOME/.config/zsh/.zshrc
 	source $HOME/.config/zsh/.zshrc
 fi
@@ -24,6 +24,9 @@ if [ ! -e $HOME/.config/fontconfig/fonts.conf ]; then
 		$HOME/.config/fontconfig/fonts.conf
 fi
 if [ ! -e $HOME/.gitconfig ]; then
+	ln -sf $ShellPath/.gitconfig $HOME/.gitconfig
+else
+	rm $HOME/.gitconfig
 	ln -sf $ShellPath/.gitconfig $HOME/.gitconfig
 fi
 
