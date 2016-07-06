@@ -4,7 +4,7 @@ cd "`pwd`"
 search="`pwd`/*"
 IFS="$'\n'"
 for file in *.ts; do
-	if [ ! -e ${file%ts}mp4 ]; then
+	if [ ! -e "${file%ts}mp4" ]; then
 		#30秒ずらし、放送に合わせる(各単位はmicro seconds)
 		#"$ffmpeg"
 		ffmpeg_ -n -i "$file" -vcodec libx265 -vpre x265 \
