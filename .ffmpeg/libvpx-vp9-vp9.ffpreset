@@ -1,0 +1,8 @@
+crf=23
+b:v=0
+threads=4
+speed=2
+frame-parallel=0
+tile-columns=0
+auto-alt-ref=1
+lag-in-frames=16
