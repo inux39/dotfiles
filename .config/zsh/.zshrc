@@ -6,8 +6,6 @@ PROMPT="[%n@%m %~]%(!.#.$) "	#[name@host directory] %|#
 alias ls='ls -alhF --color=auto'
 alias mkdir='mkdir -p'
 alias rsync='rsync --progress'
-alias clang++='clang++ -std=c++11'
-alias g++='g++ -std=c++11'
 alias sudo='sudo -E'
 alias dd='dd status=progress bs=32M'
 #共通
