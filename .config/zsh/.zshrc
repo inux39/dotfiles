@@ -8,6 +8,7 @@ alias mkdir='mkdir -p'
 alias rsync='rsync --progress'
 alias sudo='sudo -E'
 alias dd='dd status=progress bs=32M'
+export GOPATH=$HOME/.go
 #共通
 PATH="$PATH":~/bin
 #Server
