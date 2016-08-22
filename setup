@@ -30,3 +30,7 @@ else
 	ln -sf $ShellPath/.gitconfig $HOME/.gitconfig
 fi
 
+if [ ! -e $HOME/.tmux.conf ]; then
+	ln -sf $ShellPath/.config/tmux/tmux.conf $HOME/.tmux.conf
+fi
+
