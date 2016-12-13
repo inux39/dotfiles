@@ -10,15 +10,15 @@ if has('vim_starting')
 endif
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug', {'dir' : '~/.vim/plugged/vim-plug/autoload'}
-Plug 'tomasr/molokai'
-Plug 'itchyny/lightline.vim'
-Plug 'vim-jp/cpp-vim'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'rust-lang/rust.vim'
+Plug 'tomasr/molokai'	"theme
+Plug 'itchyny/lightline.vim'	"status bar theme
+Plug 'vim-jp/cpp-vim'	"c++ syntax
+Plug 'bronson/vim-trailing-whitespace'	"スペース見える化
+Plug 'rust-lang/rust.vim'	"rust syntax
 "Plug 'Townk/vim-autoclose'
-Plug 'kana/vim-smartinput'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'cespare/vim-toml'
+Plug 'kana/vim-smartinput'	"自動括弧閉じ
+Plug 'octol/vim-cpp-enhanced-highlight'	"cpp syntax
+Plug 'cespare/vim-toml'	"toml syntax
 call plug#end()
 filetype plugin indent off
 "Color
