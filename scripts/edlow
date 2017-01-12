@@ -1,0 +1,19 @@
+#!/bin/bash
+ffmpeg=$HOME/bin/ffmpeg_
+flag=true
+function encoding () {
+	${ffmpeg} -n -i "$1" -vcodec libx265 -vpre x265-low\
+	-filter:v yadif=1:-1:0 -acodec libfdk_aac "${1%ts}mp4"
+}
+
+for file in `find . -maxdepth 1 -name '*.ts'`; do
+	if [ ! -e "${file%ts}mp4" ]; then
+		encoding $file
+		flag=false
+	fi
+done
+
+if [[ $1 != $flag ]]; then
+	$0 $flag
+fi
+
