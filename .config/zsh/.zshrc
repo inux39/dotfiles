@@ -9,12 +9,8 @@ alias rsync='rsync --progress'
 alias sudo='sudo -E'
 alias dd='dd status=progress bs=32M'
 export GOPATH=$HOME/.go
-#共通
-PATH="$PATH":~/bin
-#Server
-PATH="$PATH":~/Chinachu
-#Client
-PATH="$PATH":/opt/Qt/5.5/gcc_64/bin	#そのうち消す
+PATH="$PATH":$HOME/bin
+PATH="$PATH":$HOME/.cargo/bin
 #ほか機能系
 #setopt auto_cd	#いらない可能性	#一応無効化
 #補完機能系設定
