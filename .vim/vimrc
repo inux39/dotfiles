@@ -61,8 +61,10 @@ set smartcase	"大文字なら小文字との区別をする
 set wrapscan	"最後まで行ったら最初に戻る
 set hlsearch	"検索結果をハイライト表示
 "Swap files
-set noswapfile	"スワップファイルを作らない
-set nobackup	"バックアップを作らない
+"set noswapfile	"スワップファイルを作らない
+set directory=$HOME/tmp/.cache/vim
+"set nobackup	"バックアップを作らない
+set backupdir=$HOME/tmp/.cache/vim
 command! -nargs=0 Wq wq	"Wq == wq
 "command! -nargs=0 Q! q!	"Q! == q!
 "検索ハイライトをEsc連打で消す
