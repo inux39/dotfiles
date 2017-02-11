@@ -24,9 +24,9 @@ setopt print_eight_bit	#日本語ファイル名表示
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 #履歴設定
 export HISTCONTROL=ignoredunps
-#HISTFILE=$HOME/tmp/.zsh_history
+HISTFILE=$HOME/tmp/.zsh_history
 HISTSIZE=100
-SAVEHIST=0
+SAVEHIST=100
 setopt AUTO_MENU
 setopt APPEND_HISTORY
 setopt HIST_FIND_NO_DUPS
