@@ -1,5 +1,5 @@
 set nocompatible	"viとの互換を切る
-set viminfo+=n/$HOME/tmp/vim/viminfo.txt	"set viminfo directory
+set viminfo+=n/$HOME/tmp/.cache/vim/viminfo.txt	"set viminfo directory
 "カーソル位置の保存と復元
 if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
