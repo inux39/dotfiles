@@ -14,7 +14,7 @@ PATH="$PATH":$HOME/.cargo/bin
 #ほか機能系
 #setopt auto_cd	#いらない可能性	#一応無効化
 #補完機能系設定
-autoload -U compinit;	compinit -d $HOME/tmp/.zcompdump
+autoload -U compinit;	compinit -d $HOME/tmp/.cache/zsh/.zcompdump
 setopt magic_equal_subst	# =以降も補完するらしい
 setopt auto_list	#補完候補を一覧表示する
 setopt correct	#ミスタイプして存在しないコマンド打ってもやさしくしてくれる
@@ -24,7 +24,7 @@ setopt print_eight_bit	#日本語ファイル名表示
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 #履歴設定
 export HISTCONTROL=ignoredunps
-HISTFILE=$HOME/tmp/.zsh_history
+HISTFILE=$HOME/tmp/.cache/zsh/.zsh_history
 HISTSIZE=100
 SAVEHIST=100
 setopt AUTO_MENU
