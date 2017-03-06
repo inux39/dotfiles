@@ -1,5 +1,5 @@
 set nocompatible	"viとの互換を切る
-set viminfo+=n/$HOME/tmp/.cache/vim/viminfo.txt	"set viminfo directory
+set viminfo+=n/$HOME/.cache/vim/viminfo.txt	"set viminfo directory
 "カーソル位置の保存と復元
 if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -49,7 +49,7 @@ set title	"タイトル表示
 set showmatch	"対応するかっこを表示
 set wildmenu	"補完候補を表示する
 set synmaxcol=200	"1行200文字のシンタックス
-set colorcolumn=80	"80桁目に印を付ける
+"set colorcolumn=80	"80桁目に印を付ける
 "let g:seiya_auto_enable=1	"自動的にvim画面を半透明にする(miyakogi/seiya)
 ""ステータスライン
 set laststatus=2	"ステータスラインを常に表示
@@ -63,10 +63,10 @@ set smartcase	"大文字なら小文字との区別をする
 set wrapscan	"最後まで行ったら最初に戻る
 set hlsearch	"検索結果をハイライト表示
 "Swap files
-"set noswapfile	"スワップファイルを作らない
-set directory=$HOME/tmp/.cache/vim
+set noswapfile	"スワップファイルを作らない
+"set directory=$HOME/.cache/vim
 "set nobackup	"バックアップを作らない
-set backupdir=$HOME/tmp/.cache/vim
+set backupdir=$HOME/.cache/vim
 command! -nargs=0 Wq wq	"Wq == wq
 "command! -nargs=0 Q! q!	"Q! == q!
 "検索ハイライトをEsc連打で消す
