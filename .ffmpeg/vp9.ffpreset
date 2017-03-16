@@ -1,7 +1,7 @@
 crf=30
 b:v=0
 b:a=192k
-threads=4
+threads=6
 cpu-used=4
 speed=2
 frame-parallel=1
