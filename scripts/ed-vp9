@@ -1,0 +1,22 @@
+#!/bin/zsh
+set -Ceu
+ffmpeg=$HOME/bin/ffmpeg_
+flag=true
+IFS=$'\n'
+function encoding () {
+	${ffmpeg} -n -i "$1" -c:v vp9 -c:a opus -vpre vp9-testing\
+	-vf yadif=1:-1:0 -crf 35 -strict -2 "${1%ts}webm"
+}
+for file in `find . -maxdepth 1 -name '*.ts'`; do
+	if [ ! -e "${file%ts}webm" ]; then
+		encoding $file
+		flag=false
+	else
+		flag=true
+	fi
+done
+
+if [[ $1 != true ]]; then
+	$0 $flag
+fi
+

@@ -10,4 +10,7 @@ fi
 if [ ! -e $CACHE/zsh ]; then
 	mkdir $CACHE/zsh
 fi
+if [ ! -e $CACHE/Downloads ]; then
+	mkdir $CACHE/Downloads
+fi
 
