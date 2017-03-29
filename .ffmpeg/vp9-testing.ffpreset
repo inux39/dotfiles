@@ -9,7 +9,6 @@ tile-columns=6
 lag-in-frames=25
 qmin=10
 qmax=55
-aq-mode=1
 
 b_strategy=2
 coder=1
@@ -25,4 +24,6 @@ cmp=+chroma
 partitions=+parti8x8+parti4x4+partp8x8+partb8x8
 deadline=best
 quality=good
+qcomp=0.6
+aq-strength=0.8
 
