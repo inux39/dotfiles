@@ -4,13 +4,7 @@ export XMODIFIERS=@im=fcitx
 export DefaultIMModule=fcitx
 
 CACHE=$HOME/.cache
-if [ ! -e $CACHE/vim ]; then
-	mkdir -p $CACHE/vim
-fi
-if [ ! -e $CACHE/zsh ]; then
-	mkdir $CACHE/zsh
-fi
-if [ ! -e $CACHE/Downloads ]; then
-	mkdir $CACHE/Downloads
-fi
+if [ ! -e $CACHE/vim ]; then mkdir $CACHE/vim fi
+if [ ! -e $CACHE/zsh ]; then mkdir $CACHE/zsh fi
+if [ ! -e $CACHE/Downloads ]; then mkdir $CACHE/Downloads fi
 
