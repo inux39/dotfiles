@@ -4,8 +4,8 @@ export XMODIFIERS=@im=fcitx
 export DefaultIMModule=fcitx
 TMP_HOME=/tmp/inux39
 export XDG_CACHE_HOME=$TMP_HOME/.cache
-if [ ! -e $TMP_HOME ]; then
-	mkdir -p $TMP/Downloads
+if [ ! -e $TMP_HOME/Downloads ]; then
+	mkdir -p $TMP_HOME/Downloads
 	chmod 700 $TMP_HOME
 fi
 if [ ! -e $XDG_CACHE_HOME ]; then
