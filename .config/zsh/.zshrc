@@ -40,3 +40,7 @@ setopt share_history
 setopt hist_reduce_blanks
 setopt hist_ignore_space
 
+if [ ! -e $HOME/.cache/vim ]; then
+	mkdir $HOME/.cache/vim
+fi
+

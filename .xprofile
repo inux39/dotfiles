@@ -9,7 +9,3 @@ if [ ! -e $DIR ]; then
 	chmod 700 $DIR
 fi
 
-if [ ! -e $XDG_CACHE_HOME ]; then
-	mkdir -p $XDG_CACHE_HOME/vim
-fi
-
