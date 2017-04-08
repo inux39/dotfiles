@@ -1,18 +1,14 @@
 #!/bin/zsh
 set -Ceu
 ShellPath=$(cd $(dirname $0); pwd)
-# dig
-mkdir $HOME/.vim
-mkdir $HOME/.ffmpeg
-mkdir -p $HOME/.config/zsh
-mkdir $HOME/.config/fontconfig
-mkdir $HOME/.config/tmux
 # zsh
+mkdir -p $HOME/.config/zsh
 ln -sf $ShellPath/.config/zsh/.zshenv $HOME/.zshenv
 ln -sf $ShellPath/.config/zsh/.zshrc $HOME/.config/zsh/.zshrc
 source $HOME/.config/zsh/.zshrc
 
 # vimrc
+mkdir $HOME/.vim
 ln -fs $ShellPath/.vim/vimrc $HOME/.vim/vimrc
 if [ ! -e $HOME/.vim/autoload ]; then
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -20,9 +16,11 @@ if [ ! -e $HOME/.vim/autoload ]; then
 fi
 
 cp -f $ShellPath/.xprofile $HOME/.xprofile
+mkdir $HOME/.config/fontconfig
 ln -sf $ShellPath/.config/fontconfig/fonts.conf \
 	$HOME/.config/fontconfig/fonts.conf
 ln -sf $ShellPath/.gitconfig $HOME/.gitconfig
+mkdir $HOME/.config/tmux
 ln -sf $ShellPath/.config/tmux/tmux.conf $HOME/.tmux.conf
 ln -fs $ShellPath/.ffmpeg $HOME/.ffmpeg
 
