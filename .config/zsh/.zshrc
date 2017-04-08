@@ -1,3 +1,6 @@
+if [ ! -e $HOME/.cache/zsh ]; then
+	mkdir $HOME/.cache/zsh
+fi
 #環境設定
 autoload -U colors && colors
 export EDITOR=vim
@@ -36,4 +39,8 @@ setopt interactive_comments
 setopt share_history
 setopt hist_reduce_blanks
 setopt hist_ignore_space
+
+if [ ! -e $HOME/.cache/vim ]; then
+	mkdir $HOME/.cache/vim
+fi
 
