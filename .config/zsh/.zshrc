@@ -1,3 +1,6 @@
+if [ ! -e $HOME/.cache/zsh ]; then
+	mkdir $HOME/.cache/zsh
+fi
 #環境設定
 autoload -U colors && colors
 export EDITOR=vim

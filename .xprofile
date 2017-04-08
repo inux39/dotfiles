@@ -11,6 +11,5 @@ fi
 
 if [ ! -e $XDG_CACHE_HOME ]; then
 	mkdir -p $XDG_CACHE_HOME/vim
-	mkdir $XDG_CACHE_HOME/zsh
 fi
 
