@@ -3,11 +3,7 @@ autoload -U colors && colors
 PROMPT="[%n@%m %~]%(!.#.$) "	#[name@host directory] %|#
 alias ls='ls -alhF --color=auto'
 alias mkdir='mkdir -p'
-alias rsync='rsync --progress'
 alias sudo='sudo -E'
-alias dd='dd status=progress bs=32M'
-#ほか機能系
-#setopt auto_cd	#いらない可能性	#一応無効化
 #補完機能系設定
 autoload -U compinit;	compinit -d $HOME/.cache/zsh/.zcompdump
 setopt magic_equal_subst	# =以降も補完するらしい
