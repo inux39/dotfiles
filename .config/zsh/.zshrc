@@ -1,6 +1,10 @@
 #環境設定
-autoload -U colors && colors
+export EDITOR=vim
+export LANG=ja_JP.UTF-8
+export GOPATH=$HOME/.go
+PATH="$PATH":$HOME/bin:$HOME/.cargo/bin
 PROMPT="[%n@%m %~]%(!.#.$) "	#[name@host directory] %|#
+autoload -U colors && colors
 alias ls='ls -alhF --color=auto'
 alias mkdir='mkdir -p'
 alias sudo='sudo -E'
