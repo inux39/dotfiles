@@ -2,10 +2,5 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export DefaultIMModule=fcitx
-DIR=/tmp/`whoami`
 export XDG_CACHE_HOME=$DIR/.cache
-if [ ! -e $DIR ]; then
-	mkdir -p $DIR/Downloads
-	chmod 700 $DIR
-fi
 
