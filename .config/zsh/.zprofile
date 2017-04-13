@@ -8,10 +8,6 @@ if [ ! -e $DIR ]; then
 	mkdir $XDG_CACHE_HOME
 	chmod 700 $DIR
 fi
-if [ ! -e $XDG_CACHE_HOME/zsh ]; then
-	mkdir $XDG_CACHE_HOME/zsh
-fi
-if [ ! -e $XDG_CACHE_HOME/vim ]; then
-	mkdir $XDG_CACHE_HOME/vim
-fi
+if [ ! -e $HOME/.cache/zsh ]; then; mkdir $HOME/.cache/zsh; fi
+if [ ! -e $HOME/.cache/vim ]; then; mkdir $HOME/.cache/vim; fi
 
