@@ -9,6 +9,4 @@ if [ ! -e $DIR ]; then
 	mkdir -p $DIR/Downloads
 	chmod 700 $DIR
 fi
-if [ ! -e $HOME/.cache/zsh ]; then; mkdir $HOME/.cache/zsh; fi
-if [ ! -e $HOME/.cache/vim ]; then; mkdir $HOME/.cache/vim; fi
 
