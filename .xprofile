@@ -7,6 +7,7 @@ DIR=/tmp/`whoami`
 export XDG_CACHE_HOME=$DIR/.cache
 if [ ! -e $DIR ]; then
 	mkdir -p $DIR/Downloads
-	chmod 700 $DIR
+	mkdir $XDG_CACHE_HOME
+	chmod 700 -R $DIR
 fi
 
