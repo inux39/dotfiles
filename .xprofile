@@ -3,18 +3,12 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export DefaultIMModule=fcitx
-DIR=/tmp/`whoami`
-export XDG_CACHE_HOME=$DIR/.cache
-if [ ! -e $DIR ]; then
-	mkdir -p $DIR/Downloads
-	mkdir $XDG_CACHE_HOME
-	chmod 700 -R $DIR
-fi
-
-if [ ! -e $HOME/.cache/zsh ]; then
-	mkdir $HOME/.cache/zsh
-fi
-if [ ! -e $HOME/.cache/vim ]; then
-	mkdir $HOME/.cache/vim
+CACHE_HOME=/tmp/`whoami`
+export XDG_CACHE_HOME=$CACHE_HOME/.cache
+if [ ! -e $XDG_CACHE_HOME ]; then
+	mkdir -p $XDG_CACHE_HOME
+	mkdir $XDG_CACHE_HOME/zsh
+	mkdir $XDG_CACHE_HOME/vim
+	chmod 700 -R $CACHE_HOME
 fi
 
