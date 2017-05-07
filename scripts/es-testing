@@ -1,0 +1,27 @@
+#!/bin/zsh
+set -Ceu
+ffmpeg=$HOME/bin/ffmpeg_
+IFS=$'\n'
+count=0
+
+function encode () {
+	for file in `find . -maxdepth 1 -name '*.ts'`; do
+		if [ ! -e "${file%ts}webm" ]; then
+			$ffmpeg -n -i $file -c:v libvpx-vp9 -c:a libopus \
+			-vpre vp9-testing \
+			-vf bwdif=1:-1:0 -crf 35 "${file%ts}webm"
+			count=0
+		fi
+	done
+}
+
+while true
+do
+	if [ count -gt 15 ]; then
+		exit
+	else
+		encode
+	fi
+	count=$(( count + 1 ))
+done
+
