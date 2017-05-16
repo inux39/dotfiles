@@ -11,3 +11,7 @@
 	ff = false
 [pull]
 	ff = only
+[alias]
+	ls = log --graph
+	pl = pull
+
