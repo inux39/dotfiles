@@ -8,6 +8,8 @@ autoload -U colors && colors
 alias ls='ls -alhF --color=auto'
 alias mkdir='mkdir -p'
 alias sudo='sudo -E'
+alias emacs='vim'
+#alias rsync='rsync -av --progress'
 #補完機能系設定
 autoload -U compinit;	compinit -d $HOME/.cache/zsh/.zcompdump
 setopt magic_equal_subst	# =以降も補完するらしい

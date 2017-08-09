@@ -11,8 +11,8 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug', {'dir' : '~/.vim/plugged/vim-plug/autoload'}
 " Theme
-"Plug 'tomasr/molokai'
-Plug 'w0ng/vim-hybrid'
+Plug 'tomasr/molokai'
+"Plug 'w0ng/vim-hybrid'
 " Decoration
 Plug 'itchyny/lightline.vim'	"status bar theme
 Plug 'bronson/vim-trailing-whitespace'	"スペース見える化
@@ -28,8 +28,8 @@ call plug#end()
 filetype plugin indent off
 "Color
 syntax on
-"colorscheme molokai
-colorscheme hybrid
+colorscheme molokai
+"colorscheme hybrid
 set t_Co=256
 set background=dark
 "Encode
