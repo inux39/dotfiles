@@ -14,11 +14,11 @@ setopt print_eight_bit
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 autoload -U compinit;	compinit -d $XDG_CACHE_HOME/zsh/.zcompdump
 
-setopt AUTO_MENU
-setopt APPEND_HISTORY
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
+setopt auto_menu
+setopt append_history
+setopt hist_find_no_dups
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
 setopt interactive_comments
 setopt share_history
 setopt hist_reduce_blanks
