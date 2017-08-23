@@ -1,4 +1,5 @@
 
+export PATH="$PATH":$HOME/bin:$HOME/.cargo/bin
 # 補完機能系設定
 ## =以降も補完するらしい
 setopt magic_equal_subst
@@ -11,6 +12,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 ## 日本語ファイル名表示
 setopt print_eight_bit
 zstyle ':completion:*' list-colors "${LS_COLORS}"
+autoload -U compinit;	compinit -d $XDG_CACHE_HOME/zsh/.zcompdump
 
 setopt AUTO_MENU
 setopt APPEND_HISTORY
