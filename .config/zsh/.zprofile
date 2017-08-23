@@ -1,7 +1,6 @@
 
 ### 起動時に一度だけでも十分な設定をここに
 DIR=/tmp/`whoami`
-export XDG_CACHE_HOME=$DIR/.cache
 ### 一時ディレクトリ作成
 if [ ! -e $DIR ]; then
 	mkdir -p $DIR/Downloads
