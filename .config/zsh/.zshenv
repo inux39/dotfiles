@@ -5,7 +5,7 @@ export EDITOR=vim
 export GOPATH=$HOME/.go
 PATH="$PATH":$HOME/bin:$HOME/.cargo/bin
 # [name@host directory] (%|#)
-PROMPT="[%n@%m %~]%(!.#.$) "
+export PROMPT="[%n@%m %~]%(!.#.$) "
 autoload -U colors && colors
 alias ls='ls -alhF --color=auto'
 alias sudo='sudo -E'
@@ -15,9 +15,8 @@ DIR=/tmp/`whoami`
 export XDG_CACHE_HOME=$DIR/.cache
 
 autoload -U compinit;	compinit -d $XDG_CACHE_HOME/zsh/.zcompdump
-
 export HISTCONTROL=ignoredunps
-HISTFILE=$XDG_CACHE_HOME/zsh/.zsh_history
-HISTSIZE=100
-SAVEHIST=100
+export HISTFILE=$XDG_CACHE_HOME/zsh/.zsh_history
+export HISTSIZE=100
+export SAVEHIST=100
 
