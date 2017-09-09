@@ -16,6 +16,7 @@ if [ ! -e $CACHE_HOME/Downloads ]; then
 fi
 if [ ! -e $XDG_CACHE_HOME/vim ]; then
 	mkdir $XDG_CACHE_HOME/vim
+	touch $XDG_CACHE_HOME/vim/viminfo.txt
 fi
 if [ ! -e $XDG_CACHE_HOME/zsh ]; then
 	mkdir $XDG_CACHE_HOME/zsh
