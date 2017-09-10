@@ -10,8 +10,7 @@ alias ls='ls -alhF --color=auto'
 alias sudo='sudo -E'
 alias emacs='vim'
 
-DIR=/tmp/`whoami`
-export XDG_CACHE_HOME=$DIR/.cache
+export XDG_CACHE_HOME=$HOME/.cache
 
 export HISTCONTROL=ignoredunps
 export HISTFILE=$XDG_CACHE_HOME/zsh/.zsh_history
