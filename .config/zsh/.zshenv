@@ -3,7 +3,7 @@ export ZDOTDIR=$HOME/.config/zsh
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export GOPATH=$HOME/.go
-export PROMPT="%K{green}[%n@%m %~]%(!.#.$)%k "
+export PROMPT="%K{202}[%n@%m %~]%(!.#.$)%k "
 autoload -U colors && colors
 alias ls='ls -alhF --color=auto'
 alias sudo='sudo -E'
