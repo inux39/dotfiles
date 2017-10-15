@@ -4,7 +4,7 @@ DIR=/tmp/`whoami`
 ### 一時ディレクトリ作成
 if [ ! -e $DIR ]; then
 	mkdir -p $DIR/Downloads
-	mkdir $XDG_CACHE_HOME
+	mkdir -p $DIR/.cache
 	chmod 700 $DIR
 fi
 if [ ! -e $HOME/.cache/zsh ]; then; mkdir $HOME/.cache/zsh; fi
