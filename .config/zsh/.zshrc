@@ -1,8 +1,14 @@
 
 export PATH="$PATH":$HOME/bin:$HOME/.cargo/bin
+export PROMPT="%K{202}[%n@%m %~]%(!.#.$)%k "
+autoload -U colors && colors
 autoload -U compinit;	compinit -d $XDG_CACHE_HOME/zsh/.zcompdump
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+## alias
+alias ls='ls -alhF --color=auto'
+alias sudo='sudo -E'
+alias emacs='vim'
 ## =以降も補完する
 setopt magic_equal_subst
 ## 補完候補を一覧表示する
