@@ -7,10 +7,6 @@
 	editor = vim
 [help]
 	autocorrect = 20
-[merge]
-	ff = false
-[pull]
-	ff = only
 [alias]
 	ls = log --graph
 	pl = pull
