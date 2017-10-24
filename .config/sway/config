@@ -1,5 +1,9 @@
 # Read `man 5 sway` for a complete reference.
 
+## Auto Run
+exec --no-startup-id fcitx
+exec --no-startup-id dunst
+
 ### Variables
 # Logo key. Use Mod1 for Alt.
 set $mod Mod1
