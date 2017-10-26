@@ -18,7 +18,7 @@ set $term xfce4-terminal
 set $menu dmenu_run
 
 ## Font config
-font pango:Source Han Sans JP Regular 9
+font pango:"Source Han Sans JP Regular" 11
 
 ### Output configuration
 output * bg /home/inux39/Pictures/wallpaper fill
