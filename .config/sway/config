@@ -43,6 +43,12 @@ output * bg /home/inux39/Pictures/wallpaper fill
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+input "2:7:SynPS/2_Synaptics_TouchPad" {
+	tap disabled
+	natural_scroll enabled
+}
+
+
 ### Key bindings
 #
 # Basics:
