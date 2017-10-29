@@ -3,6 +3,8 @@
 ## Auto Run
 exec --no-startup-id fcitx
 exec --no-startup-id dunst
+exec --no-startup-id nm-applet
+exec --no-startup-id parcellite
 
 ### Variables
 # Logo key. Use Mod1 for Alt.
