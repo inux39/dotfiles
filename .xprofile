@@ -5,6 +5,7 @@ export XMODIFIERS=@im=fcitx
 export DefaultIMModule=fcitx
 CACHE_HOME=/tmp/`whoami`
 export XDG_CACHE_HOME=$CACHE_HOME/.cache
+export SWAY_CURSOR_THEME=Adwaita
 if [ ! -e $CACHE_HOME ]; then
 	mkdir $CACHE_HOME
 fi
