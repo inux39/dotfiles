@@ -17,6 +17,7 @@ order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
 order += "cpu_usage"
+order += "volume master"
 order += "time"
 
 wireless _first_ {
@@ -40,6 +41,12 @@ time {
 
 cpu_usage {
         format = "CPU %usage"
+}
+
+volume master {
+	format = "♪: %volume"
+	format_muted = "♪: muted (%volume)"
+	device = "pulse"
 }
 
 # disk "/" {
