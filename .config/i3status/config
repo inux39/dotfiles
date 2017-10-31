@@ -17,7 +17,7 @@ order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
 order += "cpu_usage"
-order += "tztime local"
+order += "time"
 
 wireless _first_ {
         format_up = "W: (%quality at %essid) %ip"
@@ -34,7 +34,7 @@ battery all {
         format = "%status %percentage %remaining"
 }
 
-tztime local {
+time {
         format = "%Y/%m/%d(%a) %H:%M:%S"
 }
 
