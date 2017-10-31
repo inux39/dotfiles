@@ -77,8 +77,8 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 	bindsym $mod+Shift+e exit
 
 	# capture screen
-	bindsym $mod+p exec swaygrab /tmp/`whoami`/`date -Ihours`.png
-	bindsym $mod+Shift+p exec swaygrab -f /tmp/`whoami`/`date -Ihours`.png
+	bindsym $mod+p exec swaygrab /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
+	bindsym $mod+Shift+p exec swaygrab -f /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
 
 	# Custom Keybind
 	bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
