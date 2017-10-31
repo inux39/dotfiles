@@ -75,6 +75,10 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 
 	# exit sway (logs you out of your wayland session)
 	bindsym $mod+Shift+e exit
+
+	# capture screen
+	bindsym $mod+p exec swaygrab /tmp/`whoami`/`date -Ihours`.png
+	bindsym $mod+Shift+p exec swaygrab -f /tmp/`whoami`/`date -Ihours`.png
 #
 # Moving around:
 #
