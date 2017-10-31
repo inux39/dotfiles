@@ -79,6 +79,14 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 	# capture screen
 	bindsym $mod+p exec swaygrab /tmp/`whoami`/`date -Ihours`.png
 	bindsym $mod+Shift+p exec swaygrab -f /tmp/`whoami`/`date -Ihours`.png
+
+	# Custom Keybind
+	bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
+	bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
+	bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+	bindsym XF86MonBrightnessDown exec dsplight down 5
+	bindsym XF86MonBrightnessUp exec dsplight up 5
+
 #
 # Moving around:
 #
