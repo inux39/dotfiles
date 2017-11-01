@@ -44,8 +44,8 @@ cpu_usage {
 }
 
 volume master {
-	format = "♪: %volume"
-	format_muted = "♪: muted (%volume)"
+	format = "Vol %volume"
+	format_muted = "Vol muted (%volume)"
 	device = "pulse"
 }
 
