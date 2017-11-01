@@ -87,6 +87,7 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 	bindsym $mod+p exec swaygrab /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
 	bindsym $mod+Shift+p exec swaygrab -f /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
 	bindsym $mod+Ctrl+f exec GDK_BACKEND=x11 firefox
+	bindsym $mod+Ctrl+t exec GDK_BACKEND=x11 thunderbird
 	bindsym $mod+Ctrl+c exec GDK_BACKEND=x11 chromium
 
 #
