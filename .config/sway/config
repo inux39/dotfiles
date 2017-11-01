@@ -76,16 +76,18 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 	# exit sway (logs you out of your wayland session)
 	bindsym $mod+Shift+e exit
 
-	# capture screen
-	bindsym $mod+p exec swaygrab /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
-	bindsym $mod+Shift+p exec swaygrab -f /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
-
 	# Custom Keybind
 	bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
 	bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
 	bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
 	bindsym XF86MonBrightnessDown exec dsplight down 5
 	bindsym XF86MonBrightnessUp exec dsplight up 5
+
+	# Application Keybind
+	bindsym $mod+p exec swaygrab /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
+	bindsym $mod+Shift+p exec swaygrab -f /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
+	bindsym $mod+Ctrl+f exec GDK_BACKEND=x11 firefox
+	bindsym $mod+Ctrl+c exec GDK_BACKEND=x11 chromium
 
 #
 # Moving around:
