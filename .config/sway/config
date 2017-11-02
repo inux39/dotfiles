@@ -13,10 +13,10 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
+# Applications
 set $term xfce4-terminal
-# Your preferred application launcher
 set $menu dmenu_run
+set $filer thunar
 
 ## Font config
 font pango:"Source Han Sans JP Regular" 11
@@ -89,6 +89,7 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 	bindsym $mod+Ctrl+f exec GDK_BACKEND=x11 firefox
 	bindsym $mod+Ctrl+t exec GDK_BACKEND=x11 thunderbird
 	bindsym $mod+Ctrl+c exec GDK_BACKEND=x11 chromium
+	bindsym $mod+Ctrl+d exec $filer
 
 #
 # Moving around:
