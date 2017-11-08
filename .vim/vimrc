@@ -32,6 +32,7 @@ colorscheme molokai
 "colorscheme hybrid
 set t_Co=256
 set background=dark
+set colorcolumn=80 "80桁でガイドを入れる
 "Encode
 set encoding=utf-8	"vimの内部文字コード
 set fileencoding=utf-8	"書き込み時のエンコード指定
