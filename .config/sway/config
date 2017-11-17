@@ -47,6 +47,15 @@ output * bg /home/inux39/Pictures/wallpaper fill
 input "2:7:SynPS/2_Synaptics_TouchPad" {
 	tap disabled
 	natural_scroll enabled
+	accel_profile flat
+}
+
+input "1118:1970:Microsoft_Microsoft®_Nano_Transceiver" {
+	accel_profile flat
+}
+
+input "2:10:TPPS/2_IBM_TrackPoint" {
+	accel_profile flat
 }
 
 
