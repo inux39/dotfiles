@@ -59,6 +59,10 @@ input "2:10:TPPS/2_IBM_TrackPoint" {
 	accel_profile flat
 }
 
+input "1133:4136:Logitech" {
+	accel_profile flat
+}
+
 
 ### Key bindings
 #
