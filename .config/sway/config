@@ -1,6 +1,7 @@
 # Read `man 5 sway` for a complete reference.
 
 ## Auto Run
+#exec --no-startup-id i3lock
 exec --no-startup-id fcitx
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
@@ -72,7 +73,7 @@ input "1133:4136:Logitech" {
 	bindsym $mod+Return exec $term
 
 	# kill focused window
-	bindsym $mod+Shift+q kill
+	bindsym $mod+Ctrl+q kill
 
 	# start your launcher
 	bindsym $mod+d exec $menu
@@ -119,16 +120,16 @@ input "1133:4136:Logitech" {
 	bindsym $mod+Up focus up
 	bindsym $mod+Right focus right
 
-	# _move_ the focused window with the same, but add Shift
-	bindsym $mod+Shift+$left move left
-	bindsym $mod+Shift+$down move down
-	bindsym $mod+Shift+$up move up
-	bindsym $mod+Shift+$right move right
+	# _move_ the focused window with the same, but add Ctrl
+	bindsym $mod+Ctrl+$left move left
+	bindsym $mod+Ctrl+$down move down
+	bindsym $mod+Ctrl+$up move up
+	bindsym $mod+Ctrl+$right move right
 	# ditto, with arrow keys
-	bindsym $mod+Shift+Left move left
-	bindsym $mod+Shift+Down move down
-	bindsym $mod+Shift+Up move up
-	bindsym $mod+Shift+Right move right
+	bindsym $mod+Ctrl+Left move left
+	bindsym $mod+Ctrl+Down move down
+	bindsym $mod+Ctrl+Up move up
+	bindsym $mod+Ctrl+Right move right
 #
 # Workspaces:
 #
@@ -144,16 +145,16 @@ input "1133:4136:Logitech" {
 	bindsym $mod+9 workspace 9
 	bindsym $mod+0 workspace 10
 	# move focused container to workspace
-	bindsym $mod+Shift+1 move container to workspace 1
-	bindsym $mod+Shift+2 move container to workspace 2
-	bindsym $mod+Shift+3 move container to workspace 3
-	bindsym $mod+Shift+4 move container to workspace 4
-	bindsym $mod+Shift+5 move container to workspace 5
-	bindsym $mod+Shift+6 move container to workspace 6
-	bindsym $mod+Shift+7 move container to workspace 7
-	bindsym $mod+Shift+8 move container to workspace 8
-	bindsym $mod+Shift+9 move container to workspace 9
-	bindsym $mod+Shift+0 move container to workspace 10
+	bindsym $mod+Ctrl+1 move container to workspace 1
+	bindsym $mod+Ctrl+2 move container to workspace 2
+	bindsym $mod+Ctrl+3 move container to workspace 3
+	bindsym $mod+Ctrl+4 move container to workspace 4
+	bindsym $mod+Ctrl+5 move container to workspace 5
+	bindsym $mod+Ctrl+6 move container to workspace 6
+	bindsym $mod+Ctrl+7 move container to workspace 7
+	bindsym $mod+Ctrl+8 move container to workspace 8
+	bindsym $mod+Ctrl+9 move container to workspace 9
+	bindsym $mod+Ctrl+0 move container to workspace 10
 	# Note: workspaces can have any name you want, not just numbers.
 	# We just use 1-10 as the default.
 #
