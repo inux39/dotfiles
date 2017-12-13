@@ -1,6 +1,7 @@
 # Read `man 5 sway` for a complete reference.
 
 ## Auto Run
+#exec --no-startup-id i3lock
 exec --no-startup-id fcitx
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
