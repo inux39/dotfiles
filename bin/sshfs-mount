@@ -1,0 +1,11 @@
+#!/bin/zsh
+set -Ceu
+dir=WD30EFRX
+mount=/tmp/`whoami`/$dir
+
+if [ ! -e $mount ]; then;
+	mkdir $mount
+fi
+
+sshfs racoon.local:/mnt/$dir $mount
+
