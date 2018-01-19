@@ -5,7 +5,7 @@
 exec --no-startup-id fcitx
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
-exec --no-startup-id unclutter
+#exec --no-startup-id unclutter
 
 ### Variables
 # Logo key. Use Mod1 for Alt.
@@ -202,10 +202,15 @@ mode "resize" {
 	# right will grow the containers width
 	# up will shrink the containers height
 	# down will grow the containers height
-	bindsym $left resize shrink width 10 px or 10 ppt
-	bindsym $down resize grow height 10 px or 10 ppt
-	bindsym $up resize shrink height 10 px or 10 ppt
-	bindsym $right resize grow width 10 px or 10 ppt
+#	bindsym $left resize shrink width 10 px or 10 ppt
+#	bindsym $down resize grow height 10 px or 10 ppt
+#	bindsym $up resize shrink height 10 px or 10 ppt
+#	bindsym $right resize grow width 10 px or 10 ppt
+
+	bindsym $left resize grow width 10 px or 10 ppt
+	bindsym $down resize shrink height 10 px or 10 ppt
+	bindsym $up resize grow height 10 px or 10 ppt
+	bindsym $right resize shrink width 10 px or 10 ppt
 
 	# ditto, with arrow keys
 	bindsym Left resize shrink width 10 px or 10 ppt
