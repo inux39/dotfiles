@@ -12,11 +12,8 @@ set $term xfce4-terminal
 set $menu dmenu_run
 set $filer thunar
 ## Auto Run
-#exec --no-startup-id i3lock
 exec --no-startup-id fcitx
 exec --no-startup-id dunst
-exec --no-startup-id nm-applet
-#exec --no-startup-id unclutter
 
 ## Font config
 font pango:"Source Han Sans JP Regular" 11
