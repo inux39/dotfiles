@@ -9,7 +9,7 @@ set $up k
 set $right l
 # Applications
 set $term xfce4-terminal
-set $menu i3-dmenu-desktop
+set $menu rofi -show run -modi	#require `rofi`
 set $filer thunar
 set $locker i3lock && sleep 1
 ## Auto Run
