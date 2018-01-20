@@ -13,8 +13,11 @@ set $menu i3-dmenu-desktop
 set $filer thunar
 set $locker i3lock && sleep 1
 ## Auto Run
+exec --no-startup-id nm-applet	# NetworkManager
+exec --no-startup-id volumeicon	# require volumeicon
 exec --no-startup-id fcitx
 exec --no-startup-id dunst
+#exec --no-startup-id compton -cbm 0.75	# Composit Manager
 
 ## Font config
 font pango:"Source Han Sans JP Regular" 11
