@@ -1,4 +1,6 @@
 # Read `man 5 sway` for a complete reference.
+## General
+focus_follows_mouse no
 ### Variables
 # Logo key. Use Mod1 for Alt.
 set $mod Mod1
@@ -16,6 +18,7 @@ set $locker i3lock && sleep 1
 exec --no-startup-id fcitx
 exec --no-startup-id dunst
 exec --no-startup-id compton -cbm 0.75	# Composit Manager
+exec --no-startup-id slack
 
 ## Font config
 font pango:"Source Han Sans JP Regular" 11
