@@ -89,6 +89,9 @@ input "1133:4136:Logitech" {
 
 	# exit sway (logs you out of your wayland session)
 	bindsym $mod+Shift+e exit
+# TODO:
+#	bindsym $mod+Shift+e exec --nostartup-id \
+#		"i3-nagbar -t warning -m 'Exit?' -b 'Logout' ''"
 
 	# Custom Keybind
 	bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
