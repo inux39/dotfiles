@@ -9,12 +9,15 @@ set $up k
 set $right l
 # Applications
 set $term xfce4-terminal
-set $menu dmenu_run
+set $menu i3-dmenu-desktop
 set $filer thunar
-set $Locker i3lock && sleep 1
+set $locker i3lock && sleep 1
 ## Auto Run
+exec --no-startup-id nm-applet	# NetworkManager
+exec --no-startup-id volumeicon	# require volumeicon
 exec --no-startup-id fcitx
 exec --no-startup-id dunst
+#exec --no-startup-id compton -cbm 0.75	# Composit Manager
 
 ## Font config
 font pango:"Source Han Sans JP Regular" 11
@@ -86,6 +89,9 @@ input "1133:4136:Logitech" {
 
 	# exit sway (logs you out of your wayland session)
 	bindsym $mod+Shift+e exit
+# TODO:
+#	bindsym $mod+Shift+e exec --nostartup-id \
+#		"i3-nagbar -t warning -m 'Exit?' -b 'Logout' ''"
 
 	# Custom Keybind
 	bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
@@ -102,7 +108,7 @@ input "1133:4136:Logitech" {
 	bindsym $mod+Ctrl+c exec GDK_BACKEND=x11 chromium
 	bindsym $mod+Ctrl+d exec $filer
 
-	bindsym $mod+Ctrl+l exec $Locker, mode "default"
+	bindsym $mod+Ctrl+l exec $locker, mode "default"
 #
 # Moving around:
 #
