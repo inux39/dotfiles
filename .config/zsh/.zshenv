@@ -3,7 +3,7 @@ export ZDOTDIR=$HOME/.config/zsh
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export GOPATH=$HOME/.go
-
+export PATH="$PATH:$HOME/bin"
 export XDG_CACHE_HOME=$HOME/.cache
 
 export HISTCONTROL=ignoredunps
