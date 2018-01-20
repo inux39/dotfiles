@@ -9,9 +9,9 @@ set $up k
 set $right l
 # Applications
 set $term xfce4-terminal
-set $menu dmenu_run
+set $menu i3-dmenu-desktop
 set $filer thunar
-set $Locker i3lock && sleep 1
+set $locker i3lock && sleep 1
 ## Auto Run
 exec --no-startup-id fcitx
 exec --no-startup-id dunst
@@ -102,7 +102,7 @@ input "1133:4136:Logitech" {
 	bindsym $mod+Ctrl+c exec GDK_BACKEND=x11 chromium
 	bindsym $mod+Ctrl+d exec $filer
 
-	bindsym $mod+Ctrl+l exec $Locker, mode "default"
+	bindsym $mod+Ctrl+l exec $locker, mode "default"
 #
 # Moving around:
 #
