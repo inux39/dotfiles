@@ -19,6 +19,7 @@ exec --no-startup-id fcitx
 exec --no-startup-id dunst
 #exec --no-startup-id compton -cbm 0.75	# Composit Manager
 exec --no-startup-id slack
+exec --no-startup-id thunderbird
 
 ## Font config
 font pango:"Source Han Sans JP Regular" 11
