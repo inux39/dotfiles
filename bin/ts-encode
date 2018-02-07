@@ -2,9 +2,7 @@
 set -Ceu
 ffmpeg=$HOME/bin/ffmpeg_
 IFS=$'\n'
-
-while true
-do
+function encoding () {
 	for file in `find . -maxdepth 1 -name '*.ts'`; do
 		if [ ! -e "${file%ts}webm" ]; then
 			$ffmpeg -n -i $file -c:v libvpx-vp9 -c:a libopus \
@@ -14,5 +12,10 @@ do
 			sleep 10s
 		fi
 	done
+}
+
+while true
+do
+	encoding
 done
 
