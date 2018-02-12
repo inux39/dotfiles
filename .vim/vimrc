@@ -14,17 +14,17 @@ Plug 'junegunn/vim-plug', {'dir' : '~/.vim/plugged/vim-plug/autoload'}
 Plug 'tomasr/molokai'
 "Plug 'w0ng/vim-hybrid'
 " Decoration
-Plug 'itchyny/lightline.vim'	"status bar theme
+Plug 'itchyny/lightline.vim'			"status bar theme
 Plug 'bronson/vim-trailing-whitespace'	"スペース見える化
-Plug 'airblade/vim-gitgutter'	"git diff on vim
+Plug 'airblade/vim-gitgutter'			"git diff on vim
 "Plug 'Townk/vim-autoclose'
-Plug 'kana/vim-smartinput'	"自動括弧閉じ
+Plug 'kana/vim-smartinput'				"自動括弧閉じ
 " Syntax
-Plug 'vim-jp/cpp-vim'	"c++ syntax
-Plug 'rust-lang/rust.vim'	"rust syntax
+Plug 'vim-jp/cpp-vim'					"c++ syntax
+Plug 'rust-lang/rust.vim'				"rust syntax
 Plug 'octol/vim-cpp-enhanced-highlight'	"cpp syntax
-Plug 'cespare/vim-toml'	"toml syntax
-Plug 'udalov/kotlin-vim'	"kotlin syntax
+Plug 'cespare/vim-toml'					"toml syntax
+Plug 'udalov/kotlin-vim'				"kotlin syntax
 call plug#end()
 filetype plugin indent off
 "Color
