@@ -7,6 +7,9 @@ ln -sf $ShellPath/.config/zsh/.zshenv $HOME/.zshenv
 ln -sf $ShellPath/.config/zsh/.zprofile $HOME/.config/zsh/.zprofile
 ln -sf $ShellPath/.config/zsh/.zshrc $HOME/.config/zsh/.zshrc
 source $HOME/.config/zsh/.zshrc
+source $HOME/.config/zsh/.zprofile
+rm -fr $HOME/.thumbnails
+ln -s $HOME/.cache/thumbnails $HOME/.thumbnails
 
 # vimrc
 mkdir $HOME/.vim
