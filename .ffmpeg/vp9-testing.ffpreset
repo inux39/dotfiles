@@ -1,13 +1,13 @@
 #crf=18
 b:v=0
 b:a=192k
-threads=5
-cpu-used=4
+threads=3
+cpu-used=2
 slices=4
 frame-parallel=1
-tile-columns=6
+tile-columns=2
 lag-in-frames=25
-qmin=10
+qmin=0
 qmax=55
 
 b_strategy=2
@@ -21,14 +21,8 @@ me_method=umh
 subq=7
 refs=6
 cmp=+chroma
-#partitions=+parti8x8+parti4x4+partp8x8+partb8x8
 deadline=good
 quality=good
 qcomp=0.6
-#aq-strength=0.8
-#deblock=1:1
-#no-fast-pskip=1
-#no-dct-decimate=1
-#psy-rd=0:0
-trellis=2
+aq-mode=variance
 
