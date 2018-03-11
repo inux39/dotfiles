@@ -1,0 +1,32 @@
+#!/bin/zsh
+set -Ceu
+ffmpeg=$HOME/bin/ffmpeg_
+crf=(35 32 30 28 26 24 22 20 18 16 14 12 10)
+IFS=$'\n'
+
+if [ $# -gt 0 ]; then
+	file=$1
+else
+	echo "usage: $0 test_file.ts"
+	exit
+fi
+
+function encoding () {
+	for c in $crf; do
+		if [ ! -e "${c}.webm" ]; then
+			$ffmpeg -n -i $file -t 60 -c:v libvpx-vp9 -c:a libopus \
+			-vpre vp9-testing \
+			-vf bwdif=1:-1:0 -crf "${c}" "${c}.webm"
+
+			$ffmpeg -n -ss 25 -t 1 -r 1 -i "${c}.webm" "${c}.png"
+		else
+			sleep 1s
+		fi
+	done
+}
+
+while true
+do
+	encoding
+done
+
