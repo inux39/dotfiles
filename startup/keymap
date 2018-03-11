@@ -1,3 +1,0 @@
-export XKB_DEFAULT_LAYOUT=jp
-export XKB_DEFAULT_OPTIONS=ctrl:nocaps
-
