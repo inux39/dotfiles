@@ -3,15 +3,21 @@ set -Ceu
 ffmpeg=$HOME/bin/ffmpeg_
 IFS=$'\n'
 LOG=encode.log
+
+if [ ! -e $LOG ]; then
+	touch $LOG
+fi
+
 function encoding () {
 	for file in `find . -maxdepth 1 -name '*.ts'`; do
 		if [ ! -e "${file%ts}webm" ]; then
-			date >> $LOG
 			echo "start encode ${file}" >> $LOG
+			date >> $LOG
 			$ffmpeg -n -i $file -c:v libvpx-vp9 -c:a libopus \
 			-vpre vp9-testing \
-			-vf bwdif=1:-1:0 -crf 32 "${file%ts}webm"
+			-vf bwdif=1:-1:1 -crf 34 "${file%ts}webm"
 			echo "end encode ${file}\n" >> $LOG
+			date >> $LOG
 		else
 			sleep 2s
 		fi
