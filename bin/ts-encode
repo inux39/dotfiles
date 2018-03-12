@@ -2,7 +2,7 @@
 set -Ceu
 ffmpeg=$HOME/bin/ffmpeg_
 IFS=$'\n'
-LOG=encode.log
+LOG=_encode.log
 
 if [ ! -e $LOG ]; then
 	touch $LOG
