@@ -6,18 +6,19 @@ LOG=encode.log
 
 if [ ! -e $LOG ]; then
 	touch $LOG
+else
+	echo "" >> $LOG
 fi
 
 function encoding () {
 	for file in `find . -maxdepth 1 -name '*.ts'`; do
 		if [ ! -e "${file%ts}webm" ]; then
-			echo "start encode ${file}" >> $LOG
-			date >> $LOG
+			echo "${file}" >> $LOG
+			echo "`date`" >> $LOG
 			$ffmpeg -n -i $file -c:v libvpx-vp9 -c:a libopus \
 			-vpre vp9-testing \
-			-vf bwdif=1:-1:1 -crf 34 "${file%ts}webm"
-			echo "end encode ${file}\n" >> $LOG
-			date >> $LOG
+			-vf bwdif=1:-1:1 -crf 31 "${file%ts}webm"
+			echo "`date`\n" >> $LOG
 		else
 			sleep 2s
 		fi
@@ -28,4 +29,10 @@ while true
 do
 	encoding
 done
+
+# Comment
+#	reference: https://developers.google.com/media/vp9/settings/vod/
+# CRF
+#	720:  32
+#	1080: 31
 
