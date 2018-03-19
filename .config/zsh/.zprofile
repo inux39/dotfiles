@@ -9,8 +9,6 @@ if [ ! -e $DIR ]; then
 fi
 if [ ! -e $HOME/.cache/zsh ]; then; mkdir $HOME/.cache/zsh; fi
 if [ ! -e $HOME/.cache/vim ]; then; mkdir $HOME/.cache/vim; fi
-eval $(ssh-agent)
 
 source $HOME/.xprofile
-source $HOME/dotfiles/startup/keymap
 
