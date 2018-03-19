@@ -1,11 +1,4 @@
 
-SSH_AGENT_FILE="$XDG_CACHE_HOME/.ssh-agent"
-test -f $SSH_AGENT_FILE && source $SSH_AGENT_FILE > /dev/null 2>&1
-if [ $( ps -ef | grep ssh-agent | grep -v grep | wc -l ) -eq 0 ]; then
-	ssh-agent > $SSH_AGENT_FILE
-	source $SSH_AGENT_FILE > /dev/null 2>&1
-fi
-
 export PATH="$PATH":$HOME/bin:$HOME/.cargo/bin
 export PROMPT="%K{105}[%n@%m %~]%(!.#.$)%k "
 autoload -U colors && colors
