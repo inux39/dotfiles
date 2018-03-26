@@ -1,11 +1,26 @@
 #!/bin/zsh
 set -Ceu
 dir=WD30EFRX
-mount=/tmp/`whoami`/$dir
+uroot=/tmp/`whoami`
+mount=/mnt/$dir
 
 if [ ! -e $mount ]; then;
 	mkdir $mount
 fi
 
-sshfs racoon.local:/mnt/$dir $mount
+if [ $# = 0 ]; then;
+	sshfs racoon.local:/mnt/$dir $mount
+fi
+
+if [ $1 = "all" ]; then
+	sshfs-mount
+	sshfs-mount arc
+fi
+
+if [ $1 = "arc" ]; then
+	if [ ! -e $uroot/mnt ]; then
+		mkdir $uroot/mnt
+	fi
+	sshfs arcticfox.local:/mnt  $uroot/mnt
+fi
 
