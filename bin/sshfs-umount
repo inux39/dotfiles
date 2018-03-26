@@ -1,8 +1,19 @@
 #!/bin/zsh
 set -Ceu
 dir=WD30EFRX
-#mount=/tmp/`whoami`/$dir
+uroot=/tmp/`whoami`
 mount=/mnt/$dir
 
-fusermount -uz $mount
+if [ $# = 0 ]; then;
+	fusermount -uz $mount
+fi
+
+if [ $1 = "all" ]; then;
+	fusermount -uz $mount
+	fusermount -uz $uroot/mnt
+fi
+
+if [ $1 = "arc" ]; then;
+	fusermount -uz $uroot/mnt
+fi
 
