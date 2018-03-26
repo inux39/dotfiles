@@ -1,4 +1,3 @@
-
 export PATH="$PATH":$HOME/bin:$HOME/.cargo/bin
 export PROMPT="%K{105}[%n@%m %~]%(!.#.$)%k "
 autoload -U colors && colors

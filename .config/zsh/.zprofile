@@ -10,5 +10,3 @@ fi
 if [ ! -e $HOME/.cache/zsh ]; then; mkdir $HOME/.cache/zsh; fi
 if [ ! -e $HOME/.cache/vim ]; then; mkdir $HOME/.cache/vim; fi
 
-source $HOME/.xprofile
-
