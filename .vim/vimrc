@@ -25,6 +25,7 @@ Plug 'rust-lang/rust.vim'				"rust syntax
 Plug 'octol/vim-cpp-enhanced-highlight'	"cpp syntax
 Plug 'cespare/vim-toml'					"toml syntax
 Plug 'udalov/kotlin-vim'				"kotlin syntax
+Plug 'racer-rust/vim-racer'
 call plug#end()
 filetype plugin indent off
 "Color
