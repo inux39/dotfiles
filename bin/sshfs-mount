@@ -4,23 +4,34 @@ dir=WD30EFRX
 uroot=/tmp/`whoami`
 mount=/mnt/$dir
 
+smb="racoon.local"
+ver="arcticfox.local"
+
 if [ ! -e $mount ]; then;
 	mkdir $mount
 fi
 
 if [ $# = 0 ]; then;
-	sshfs racoon.local:/mnt/$dir $mount
-fi
-
-if [ $1 = "all" ]; then
-	sshfs-mount
-	sshfs-mount arc
-fi
-
-if [ $1 = "arc" ]; then
-	if [ ! -e $uroot/mnt ]; then
-		mkdir $uroot/mnt
+	sshfs $smb:/mnt/$dir $mount
+else
+	if [ $1 = "all" ]; then
+		sshfs-mount
+		sshfs-mount arc
 	fi
-	sshfs arcticfox.local:/mnt  $uroot/mnt
+
+	if [ $1 = "arc" ]; then
+		if [ ! -e $uroot/mnt ]; then
+			mkdir $uroot/mnt
+		fi
+		sshfs $ver:/mnt  $uroot/mnt
+	fi
+
+	if [ $1 = "tmp" ]; then
+		if [ ! -e $uroot/$dir ]; then
+			mkdir $uroot/$dir
+		fi
+		sshfs $smb:/mnt/$dir $uroot/$dir
+	fi
 fi
+
 
