@@ -10,8 +10,13 @@ else
 	echo "" >> $LOG
 fi
 
-function encoding () {
+while true
+do
 	for file in `find . -maxdepth 1 -name '*.ts'`; do
+		if [ ! -e $file ]; then
+			continue
+		fi
+
 		if [ ! -e "${file%ts}webm" ]; then
 			echo "${file}" >> $LOG
 			echo "`date`" >> $LOG
@@ -23,11 +28,6 @@ function encoding () {
 			sleep 2s
 		fi
 	done
-}
-
-while true
-do
-	encoding
 done
 
 # Comment
