@@ -14,16 +14,12 @@ fi
 if [ $# = 0 ]; then;
 	sshfs $smb:/mnt/$dir $mount
 else
-	if [ $1 = "all" ]; then
-		sshfs-mount
-		sshfs-mount arc
-	fi
-
 	if [ $1 = "arc" ]; then
 		if [ ! -e $uroot/mnt ]; then
 			mkdir $uroot/mnt
 		fi
 		sshfs $ver:/mnt  $uroot/mnt
+		sshfs $ver:/mnt/disk1 /mnt/disk1
 	fi
 
 	if [ $1 = "tmp" ]; then
