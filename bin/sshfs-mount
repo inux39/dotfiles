@@ -30,13 +30,17 @@ else
 	fi
 
 	if [ $1 = "remote" ]; then
-		sshfs remote.racoon:/mnt/$dir $mount
-		if [ $# = 2 && $2 = "arc" ]; then
-			if [ ! -e $uroot/mnt ]; then
-				mkdir $uroot/mnt
-			fi
+		if [ $# = 2 ]; then
+			if [ $2 = "arc" ]; then
+				if [ ! -e $uroot/mnt ]; then
+					mkdir $uroot/mnt
+				fi
 			sshfs remote.arcticfox:/mnt  $uroot/mnt
-			sshfs remote.arcticfox:/mnt/disk1 /mnt/disk1
+				sshfs remote.arcticfox:/mnt/disk1 /mnt/disk1
+			fi
+			if [ $2 = "racoon" ]; then
+				sshfs remote.racoon:/mnt/$dir $mount
+			fi
 		fi
 	fi
 fi
