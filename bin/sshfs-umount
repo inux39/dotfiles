@@ -4,20 +4,20 @@ dir=WD30EFRX
 uroot=/tmp/`whoami`
 mount=/mnt/$dir
 
-if [ $# = 0 ]; then;
+if [ $# = 0 ]; then
 	fusermount -uz $mount
 else
-	if [ $1 = "all" ]; then;
+	if [ $1 = "all" ]; then
 		sshfs-umount
 		sshfs-umount arc
 	fi
 
-	if [ $1 = "arc" ]; then;
+	if [ $1 = "arc" ]; then
 		fusermount -uz $uroot/mnt
 		fusermount -uz /mnt/disk1
 	fi
 
-	if [ $1 = "mnt" ]; then;
+	if [ $1 = "mnt" ]; then
 		fusermount -uz $uroot/$dir
 	fi
 fi
