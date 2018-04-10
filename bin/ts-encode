@@ -7,7 +7,9 @@ LOG=".encode.log"
 if [ ! -e $LOG ]; then
 	touch $LOG
 else
-	echo "" >> $LOG
+	if [ "`tail -n 1 $LOG`" != "" ]; then
+		echo "" >> $LOG
+	fi
 fi
 
 while true
