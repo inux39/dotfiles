@@ -12,7 +12,11 @@ if [ ! -e $mount ]; then
 fi
 
 if [ $# = 0 ]; then
-	sshfs $smb:/mnt/$dir $mount
+	if [ `hostname` = "arcticfox" ]; then
+		sshfs -o allow_root $smb:/mnt/$dir $mount
+	else
+		sshfs $smb:/mnt/$dir $mount
+	fi
 elif [ $# = 1 ]; then
 	if [ $1 = "arc" ]; then
 		if [ ! -e $uroot/mnt ]; then
