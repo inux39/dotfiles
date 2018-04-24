@@ -21,6 +21,5 @@ if [ ! -e $XDG_CACHE_HOME/zsh ]; then
 	mkdir $XDG_CACHE_HOME/zsh
 fi
 chmod 700 $CACHE_HOME
-compton -b --config $HOME/.config/compton/compton.conf
 sshfs-mount
 
