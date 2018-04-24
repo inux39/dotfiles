@@ -86,6 +86,18 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 "inoremap [<Enter> []<Left><CR><ESC><S-o>
 "inoremap ( ()<Left>
 "inoremap (<Enter> ()<Left><CR><ESC><S-o>
+"GVIM
+"GUIの種類で判別するしかない模様。とりあえずの対応
+"gui_gtkはすべてのバージョンに対応しているらしい(未確認)
+if has("gui_gtk") || has("gui_mac")
+	set guifont=源ノ角ゴシック\ Code\ JP\ M\ 10
+	set guifontwide=源ノ角ゴシック\ Code\ JP\ M\ 10
+endif
+"Win32は64bitも含まれる?
+if has("gui_win32")
+	set guifont=源ノ角ゴシック\ Code\ JP:h10
+	set guifontwide=源ノ角ゴシック\ Code\ JP:h10
+endif
 "Vim Plugin Config
 "lightline
 let g:lightline = {
