@@ -19,4 +19,5 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	cm = commit
 	co = checkout
+	diffs = diff --word-diff-regex=. --word-diff=color
 
