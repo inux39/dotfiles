@@ -18,8 +18,8 @@ set $locker i3lock && sleep 1
 exec --no-startup-id fcitx
 exec --no-startup-id dunst
 #exec --no-startup-id compton -cbm 0.75	# Composit Manager
-exec --no-startup-id slack
-exec --no-startup-id thunderbird
+#exec --no-startup-id slack
+#exec --no-startup-id thunderbird
 #exec --no-startup-id xautolock -time 10 -locker "i3lock" -lockaftersleep
 
 ## Font config
