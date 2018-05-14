@@ -6,6 +6,12 @@ if [ ! -e $DIR ]; then
 	mkdir -p $DIR/.cache
 	chmod 700 $DIR
 fi
+
+if [ ! -L $HOME/.cache ]; then;
+	rm -fr $HOME/.cache
+	ln -s $DIR/.cache $HOME/.cache
+fi
+
 if [ ! -e $HOME/.cache/zsh ]; then; mkdir $HOME/.cache/zsh; fi
 if [ ! -e $HOME/.cache/vim ]; then; mkdir $HOME/.cache/vim; fi
 
