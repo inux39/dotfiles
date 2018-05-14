@@ -9,6 +9,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 alias ls='ls -alhF --color=auto'
 alias sudo='sudo -E'
 alias emacs='vim'
+alias sshfs='sshfs -o allow_root'
 ## =以降も補完する
 setopt magic_equal_subst
 ## 補完候補を一覧表示する
