@@ -12,25 +12,21 @@ if [ ! -e $mount ]; then
 fi
 
 if [ $# = 0 ]; then
-	if [ `hostname` = "arcticfox" ]; then
-		sshfs -o allow_root $smb:/mnt/$dir $mount
-	else
-		sshfs $smb:/mnt/$dir $mount
-	fi
+	sshfs -o allow_root $smb:/mnt/$dir $mount
 elif [ $# = 1 ]; then
 	if [ $1 = "arc" ]; then
 		if [ ! -e $uroot/mnt ]; then
 			mkdir $uroot/mnt
 		fi
-		sshfs $ver:/mnt  $uroot/mnt
-		sshfs $ver:/mnt/disk1 /mnt/disk1
+		sshfs -o allow_root $ver:/mnt  $uroot/mnt
+		sshfs -o allow_root $ver:/mnt/disk1 /mnt/disk1
 	fi
 
 	if [ $1 = "tmp" ]; then
 		if [ ! -e $uroot/$dir ]; then
 			mkdir $uroot/$dir
 		fi
-		sshfs $smb:/mnt/$dir $uroot/$dir
+		sshfs -o allow_root $smb:/mnt/$dir $uroot/$dir
 	fi
 elif [ $# = 2 ]; then
 	if [ $1 = "remote" ]; then
@@ -38,13 +34,12 @@ elif [ $# = 2 ]; then
 			if [ ! -e $uroot/mnt ]; then
 				mkdir $uroot/mnt
 			fi
-		sshfs remote.arcticfox:/mnt  $uroot/mnt
-			sshfs remote.arcticfox:/mnt/disk1 /mnt/disk1
+		sshfs -o allow_root remote.arcticfox:/mnt  $uroot/mnt
+			sshfs -o allow_root remote.arcticfox:/mnt/disk1 /mnt/disk1
 		fi
 		if [ $2 = "racoon" ]; then
-			sshfs remote.racoon:/mnt/$dir $mount
+			sshfs -o allow_root remote.racoon:/mnt/$dir $mount
 		fi
 	fi
 fi
-
 
