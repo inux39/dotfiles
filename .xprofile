@@ -2,24 +2,5 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export DefaultIMModule=fcitx
-CACHE_HOME=/tmp/`whoami`
-export XDG_CACHE_HOME=$CACHE_HOME/.cache
-if [ ! -e $CACHE_HOME ]; then
-	mkdir $CACHE_HOME
-fi
-if [ ! -e $XDG_CACHE_HOME ]; then
-	mkdir $XDG_CACHE_HOME
-fi
-if [ ! -e $CACHE_HOME/Downloads ]; then
-	mkdir $CACHE_HOME/Downloads
-fi
-if [ ! -e $XDG_CACHE_HOME/vim ]; then
-	mkdir $XDG_CACHE_HOME/vim
-	touch $XDG_CACHE_HOME/vim/viminfo.txt
-fi
-if [ ! -e $XDG_CACHE_HOME/zsh ]; then
-	mkdir $XDG_CACHE_HOME/zsh
-fi
-chmod 700 $CACHE_HOME
-sshfs-mount
+source $HOME/.config/zsh/.zprofile
 
