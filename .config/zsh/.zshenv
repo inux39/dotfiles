@@ -9,5 +9,4 @@ export EDITOR=vim
 export GOPATH=$HOME/.go
 export PATH="$PATH:$HOME/bin"
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 

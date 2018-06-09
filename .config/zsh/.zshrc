@@ -1,7 +1,9 @@
 export PATH="$PATH":$HOME/bin:$HOME/.cargo/bin
 export PROMPT="%K{105}[%n@%m %~]
 %(!.#.$)%k "
+unset SSH_AGENT_PID
 export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 autoload -U colors && colors
 autoload -U compinit;	compinit -d $XDG_CACHE_HOME/zsh/.zcompdump
 zstyle ':completion:*' list-colors "${LS_COLORS}"
