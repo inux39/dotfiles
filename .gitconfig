@@ -21,6 +21,7 @@
 	cm = commit
 	co = checkout
 	diffs = diff --word-diff-regex=. --word-diff=color
+	squash = merge --squash --ff
 
 [color]
 	ui = auto
