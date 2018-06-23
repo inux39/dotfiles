@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ $# == 0 ]; then
+	cat /dev/urandom | tr -dc "[:graph:]" | fold -w 64 | head -n 1
+else
+	cat /dev/urandom | tr -dc "[:graph:]" | fold -w 64 | head -n $1
+fi
+
