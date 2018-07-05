@@ -15,9 +15,6 @@ if [ $# = 0 ]; then
 	sshfs -o allow_root $smb:/mnt/$dir $mount
 elif [ $# = 1 ]; then
 	if [ $1 = "arc" ]; then
-		if [ ! -e $uroot/mnt ]; then
-			mkdir $uroot/mnt
-		fi
 		sshfs -o allow_root $ver:/mnt  $uroot/mnt
 		sshfs -o allow_root $ver:/mnt/disk1 /mnt/disk1
 	fi
@@ -31,10 +28,6 @@ elif [ $# = 1 ]; then
 elif [ $# = 2 ]; then
 	if [ $1 = "remote" ]; then
 		if [ $2 = "arc" ]; then
-			if [ ! -e $uroot/mnt ]; then
-				mkdir $uroot/mnt
-			fi
-		sshfs -o allow_root remote.arcticfox:/mnt  $uroot/mnt
 			sshfs -o allow_root remote.arcticfox:/mnt/disk1 /mnt/disk1
 		fi
 		if [ $2 = "racoon" ]; then

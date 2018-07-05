@@ -13,11 +13,10 @@ else
 	fi
 
 	if [ $1 = "arc" ]; then
-		fusermount -uz $uroot/mnt
 		fusermount -uz /mnt/disk1
 	fi
 
-	if [ $1 = "mnt" ]; then
+	if [ $1 = "tmp" ]; then
 		fusermount -uz $uroot/$dir
 	fi
 fi
