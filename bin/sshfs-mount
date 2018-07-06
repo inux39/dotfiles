@@ -13,26 +13,27 @@ function mkmountdir() {
 	fi
 }
 
-function remotemount() {
+function rmount() {
 	local remote=$1
 	local mountdir=$2
 	local _local=$3
+	mkmountdir $_local
 	sshfs -o allow_root $remote:$mountdir $_local
 }
 
 if [ $# = 0 ]; then
-	sshfs -o allow_root $fserv:$mount $mount
+	rmount $fserv $mount $mount
 elif [ $# = 1 ]; then
 	if [ $1 = "arc" ]; then
-		sshfs -o allow_root $eserv:/mnt/disk1 /mnt/disk1
+		rmount $eserv /mnt/disk1 /mnt/disk1
 	fi
 elif [ $# = 2 ]; then
 	if [ $1 = "remote" ]; then
 		if [ $2 = "arc" ]; then
-			sshfs -o allow_root remote.arcticfox:/mnt/disk1 /mnt/disk1
+			rmount remote.arcticfox /mnt/disk1 /mnt/disk1
 		fi
 		if [ $2 = "racoon" ]; then
-			sshfs -o allow_root remote.racoon:$mount $mount
+			rmount remote.racoon $mount $mount
 		fi
 	fi
 fi
