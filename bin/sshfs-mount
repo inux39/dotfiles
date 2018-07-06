@@ -1,29 +1,30 @@
 #!/bin/zsh
 set -Ceu
-dir=WD30EFRX
 uroot=/tmp/`whoami`
-mount=/mnt/$dir
+mount=/mnt/WD30EFRX
 
-smb="racoon.local"
-ver="arcticfox.local"
+fserv="racoon.local"
+eserv="arcticfox.local"
 
-if [ ! -e $mount ]; then
-	mkdir $mount
-fi
+function mkmountdir() {
+	local d=$1
+	if [ ! -e $d ]; then
+		mkdir $d
+	fi
+}
+
+function remotemount() {
+	local remote=$1
+	local mountdir=$2
+	local _local=$3
+	sshfs -o allow_root $remote:$mountdir $_local
+}
 
 if [ $# = 0 ]; then
-	sshfs -o allow_root $smb:/mnt/$dir $mount
+	sshfs -o allow_root $fserv:$mount $mount
 elif [ $# = 1 ]; then
 	if [ $1 = "arc" ]; then
-		sshfs -o allow_root $ver:/mnt  $uroot/mnt
-		sshfs -o allow_root $ver:/mnt/disk1 /mnt/disk1
-	fi
-
-	if [ $1 = "tmp" ]; then
-		if [ ! -e $uroot/$dir ]; then
-			mkdir $uroot/$dir
-		fi
-		sshfs -o allow_root $smb:/mnt/$dir $uroot/$dir
+		sshfs -o allow_root $eserv:/mnt/disk1 /mnt/disk1
 	fi
 elif [ $# = 2 ]; then
 	if [ $1 = "remote" ]; then
@@ -31,7 +32,7 @@ elif [ $# = 2 ]; then
 			sshfs -o allow_root remote.arcticfox:/mnt/disk1 /mnt/disk1
 		fi
 		if [ $2 = "racoon" ]; then
-			sshfs -o allow_root remote.racoon:/mnt/$dir $mount
+			sshfs -o allow_root remote.racoon:$mount $mount
 		fi
 	fi
 fi
