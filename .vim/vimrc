@@ -80,6 +80,11 @@ command! -nargs=0 Wq wq	"Wq == wq
 "command! -nargs=0 Q! q!	"Q! == q!
 "検索ハイライトをEsc連打で消す
 nnoremap <ESC><ESC> :nohlsearch<CR>
+"ウィンドウ移動 Ctrl + hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 "inoremap { {}<Left>
 "inoremap {<Enter> {}<Left><CR><ESC><S-o>
 "inoremap [ []<Left>
