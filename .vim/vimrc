@@ -1,4 +1,3 @@
-set nocompatible	"viとの互換を切る
 set viminfo+=n/$HOME/.cache/vim/viminfo.txt	"set viminfo directory
 "カーソル位置の保存と復元
 if has("autocmd")
@@ -12,12 +11,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug', {'dir' : '~/.vim/plugged/vim-plug/autoload'}
 " Theme
 Plug 'tomasr/molokai'
-"Plug 'w0ng/vim-hybrid'
 " Decoration
 Plug 'itchyny/lightline.vim'			"status bar theme
 Plug 'bronson/vim-trailing-whitespace'	"スペース見える化
 Plug 'airblade/vim-gitgutter'			"git diff on vim
-"Plug 'Townk/vim-autoclose'
 Plug 'kana/vim-smartinput'				"自動括弧閉じ
 " Syntax
 Plug 'vim-jp/cpp-vim'					"c++ syntax
@@ -31,17 +28,15 @@ filetype plugin indent off
 "Color
 syntax on
 colorscheme molokai
-"colorscheme hybrid
 set t_Co=256
 set background=dark
 set colorcolumn=80 "80桁でガイドを入れる
-"Encode
+"file
+set autoread
 set encoding=utf-8	"vimの内部文字コード
 set fileencoding=utf-8	"書き込み時のエンコード指定
 set fileencodings=utf-8,euc-jp,cp932,sjis,iso-20220jp,ucs-2
-set fileformats=unix,dos,mac	"改行コードの自動認識らしい
-	"読み込み時にどのファイルエンコードで開くかを指定
-	"左から順に試される
+set fileformats=unix,dos,mac	"改行コードの自動認識(左から順に)
 "Indent
 set autoindent	"自動インデント
 set smartindent	"改行前の末尾に合わせてインデントを調整
@@ -56,10 +51,12 @@ set cursorline	"カーソルのある行をハイライト
 set number	"行番号表示
 set title	"タイトル表示
 set showmatch	"対応するかっこを表示
+set matchtime=1	"showmatchでカーソルが飛ぶ時間
 set wildmenu	"補完候補を表示する
 set synmaxcol=200	"1行200文字のシンタックス
-"set colorcolumn=80	"80桁目に印を付ける
-"let g:seiya_auto_enable=1	"自動的にvim画面を半透明にする(miyakogi/seiya)
+set ambiwidth=double	"全角文字の設定
+set display=lastline	"1行が長くてもちゃんと描画する
+set pumheight=10	"補完メニューの高さ
 ""ステータスライン
 set laststatus=2	"ステータスラインを常に表示
 set ruler	"右下に行,列表示
@@ -73,11 +70,10 @@ set wrapscan	"最後まで行ったら最初に戻る
 set hlsearch	"検索結果をハイライト表示
 "Swap files
 set noswapfile	"スワップファイルを作らない
-"set directory=$HOME/.cache/vim
+"set directory=$HOME/.cache/vim	"swapの置き場
 "set nobackup	"バックアップを作らない
 set backupdir=$HOME/.cache/vim
 command! -nargs=0 Wq wq	"Wq == wq
-"command! -nargs=0 Q! q!	"Q! == q!
 "検索ハイライトをEsc連打で消す
 nnoremap <ESC><ESC> :nohlsearch<CR>
 "ウィンドウ移動 Ctrl + hjkl
@@ -85,23 +81,10 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-"inoremap { {}<Left>
-"inoremap {<Enter> {}<Left><CR><ESC><S-o>
-"inoremap [ []<Left>
-"inoremap [<Enter> []<Left><CR><ESC><S-o>
-"inoremap ( ()<Left>
-"inoremap (<Enter> ()<Left><CR><ESC><S-o>
 "GVIM
-"GUIの種類で判別するしかない模様。とりあえずの対応
-"gui_gtkはすべてのバージョンに対応しているらしい(未確認)
 if has("gui_gtk") || has("gui_mac")
 	set guifont=monospace
 	set guifontwide=monospace
-endif
-"Win32は64bitも含まれる?
-if has("gui_win32")
-	set guifont=源ノ角ゴシック\ Code\ JP:h10
-	set guifontwide=源ノ角ゴシック\ Code\ JP:h10
 endif
 "Vim Plugin Config
 "lightline
