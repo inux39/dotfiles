@@ -8,7 +8,7 @@ if [ ! -e $LOG ]; then
 	touch $LOG
 else
 	if [ "`tail -n 1 $LOG`" != "" ]; then
-		echo "" >> $LOG
+		echo "\n" >> $LOG
 	fi
 fi
 
