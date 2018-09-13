@@ -1,7 +1,7 @@
 [user]
 	name = inux39
 	email = inux39@protonmail.ch
-	signingkey = A8DBCB6E6F1C6116782634E45CC1740973BD71B0
+	signingkey = E782A8FC2F39BC12D8E351AA8536B5424DE4178A
 [push]
 	default = simple
 [core]
