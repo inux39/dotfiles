@@ -69,7 +69,7 @@ set smartcase	"大文字なら小文字との区別をする
 set wrapscan	"最後まで行ったら最初に戻る
 set hlsearch	"検索結果をハイライト表示
 "Swap files
-set noswapfile	"スワップファイルを作らない
+"set noswapfile	"スワップファイルを作らない
 set directory=$HOME/.cache/vim/swap	"swapの置き場
 "set nobackup	"バックアップを作らない
 set backupdir=$HOME/.cache/vim/backup
