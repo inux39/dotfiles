@@ -1,15 +1,37 @@
 ### 起動時に一度だけでも十分な設定をここに
-DIR=/tmp/`whoami`
 ### 一時ディレクトリ作成
-if [ ! -e $DIR ]; then; mkdir $DIR; chmod 700 $DIR; fi
+if [ ! -e /tmp/`whoami` ]
+then
+	mkdir /tmp/`whoami`
+	chmod 700 /tmp/`whoami`
+ fi
 
-if [ ! -e $DIR/.cache ]; then; mkdir $DIR/.cache; fi
-if [ ! -e $HOME/.cache/zsh ]; then; mkdir $HOME/.cache/zsh; fi
-if [ ! -e $HOME/.cache/vim ]; then; mkdir $HOME/.cache/vim; fi
-if [ ! -e $DIR/Downloads ]; then; mkdir $DIR/Downloads; fi
+if [ ! -e /tmp/`whoami`/Downloads ]
+then
+	mkdir /tmp/`whoami`/Downloads
+	chmod 700 /tmp/`whoami`/Downloads
+fi
 
-if [ ! -L $HOME/.cache ]; then;
+if [ ! -e /tmp/`whoami`/.cache ]
+then
+	mkdir /tmp/`whoami`/.cache
+	chmod 700 /tmp/`whoami`/.cache
+fi
+
+if [ ! -e /tmp/`whoami`/.cache/zsh ]
+then
+	mkdir /tmp/`whoami`/.cache/zsh
+fi
+
+if [ ! -e /tmp/`whoami`/.cache/vim ]
+then
+	mkdir /tmp/`whoami`/.cache/vim
+	touch /tmp/`whoami`/.cache/vim/viminfo.txt
+fi
+
+if [ ! -L $HOME/.cache ]
+then
 	rm -fr $HOME/.cache
-	ln -s $DIR/.cache $HOME/.cache
+	ln -s /tmp/`whoami`/.cache $HOME/.cache
 fi
 
