@@ -8,8 +8,6 @@
 	editor = vim
 [help]
 	autocorrect = 20
-[merge]
-	ff = false
 [pull]
 	ff = only
 [alias]
@@ -21,7 +19,6 @@
 	cm = commit
 	co = checkout
 	diffs = diff --word-diff-regex=. --word-diff=color
-	squash = merge --squash --ff
 
 [color]
 	ui = auto
