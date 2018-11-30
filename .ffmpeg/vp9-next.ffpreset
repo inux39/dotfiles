@@ -1,10 +1,9 @@
 b:v=0
 b:a=192k
 quality=good
-threads=3
+threads=8
 cpu-used=2
 speed=2
-slices=4
 frame-parallel=1
 tile-columns=2
 lag-in-frames=16
