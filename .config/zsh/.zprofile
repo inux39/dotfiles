@@ -16,6 +16,7 @@ if [ ! -e /tmp/`whoami`/.cache ]
 then
 	mkdir /tmp/`whoami`/.cache
 	chmod 700 /tmp/`whoami`/.cache
+	mkdir /tmp/`whoami`/.cache/ccache
 fi
 
 if [ ! -e /tmp/`whoami`/.cache/zsh ]
