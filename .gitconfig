@@ -7,7 +7,7 @@
 [core]
 	editor = vim
 [help]
-	autocorrect = 20
+	autocorrect = 5
 [merge]
 	ff = false
 [pull]
