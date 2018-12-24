@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -Ceu
 uroot=/tmp/`whoami`
-mount=/mnt/WD30EFRX
+mount=("/mnt/WD30EFRX" "/mnt/array0")
 
 fserv="racoon.local"
 eserv="arcticfox.local"
@@ -22,7 +22,9 @@ function rmount() {
 }
 
 if [ $# = 0 ]; then
-	rmount $fserv $mount $mount
+	for i in "${mount[@]}"; do
+		rmount $fserv $i $i
+	done
 elif [ $# = 1 ]; then
 	if [ $1 = "arc" ]; then
 		rmount $eserv /mnt/disk1 /mnt/disk1
@@ -33,7 +35,9 @@ elif [ $# = 2 ]; then
 			rmount remote.arcticfox /mnt/disk1 /mnt/disk1
 		fi
 		if [ $2 = "racoon" ]; then
-			rmount remote.racoon $mount $mount
+			for i in "${mount[@]}"; do
+				rmount $fserv $i $i
+			done
 		fi
 	fi
 fi
