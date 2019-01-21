@@ -6,10 +6,6 @@ repo = 'bronson/vim-trailing-whitespace'
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 
-# 自動括弧閉じ
-[[plugins]]
-repo = 'kana/vim-smartinput'
-
 # Syntax
 # C++
 [[plugins]]
@@ -22,11 +18,11 @@ on_ft = ['cpp']
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'
-on_ft = ['rs']
+on_ft = ['rust']
 
 #[[plugins]]
 #repo = 'racer-rust/vim-racer'
-#on_ft = ['rs']
+#on_ft = ['rust']
 
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -34,5 +30,5 @@ on_ft = ['toml']
 
 [[plugins]]
 repo = 'udalov/kotlin-vim'
-on_ft = ['kt']
+on_ft = ['kotlin']
 
