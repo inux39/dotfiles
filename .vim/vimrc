@@ -3,27 +3,33 @@ set viminfo+=n/$HOME/.cache/vim/viminfo.txt	"set viminfo directory
 if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
-"NeoBundle
-if has('vim_starting')
-    set runtimepath+=~/.vim/plugged/vim-plug
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+if dein#load_state('~/.vim/dein')
+	call dein#begin('~/.vim/dein')
+	call dein#add('~/vim/dein/repos/github.com/Shougo/dein.vim')
+	call dein#add('Shougo/deoplete.nvim')
+	"" Theme
+	call dein#add('tomasr/molokai')
+	"" Decoration
+	call dein#add('itchyny/lightline.vim')			"status bar theme
+	call dein#add('bronson/vim-trailing-whitespace')	"スペース見える化
+	call dein#add('airblade/vim-gitgutter')			"git diff on vim
+	call dein#add('kana/vim-smartinput')				"自動括弧閉じ
+	"" Syntax
+	call dein#add('vim-jp/cpp-vim')					"c++ syntax
+	call dein#add('rust-lang/rust.vim')				"rust syntax
+	"call dein#add('octol/vim-cpp-enhanced-highlight')	"cpp syntax
+	call dein#add('cespare/vim-toml')					"toml syntax
+	call dein#add('udalov/kotlin-vim')				"kotlin syntax
+	"call dein#add('racer-rust/vim-racer')
+	if !has('nvim')
+		call dein#add('roxma/nvim-yarp')
+		call dein#add('roxma/vim-hug-neovim-rpc')
+	endif
+
+	call dein#end()
+	call dein#save_state()
 endif
-call plug#begin('~/.vim/plugged')
-Plug 'junegunn/vim-plug', {'dir' : '~/.vim/plugged/vim-plug/autoload'}
-" Theme
-Plug 'tomasr/molokai'
-" Decoration
-Plug 'itchyny/lightline.vim'			"status bar theme
-Plug 'bronson/vim-trailing-whitespace'	"スペース見える化
-Plug 'airblade/vim-gitgutter'			"git diff on vim
-Plug 'kana/vim-smartinput'				"自動括弧閉じ
-" Syntax
-Plug 'vim-jp/cpp-vim'					"c++ syntax
-Plug 'rust-lang/rust.vim'				"rust syntax
-Plug 'octol/vim-cpp-enhanced-highlight'	"cpp syntax
-Plug 'cespare/vim-toml'					"toml syntax
-Plug 'udalov/kotlin-vim'				"kotlin syntax
-Plug 'racer-rust/vim-racer'
-call plug#end()
 filetype plugin indent off
 "Color
 syntax on
