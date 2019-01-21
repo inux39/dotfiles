@@ -4,11 +4,11 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 
-#Theme
+# Theme
 [[plugins]]
 repo = 'tomasr/molokai'
 
-#status bar theme
+# status bar theme
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 
