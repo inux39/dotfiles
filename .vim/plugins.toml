@@ -1,0 +1,14 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+#Theme
+[[plugins]]
+repo = 'tomasr/molokai'
+
+#status bar theme
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+

@@ -1,0 +1,38 @@
+# スペース見える化
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+# git diff on vim
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+# 自動括弧閉じ
+[[plugins]]
+repo = 'kana/vim-smartinput'
+
+# Syntax
+# C++
+[[plugins]]
+repo = 'vim-jp/cpp-vim'
+on_ft = ['cpp']
+
+[[plugins]]
+repo = 'octol/vim-cpp-enhanced-highlight'
+on_ft = ['cpp']
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = ['rs']
+
+#[[plugins]]
+#repo = 'racer-rust/vim-racer'
+#on_ft = ['rs']
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
+[[plugins]]
+repo = 'udalov/kotlin-vim'
+on_ft = ['kt']
+
