@@ -3,6 +3,8 @@ set viminfo+=n/$HOME/.cache/vim/viminfo.txt	"set viminfo directory
 if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
+
+" dein setup
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 let s:dein_path = expand('~/.vim/dein')
 let s:dein_repo_path = s:dein_path . '/repos/github.com/Shougo/dein.vim'
@@ -14,6 +16,8 @@ if dein#load_state('~/.vim/dein')
 
 	call dein#load_toml(s:toml, {'lazy': 0})
 	call dein#load_toml(s:lazy_toml, {'lazy': 1})
+	" tomlの記述を変えたあと、うまく適用されない場合は
+	" `call dein#recache_runtimepath()` をやるとよいぞ。
 	if !has('nvim')
 		call dein#add('roxma/nvim-yarp')
 		call dein#add('roxma/vim-hug-neovim-rpc')
@@ -22,6 +26,11 @@ if dein#load_state('~/.vim/dein')
 	call dein#end()
 	call dein#save_state()
 endif
+" dein check
+if dein#check_install()
+	call dein#install()
+endif
+
 filetype plugin indent off
 "Color
 syntax on
