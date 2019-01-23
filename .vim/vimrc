@@ -11,11 +11,11 @@ let s:dein_repo_path = s:dein_path . '/repos/github.com/Shougo/dein.vim'
 if dein#load_state('~/.vim/dein')
 	call dein#begin('~/.vim/dein')
 	let g:config_dir = expand('~/dotfiles/.vim')
-	let s:toml = g:config_dir . '/plugins.toml'
-	let s:lazy_toml = g:config_dir . '/plugins_lazy.toml'
+	let s:plugins = g:config_dir . '/plugins.toml'
+	let s:plugins_lazy = g:config_dir . '/plugins_lazy.toml'
 
-	call dein#load_toml(s:toml, {'lazy': 0})
-	call dein#load_toml(s:lazy_toml, {'lazy': 1})
+	call dein#load_toml(s:plugins, {'lazy': 0})
+	call dein#load_toml(s:plugins_lazy, {'lazy': 1})
 	" tomlの記述を変えたあと、うまく適用されない場合は
 	" `call dein#recache_runtimepath()` をやるとよいぞ。
 	if !has('nvim')
@@ -93,9 +93,18 @@ if has("gui_gtk") || has("gui_mac")
 	set guifont=monospace
 	set guifontwide=monospace
 endif
-"Vim Plugin Config
-"lightline
-let g:lightline = {
-	\	'colorscheme' : 'jellybeans',
-	\	}
 
+" airline
+let g:airline_theme = 'wombat'
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#wordcount#enabled = 0
+let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'y', 'z']]
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#default#section_truncate_width = {}
+let g:airline_section_c = '%t'
+let g:airline_section_x = '%{&filetype}'
+let g:airline_section_z = '%3l:%2v'
+
+" vim-table-mode
+let g:table_mode_corner = '|'"
