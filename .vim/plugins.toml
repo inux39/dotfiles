@@ -8,7 +8,29 @@ repo = 'Shougo/deoplete.nvim'
 [[plugins]]
 repo = 'tomasr/molokai'
 
-# status bar theme
+# git diff on vim
+#[[plugins]]
+#repo = "airblade/vim-gitgutter"
+
 [[plugins]]
-repo = 'itchyny/lightline.vim'
+repo = "tpope/vim-fugitive"
+
+# status bar theme
+#[[plugins]]
+#repo = 'itchyny/lightline.vim'
+
+# スペース見える化
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+# ステータスライン
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+# アイコンフォント
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
 

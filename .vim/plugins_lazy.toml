@@ -1,38 +1,36 @@
-# スペース見える化
-[[plugins]]
-repo = 'bronson/vim-trailing-whitespace'
-
 # 自動括弧閉じ
 [[plugins]]
-repo = 'kana/vim-smartinput'
+repo = "kana/vim-smartinput"
+on_i = 1
 
-# git diff on vim
+# テーブル整形
 [[plugins]]
-repo = 'airblade/vim-gitgutter'
+repo = "dhruvasagar/vim-table-mode"
+on_ft = ["markdown"]
 
 # Syntax
 # C++
 [[plugins]]
-repo = 'vim-jp/cpp-vim'
-on_ft = ['cpp']
+repo = "vim-jp/cpp-vim"
+on_ft = ["cpp"]
 
 [[plugins]]
-repo = 'octol/vim-cpp-enhanced-highlight'
-on_ft = ['cpp']
+repo = "octol/vim-cpp-enhanced-highlight"
+on_ft = ["cpp"]
 
 [[plugins]]
-repo = 'rust-lang/rust.vim'
-on_ft = ['rust']
+repo = "rust-lang/rust.vim"
+on_ft = ["rust"]
 
 #[[plugins]]
-#repo = 'racer-rust/vim-racer'
-#on_ft = ['rust']
+#repo = "racer-rust/vim-racer"
+#on_ft = ["rust"]
 
 [[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = ['toml']
+repo = "cespare/vim-toml"
+on_ft = ["toml"]
 
 [[plugins]]
-repo = 'udalov/kotlin-vim'
-on_ft = ['kotlin']
+repo = "udalov/kotlin-vim"
+on_ft = ["kotlin"]
 
