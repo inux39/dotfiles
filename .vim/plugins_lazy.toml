@@ -3,6 +3,11 @@
 repo = "kana/vim-smartinput"
 on_i = 1
 
+# カッコをうまくやる
+[[plugins]]
+repo = "tpope/vim-surround"
+on_i = 1
+
 # テーブル整形
 [[plugins]]
 repo = "dhruvasagar/vim-table-mode"

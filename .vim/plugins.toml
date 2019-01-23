@@ -9,8 +9,8 @@ repo = 'Shougo/deoplete.nvim'
 repo = 'tomasr/molokai'
 
 # git diff on vim
-#[[plugins]]
-#repo = "airblade/vim-gitgutter"
+[[plugins]]
+repo = "airblade/vim-gitgutter"
 
 [[plugins]]
 repo = "tpope/vim-fugitive"
@@ -22,6 +22,10 @@ repo = "tpope/vim-fugitive"
 # スペース見える化
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
+
+# インデント見える化
+[[plugins]]
+repo = "nathanaelkane/vim-indent-guides"
 
 # ステータスライン
 [[plugins]]

@@ -108,3 +108,7 @@ let g:airline_section_z = '%3l:%2v'
 
 " vim-table-mode
 let g:table_mode_corner = '|'"
+
+" visible indent
+let g:indent_guides_enable_on_vim_startup = 1
+
