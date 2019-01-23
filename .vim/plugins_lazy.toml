@@ -2,6 +2,10 @@
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 
+# 自動括弧閉じ
+[[plugins]]
+repo = 'kana/vim-smartinput'
+
 # git diff on vim
 [[plugins]]
 repo = 'airblade/vim-gitgutter'

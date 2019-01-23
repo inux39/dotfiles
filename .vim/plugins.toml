@@ -4,10 +4,6 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 
-# 自動括弧閉じ
-[[plugins]]
-repo = 'kana/vim-smartinput'
-
 # Theme
 [[plugins]]
 repo = 'tomasr/molokai'
