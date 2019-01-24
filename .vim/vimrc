@@ -49,7 +49,7 @@ set autoindent	"自動インデント
 set smartindent	"改行前の末尾に合わせてインデントを調整
 set tabstop=4	"タブサイズ
 set shiftwidth=4	"自動インデントのタブサイズ
-set noexpandtab	"タブ文字の代わりにスペースno
+set expandtab	"スペース
 set backspace=indent,eol,start	"バックスペースで改行など削除
 set cindent	"C言語スタイルの自動インデント
 "画面設定
@@ -111,4 +111,9 @@ let g:table_mode_corner = '|'"
 
 " visible indent
 let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkblue ctermbg=215
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkmagenta ctermbg=155
 
