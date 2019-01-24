@@ -5,36 +5,36 @@ IFS=$'\n'
 LOG=".encode.log"
 
 if [ ! -e $LOG ]; then
-	touch $LOG
+    touch $LOG
 else
-	if [ "`tail -n 1 $LOG`" != "" ]; then
-		echo "\n" >> $LOG
-	fi
+    if [ "`tail -n 1 $LOG`" != "" ]; then
+        echo "\n" >> $LOG
+    fi
 fi
 
 while true
 do
-	for file in `find . -maxdepth 1 -name '*.ts'`; do
-		if [ ! -e $file ]; then
-			continue
-		fi
+    for file in `find . -maxdepth 1 -name '*.ts'`; do
+        if [ ! -e $file ]; then
+            continue
+        fi
 
-		if [ ! -e "${file%ts}webm" ]; then
-			echo "${file}" >> $LOG
-			echo -n "`date`" >> $LOG
-			$ffmpeg -n -i $file -c:v libvpx-vp9 -c:a libopus \
-			-vpre vp9-next \
-			-vf bwdif=1:-1:1 -crf 38 "${file%ts}webm"
-			echo ", `date`\n" >> $LOG
-		else
-			sleep 2s
-		fi
-	done
+        if [ ! -e "${file%ts}webm" ]; then
+            echo "${file}" >> $LOG
+            echo -n "`date`" >> $LOG
+            $ffmpeg -n -i $file -c:v libvpx-vp9 -c:a libopus \
+            -vpre vp9-next \
+            -vf bwdif=1:-1:1 -crf 38 "${file%ts}webm"
+            echo ", `date`\n" >> $LOG
+        else
+            sleep 2s
+        fi
+    done
 done
 
 # Comment
-#	reference: https://developers.google.com/media/vp9/settings/vod/
+#   reference: https://developers.google.com/media/vp9/settings/vod/
 # CRF
-#	720:  32
-#	1080: 31
+#   720:  32
+#   1080: 31
 

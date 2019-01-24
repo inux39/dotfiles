@@ -5,19 +5,19 @@ uroot=/tmp/`whoami`
 mount=/mnt/$dir
 
 if [ $# = 0 ]; then
-	fusermount -uz $mount
+    fusermount -uz $mount
 else
-	if [ $1 = "all" ]; then
-		sshfs-umount
-		sshfs-umount arc
-	fi
+    if [ $1 = "all" ]; then
+        sshfs-umount
+        sshfs-umount arc
+    fi
 
-	if [ $1 = "arc" ]; then
-		fusermount -uz /mnt/disk1
-	fi
+    if [ $1 = "arc" ]; then
+        fusermount -uz /mnt/disk1
+    fi
 
-	if [ $1 = "tmp" ]; then
-		fusermount -uz $uroot/$dir
-	fi
+    if [ $1 = "tmp" ]; then
+        fusermount -uz $uroot/$dir
+    fi
 fi
 

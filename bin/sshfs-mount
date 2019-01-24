@@ -7,38 +7,38 @@ fserv="racoon.local"
 eserv="arcticfox.local"
 
 function mkmountdir() {
-	local d=$1
-	if [ ! -e $d ]; then
-		mkdir $d
-	fi
+    local d=$1
+    if [ ! -e $d ]; then
+        mkdir $d
+    fi
 }
 
 function rmount() {
-	local remote=$1
-	local mountdir=$2
-	local _local=$3
-	mkmountdir $_local
-	sshfs -o allow_root $remote:$mountdir $_local
+    local remote=$1
+    local mountdir=$2
+    local _local=$3
+    mkmountdir $_local
+    sshfs -o allow_root $remote:$mountdir $_local
 }
 
 if [ $# = 0 ]; then
-	for i in "${mount[@]}"; do
-		rmount $fserv $i $i
-	done
+    for i in "${mount[@]}"; do
+        rmount $fserv $i $i
+    done
 elif [ $# = 1 ]; then
-	if [ $1 = "arc" ]; then
-		rmount $eserv /mnt/disk1 /mnt/disk1
-	fi
+    if [ $1 = "arc" ]; then
+        rmount $eserv /mnt/disk1 /mnt/disk1
+    fi
 elif [ $# = 2 ]; then
-	if [ $1 = "remote" ]; then
-		if [ $2 = "arc" ]; then
-			rmount remote.arcticfox /mnt/disk1 /mnt/disk1
-		fi
-		if [ $2 = "racoon" ]; then
-			for i in "${mount[@]}"; do
-				rmount $fserv $i $i
-			done
-		fi
-	fi
+    if [ $1 = "remote" ]; then
+        if [ $2 = "arc" ]; then
+            rmount remote.arcticfox /mnt/disk1 /mnt/disk1
+        fi
+        if [ $2 = "racoon" ]; then
+            for i in "${mount[@]}"; do
+                rmount $fserv $i $i
+            done
+        fi
+    fi
 fi
 

@@ -44,9 +44,9 @@ cpu_usage {
 }
 
 volume master {
-	format = "Vol %volume"
-	format_muted = "Vol muted (%volume)"
-	device = "pulse"
+    format = "Vol %volume"
+    format_muted = "Vol muted (%volume)"
+    device = "pulse"
 }
 
 # disk "/" {
