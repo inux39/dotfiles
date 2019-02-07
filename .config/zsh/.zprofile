@@ -25,7 +25,7 @@ if [ ! -e $DIR ]
 then
     mkdir $DIR
     chmod 700 $DIR
- fi
+fi
 
 if [ ! -e $DIR/Downloads ]
 then
@@ -37,7 +37,6 @@ if [ ! -e $CACHE ]
 then
     mkdir $CACHE
     chmod 700 $CACHE
-    mkdir $CACHE/ccache
 fi
 
 if [ ! -e $CACHE/zsh ]
