@@ -1,27 +1,27 @@
 [user]
-	name = inux39
-	email = inux39@protonmail.ch
-	signingkey = E782A8FC2F39BC12D8E351AA8536B5424DE4178A
+    name = inux39
+    email = inux39@protonmail.ch
+    signingkey = E782A8FC2F39BC12D8E351AA8536B5424DE4178A
 [push]
-	default = simple
+    default = simple
 [core]
-	editor = vim
+    editor = vim
 [help]
-	autocorrect = 5
+    autocorrect = 5
 [merge]
-	ff = false
+    ff = false
 [pull]
-	ff = only
+    ff = only
 [alias]
-	ls = log --graph
-	pl = pull
-	branches = branch -a
-	tags = tag -l
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-	cm = commit
-	co = checkout
-	diffs = diff --word-diff-regex=. --word-diff=color
-	squash = merge --squash --ff
+    ls = log --graph
+    pl = pull
+    branches = branch -a
+    tags = tag -l
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    cm = commit
+    co = checkout
+    diffs = diff --word-diff-regex=. --word-diff=color
+    squash = merge --squash --ff
 
 [color]
-	ui = auto
+    ui = auto

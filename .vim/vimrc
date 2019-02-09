@@ -1,7 +1,7 @@
-set viminfo+=n/$HOME/.cache/vim/viminfo.txt	"set viminfo directory
+set viminfo+=n/$HOME/.cache/vim/viminfo.txt "set viminfo directory
 "カーソル位置の保存と復元
 if has("autocmd")
-	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
 
 " dein setup
@@ -9,26 +9,26 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 let s:dein_path = expand('~/.vim/dein')
 let s:dein_repo_path = s:dein_path . '/repos/github.com/Shougo/dein.vim'
 if dein#load_state('~/.vim/dein')
-	call dein#begin('~/.vim/dein')
-	let g:config_dir = expand('~/dotfiles/.vim')
-	let s:plugins = g:config_dir . '/plugins.toml'
-	let s:plugins_lazy = g:config_dir . '/plugins_lazy.toml'
+    call dein#begin('~/.vim/dein')
+    let g:config_dir = expand('~/dotfiles/.vim')
+    let s:plugins = g:config_dir . '/plugins.toml'
+    let s:plugins_lazy = g:config_dir . '/plugins_lazy.toml'
 
-	call dein#load_toml(s:plugins, {'lazy': 0})
-	call dein#load_toml(s:plugins_lazy, {'lazy': 1})
-	" tomlの記述を変えたあと、うまく適用されない場合は
-	" `call dein#recache_runtimepath()` をやるとよいぞ。
-	if !has('nvim')
-		call dein#add('roxma/nvim-yarp')
-		call dein#add('roxma/vim-hug-neovim-rpc')
-	endif
+    call dein#load_toml(s:plugins, {'lazy': 0})
+    call dein#load_toml(s:plugins_lazy, {'lazy': 1})
+    " tomlの記述を変えたあと、うまく適用されない場合は
+    " `call dein#recache_runtimepath()` をやるとよいぞ。
+    if !has('nvim')
+        call dein#add('roxma/nvim-yarp')
+        call dein#add('roxma/vim-hug-neovim-rpc')
+    endif
 
-	call dein#end()
-	call dein#save_state()
+    call dein#end()
+    call dein#save_state()
 endif
 " dein check
 if dein#check_install()
-	call dein#install()
+    call dein#install()
 endif
 
 filetype plugin indent off
@@ -37,50 +37,50 @@ syntax on
 colorscheme molokai
 set t_Co=256
 set background=dark
-set colorcolumn=80 "80桁でガイドを入れる
+set colorcolumn=80      "80桁でガイドを入れる
 "file
 set autoread
-set encoding=utf-8	"vimの内部文字コード
-set fileencoding=utf-8	"書き込み時のエンコード指定
+set encoding=utf-8      "vimの内部文字コード
+set fileencoding=utf-8  "書き込み時のエンコード指定
 set fileencodings=utf-8,euc-jp,cp932,sjis,iso-20220jp,ucs-2
-set fileformats=unix,dos,mac	"改行コードの自動認識(左から順に)
+set fileformats=unix,dos,mac    "改行コードの自動認識(左から順に)
 "Indent
-set autoindent	"自動インデント
-set smartindent	"改行前の末尾に合わせてインデントを調整
-set tabstop=4	"タブサイズ
-set shiftwidth=4	"自動インデントのタブサイズ
-set expandtab	"スペース
-set backspace=indent,eol,start	"バックスペースで改行など削除
-set cindent	"C言語スタイルの自動インデント
+set autoindent          "自動インデント
+set smartindent         "改行前の末尾に合わせてインデントを調整
+set tabstop=4           "タブサイズ
+set shiftwidth=4        "自動インデントのタブサイズ
+set expandtab           "タブスペース
+set backspace=indent,eol,start  "バックスペースで改行など削除
+set cindent             "C言語スタイルの自動インデント
 "画面設定
-set scrolloff=5	"いい感じにスクロールしてくれるやつ
-set cursorline	"カーソルのある行をハイライト
-set number	"行番号表示
-set title	"タイトル表示
-set showmatch	"対応するかっこを表示
-set matchtime=1	"showmatchでカーソルが飛ぶ時間
-set wildmenu	"補完候補を表示する
-set synmaxcol=200	"1行200文字のシンタックス
-set ambiwidth=double	"全角文字の設定
-set display=lastline	"1行が長くてもちゃんと描画する
-set pumheight=10	"補完メニューの高さ
+set scrolloff=5         "いい感じにスクロールしてくれるやつ
+set cursorline          "カーソルのある行をハイライト
+set number              "行番号表示
+set title               "タイトル表示
+set showmatch           "対応するかっこを表示
+set matchtime=1         "showmatchでカーソルが飛ぶ時間
+set wildmenu            "補完候補を表示する
+set synmaxcol=200        "1行200文字のシンタックス
+set ambiwidth=double    "全角文字の設定
+set display=lastline    "1行が長くてもちゃんと描画する
+set pumheight=10        "補完メニューの高さ
 ""ステータスライン
-set laststatus=2	"ステータスラインを常に表示
-set ruler	"右下に行,列表示
-set showcmd	"タイプ途中のコマンドを表示
-set showmode	"モード表示
+set laststatus=2        "ステータスラインを常に表示
+set ruler               "右下に行,列表示
+set showcmd             "タイプ途中のコマンドを表示
+set showmode            "モード表示
 "Search
-set incsearch	"即検索
-set ignorecase	"大文字小文字の区別をしない
-set smartcase	"大文字なら小文字との区別をする
-set wrapscan	"最後まで行ったら最初に戻る
-set hlsearch	"検索結果をハイライト表示
+set incsearch           "即検索
+set ignorecase          "大文字小文字の区別をしない
+set smartcase           "大文字なら小文字との区別をする
+set wrapscan            "最後まで行ったら最初に戻る
+set hlsearch            "検索結果をハイライト表示
 "Swap files
-"set noswapfile	"スワップファイルを作らない
-set directory=$HOME/.cache/vim/swap	"swapの置き場
-"set nobackup	"バックアップを作らない
+"set noswapfile          "スワップファイルを作らない
+set directory=$HOME/.cache/vim/swap "swapの置き場
+"set nobackup            "バックアップを作らない
 set backupdir=$HOME/.cache/vim/backup
-command! -nargs=0 Wq wq	"Wq == wq
+command! -nargs=0 Wq wq "Wq == wq
 "検索ハイライトをEsc連打で消す
 nnoremap <ESC><ESC> :nohlsearch<CR>
 "ウィンドウ移動 Ctrl + hjkl
@@ -90,8 +90,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 "GVIM
 if has("gui_gtk") || has("gui_mac")
-	set guifont=monospace
-	set guifontwide=monospace
+    set guifont=monospace
+    set guifontwide=monospace
 endif
 
 " airline
