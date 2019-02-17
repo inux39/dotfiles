@@ -22,11 +22,11 @@ do
         if [ ! -e "${file%ts}webm" ]; then
             echo "[[program]]" >> $LOG
             echo "name = \"${file/.\//}\"" >> $LOG
-            echo "start = \"`date`\"" >> $LOG
+            echo "start = \"`date +%s`\"" >> $LOG
             $ffmpeg -n -i $file -c:v libvpx-vp9 -c:a libopus \
             -vpre vp9-next \
             -vf bwdif=1:-1:1 -crf 38 "${file%ts}webm"
-            echo "end = \"`date`\"" >> $LOG
+            echo "end = \"`date +%s`\"" >> $LOG
             echo "" >> $LOG
         else
             sleep 2s
