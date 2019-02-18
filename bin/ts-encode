@@ -1,6 +1,6 @@
 #!/bin/zsh
 set -Ceu
-ffmpeg=$HOME/bin/ffmpeg_
+ffmpeg=$HOME/ffmpeg/bin/ffmpeg
 IFS=$'\n'
 LOG=".encode.toml"
 
