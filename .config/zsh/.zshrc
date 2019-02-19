@@ -1,4 +1,8 @@
 export PATH=$HOME/bin:$HOME/.cargo/bin:"$PATH"
+gpgconf --launch gpg-agent
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
 autoload -U colors && colors
 autoload -U compinit;   compinit -d $XDG_CACHE_HOME/zsh/.zcompdump
 zstyle ':completion:*' list-colors "${LS_COLORS}"
