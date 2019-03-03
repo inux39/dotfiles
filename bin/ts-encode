@@ -5,7 +5,7 @@ IFS=$'\n'
 LOG=".encode.toml"
 
 function tssearch() {
-    for file in `find . -maxdepth 1 -name '*.ts'`; do
+    for file in `find . -maxdepth 1 -name '*.ts' | sort`; do
         if [ ! -e $file ]; then; continue; fi
         if [ -e "${file%ts}webm" ]; then; continue; fi
         echo $file
