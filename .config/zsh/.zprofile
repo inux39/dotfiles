@@ -18,6 +18,9 @@ sec_setup $DIR
 sec_setup $DIR/Downloads
 sec_setup $CACHE
 setup $CACHE/vim
+setup $CACHE/vim/backup
+setup $CACHE/vim/swap
+setup $CACHE/vim/undo
 touch $CACHE/vim/viminfo.txt
 setup $CACHE/zsh
 
