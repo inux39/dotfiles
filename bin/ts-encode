@@ -1,8 +1,17 @@
 #!/bin/zsh
 set -Ceu
-ffmpeg=$HOME/bin/ffmpeg_
+ffmpeg=$HOME/ffmpeg/bin/ffmpeg
 IFS=$'\n'
 LOG=".encode.toml"
+
+function tssearch() {
+    for file in `find . -maxdepth 1 -name '*.ts' | sort`; do
+        if [ ! -e $file ]; then; continue; fi
+        if [ -e "${file%ts}webm" ]; then; continue; fi
+        echo $file
+        break
+    done
+}
 
 if [ ! -e $LOG ]; then
     touch $LOG
@@ -14,24 +23,25 @@ fi
 
 while true
 do
-    for file in `find . -maxdepth 1 -name '*.ts'`; do
-        if [ ! -e $file ]; then
-            continue
-        fi
+    NEXT=`tssearch`
+    if [ -e "stop" ]; then; sleep 10s; fi
+    if [ -n "$NEXT" ]; then
+        # log
+        echo "[[program]]" >> $LOG
+        echo "name = \"${NEXT/.\//}\"" >> $LOG
+        echo "start = `date +%s`" >> $LOG
 
-        if [ ! -e "${file%ts}webm" ]; then
-            echo "[[program]]" >> $LOG
-            echo "name = \"${file/.\//}\"" >> $LOG
-            echo "start = \"`date`\"" >> $LOG
-            $ffmpeg -n -i $file -c:v libvpx-vp9 -c:a libopus \
-            -vpre vp9-next \
-            -vf bwdif=1:-1:1 -crf 38 "${file%ts}webm"
-            echo "end = \"`date`\"" >> $LOG
-            echo "" >> $LOG
-        else
-            sleep 2s
-        fi
-    done
+        # encode
+        $ffmpeg -n -i $NEXT \
+        -c:v libvpx-vp9 -c:a libopus -vpre vp9-next \
+        -vf bwdif=1:-1:1 -crf 38 "${NEXT%ts}webm"
+
+        # log
+        echo "end = `date +%s`" >> $LOG
+        echo "" >> $LOG
+    else
+        sleep 1s
+    fi
 done
 
 # Comment

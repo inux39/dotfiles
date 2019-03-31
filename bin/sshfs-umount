@@ -2,10 +2,17 @@
 set -Ceu
 dir=WD30EFRX
 uroot=/tmp/`whoami`
-mount=/mnt/$dir
+full_mount=("/mnt/WD30EFRX" "/mnt/array0")
+mount="/mnt/array0"
 
 if [ $# = 0 ]; then
-    fusermount -uz $mount
+    if [ `hostname` = "arcticfox" ]; then
+        for i in "${full_mount[@]}"; do
+            fusermount -uz $i
+        done
+    else
+        fusermount -uz $mount
+    fi
 else
     if [ $1 = "all" ]; then
         sshfs-umount

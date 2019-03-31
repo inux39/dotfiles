@@ -19,7 +19,7 @@ function rmount() {
     local mountdir=$2
     local _local=$3
     mkmountdir $_local
-    sshfs -o allow_root $remote:$mountdir $_local
+    sshfs -o allow_root -o reconnect $remote:$mountdir $_local
 }
 
 if [ $# = 0 ]; then
