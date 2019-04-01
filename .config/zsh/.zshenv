@@ -8,5 +8,4 @@ export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export GOPATH=$HOME/.go
 export PATH="$PATH:$HOME/bin"
-export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src
 
