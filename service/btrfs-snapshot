@@ -3,7 +3,7 @@ set -Ceu
 keep=8
 date=`date +%Y%m%d`
 root='/mnt/array0'
-backup=('Documents' 'Git' 'Music' 'Photo' 'Rec' 'Recorded')
+backup=('Documents' 'Git' 'Music' 'Photos' 'Rec' 'Recorded')
 snapshot='Snapshot'
 
 if [ ! -e $root/$snapshot/$date ]; then
