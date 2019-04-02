@@ -1,6 +1,6 @@
 #!/bin/zsh
 set -Ceu
-keep=8
+keep=7
 date=`date +%Y%m%d`
 root='/mnt/array0'
 backup=('Documents' 'Git' 'Music' 'Photos' 'Rec' 'Recorded')
@@ -13,9 +13,9 @@ if [ ! -e $root/$snapshot/$date ]; then
     done
 fi
 
-for file in `find $root/$snapshot -maxdepth 1 -mtime +$keep`; do
-    for i in $backup; do
-        btrfs subvolume delete $file/$i
+for file in `find $root/$snapshot -maxdepth 1 -mindepth 1 -mtime $keep`; do
+    for sub in `find $file -maxdepth 1 -mindepth 1`; do
+        btrfs subvolume delete --verbose $sub
     done
     rmdir -v $file
 done
