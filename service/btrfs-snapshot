@@ -1,22 +1,62 @@
 #!/bin/zsh
 set -Ceu
-keep=7
-date=`date +%Y%m%d`
-root='/mnt/array0'
-backup=('Documents' 'Git' 'Music' 'Photos' 'Rec' 'Recorded')
-snapshot='Snapshot'
+# Set default variables
+SCRIPT=$0
+KEEP=7
+SAVE="Snapshot"
+DATE=`date +%Y%m%d`
+MUST_FLAG_r=0
 
-if [ ! -e $root/$snapshot/$date ]; then
-    mkdir -v $root/$snapshot/$date
-    for i in $backup; do
-        btrfs subvolume snapshot $root/$i $root/$snapshot/$date/$i
-    done
-fi
+# function
+## Command line options
+function print_help() {
+    echo "Usage: $SCRIPT [Option] [Btrfs subvolume directory]
+    = Options
+    [-n] Snapshot directory (defalut \"$SAVE\")
+    [-d] Save days (defalut \"$KEEP\")" 1>&2
+    exit 1
+}
 
-for file in `find $root/$snapshot -maxdepth 1 -mindepth 1 -mtime $keep`; do
-    for sub in `find $file -maxdepth 1 -mindepth 1`; do
-        btrfs subvolume delete --verbose $sub
+## Snapshot sequence
+function snapshot() {
+    if [ ! -e $1/$SAVE/$DATE ]; then
+        mkdir -v -p $1/$SAVE/$DATE
+    fi
+    LIST=`btrfs subvolume list $1`
+    DIRS=`echo $LIST | tr -s ' ' ' ' | cut -d" " -f 9`
+    (IFS=$'\n'; for i in `echo $DIRS`; do
+        if [ ! `echo $i | grep "/"` ]; then
+            if [ ! -e $1/$SAVE/$DATE/$i ]; then
+                btrfs subvolume snapshot $1/$i $1/$SAVE/$DATE/$i
+            fi
+        fi
+    done)
+}
+
+## Remove Snapshot sequence
+function delete_snapshot() {
+    for file in `find $1/$SAVE -maxdepth 1 -mindepth 1 -mtime $KEEP`; do
+        for sub in `find $file -maxdepth 1 -mindepth 1`; do
+            btrfs subvolume delete --verbose $sub
+        done
+        rmdir -v $file
     done
-    rmdir -v $file
+}
+
+# Main sequence
+while getopts "n:d:r:h" OPT
+do
+    case $OPT in
+        n) OPT_FLAG_s=1;SAVE=$OPTARG ;;
+        d) OPT_FLAG_k=1;KEEP=$OPTARG ;;
+        h) print_help;;;
+        \?) print_help;;;
+    esac
+done
+
+shift $((OPTIND - 1))
+for i in `echo $@`; do
+    snapshot $i
+    delete_snapshot $i
 done
 
