@@ -5,7 +5,6 @@ SCRIPT=$0
 KEEP=7
 SAVE="Snapshot"
 DATE=`date +%Y%m%d`
-MUST_FLAG_r=0
 
 # function
 ## Command line options
