@@ -2,7 +2,7 @@
 set -Ceu
 # Set default variables
 SCRIPT=$0
-KEEP=7
+KEEP=6 # save (KEEP + 1) day
 SAVE="Snapshot"
 DATE=`date +%Y%m%d`
 
