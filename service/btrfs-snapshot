@@ -34,7 +34,7 @@ function snapshot() {
 
 ## Remove Snapshot sequence
 function delete_snapshot() {
-    for file in `find $1/$SAVE -maxdepth 1 -mindepth 1 -mtime $KEEP`; do
+    for file in `find $1/$SAVE -maxdepth 1 -mindepth 1 -mtime +$KEEP`; do
         for sub in `find $file -maxdepth 1 -mindepth 1`; do
             btrfs subvolume delete --verbose $sub
         done
