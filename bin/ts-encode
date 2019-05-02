@@ -3,6 +3,16 @@ set -Ceu
 ffmpeg=$HOME/ffmpeg/bin/ffmpeg
 IFS=$'\n'
 LOG=".encode.toml"
+ORIG="ts"
+ENCODED="webm"
+
+if [ ! -e $ORIG ]; then
+    mkdir $ORIG
+fi
+
+if [ ! -e $ENCODED ]; then
+    mkdir $ENCODED
+fi
 
 function tssearch() {
     for file in `find . -maxdepth 1 -name '*.ts' | sort`; do
@@ -39,6 +49,8 @@ do
         # log
         echo "end = `date +%s`" >> $LOG
         echo "" >> $LOG
+        mv "${NEXT}" $ORIG
+        mv "${NEXT%ts}webm" $ENCODED
     else
         sleep 1s
     fi
