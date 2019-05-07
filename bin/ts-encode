@@ -34,9 +34,11 @@ fi
 while true
 do
     NEXT=`tssearch`
-    if [ -e "stop" ]; then; exit; fi
-    if [ -e "break" ]; then; sleep 10s; fi
-    if [ -n "$NEXT" ]; then
+    if [ -e "stop" ]; then
+        exit
+    elif [ -e "break" ]; then
+        sleep 10s
+    elif [ -n "$NEXT" ]; then
         # log
         echo "[[program]]" >> $LOG
         echo "name = \"${NEXT/.\//}\"" >> $LOG
