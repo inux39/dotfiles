@@ -34,9 +34,9 @@ fi
 while true
 do
     NEXT=`tssearch`
-    if [ -e "stop" ]; then
+    if [ -e "exit" ]; then
         exit
-    elif [ -e "break" ]; then
+    elif [ -e "sleep" ]; then
         sleep 10s
     elif [ -n "$NEXT" ]; then
         # log
