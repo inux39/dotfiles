@@ -24,5 +24,3 @@ setup $CACHE/vim/undo
 touch $CACHE/vim/viminfo.txt
 setup $CACHE/zsh
 
-systemctl --user start keybase
-

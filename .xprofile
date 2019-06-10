@@ -1,3 +1,4 @@
 source $HOME/.config/zsh/.zprofile
+systemctl --user start keybase
 compton --config $HOME/.config/compton/compton.conf &
 
