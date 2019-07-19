@@ -10,17 +10,16 @@ set $down j
 set $up k
 set $right l
 # Applications
-set $term xfce4-terminal
+set $term alacritty
 set $menu rofi -show run -modi  #require `rofi`
 set $filer thunar
-set $locker i3lock && sleep 1
+set $locker swaylock -e && sleep 1
 ## Auto Run
+exec --no-startup-id source $HOME/.config/zsh/.zprofile
+exec --no-startup-id systemctl --user start keybase
+exec --no-startup-id pulseaudio --start
 exec --no-startup-id fcitx
 exec --no-startup-id dunst
-#exec --no-startup-id compton -cbm 0.75 # Composit Manager
-#exec --no-startup-id slack
-#exec --no-startup-id thunderbird
-#exec --no-startup-id xautolock -time 10 -locker "i3lock" -lockaftersleep
 
 ## Font config
 font pango:"Source Han Sans JP Regular" 11
@@ -93,8 +92,10 @@ input "1133:4136:Logitech" {
     # exit sway (logs you out of your wayland session)
     bindsym $mod+Shift+e exit
 # TODO:
-#   bindsym $mod+Shift+e exec --nostartup-id \
-#       "i3-nagbar -t warning -m 'Exit?' -b 'Logout' ''"
+    set $mode_system System (l) lock
+    mode "$mode_system" {
+        bindsym l exec --no-startup-id $locker, mode "default"
+    }
 
     # Custom Keybind
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
@@ -104,8 +105,8 @@ input "1133:4136:Logitech" {
     bindsym XF86MonBrightnessUp exec dsplight up 5
 
     # Application Keybind
-    bindsym $mod+p exec swaygrab /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
-    bindsym $mod+Shift+p exec swaygrab -f /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
+    bindsym $mod+p exec grim $HOME/Downloads/`date +"%Y-%m-%d_%T"`.png
+#    bindsym $mod+Shift+p exec grim -f /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
     bindsym $mod+Ctrl+f exec GDK_BACKEND=x11 firefox
     bindsym $mod+Ctrl+t exec GDK_BACKEND=x11 thunderbird
     bindsym $mod+Ctrl+c exec GDK_BACKEND=x11 chromium
@@ -236,6 +237,7 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     status_command i3status
+#    status_command waybar
     position bottom
     colors {
         statusline #ffffff
