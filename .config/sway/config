@@ -86,7 +86,7 @@ input "1133:4136:Logitech" {
     floating_modifier $mod normal
 
     # reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+r reload
 
     # exit sway (logs you out of your wayland session)
     bindsym $mod+Shift+e exit
