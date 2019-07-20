@@ -47,7 +47,7 @@ do
         # encode
         $ffmpeg -n -i $NEXT \
         -c:v libvpx-vp9 -c:a libopus -vpre vp9-next \
-        -vf bwdif=1:-1:1 -crf 38 "${NEXT%ts}webm"
+        -vf bwdif=1:-1:1 -crf 36 "${NEXT%ts}webm"
 
         # log
         echo "end = `date +%s`" >> $LOG
