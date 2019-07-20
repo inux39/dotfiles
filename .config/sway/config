@@ -17,8 +17,8 @@ set $filer thunar
 exec --no-startup-id source $HOME/.config/zsh/.zprofile
 exec --no-startup-id systemctl --user start keybase
 exec --no-startup-id pulseaudio --start
-exec --no-startup-id fcitx
-exec --no-startup-id dunst
+exec --no-startup-id fcitx-autostart
+exec --no-startup-id mako
 
 ## Font config
 font pango:"Source Han Sans JP Regular" 11
