@@ -10,13 +10,14 @@ set $down j
 set $up k
 set $right l
 # Applications
-set $term alacritty
+set $term xfce4-terminal
+set $term2 WINIT_UNIX_BACKEND=x11 alacritty
 set $menu rofi -show run -modi  #require `rofi`
 set $filer thunar
 ## Auto Run
 exec --no-startup-id source $HOME/.config/zsh/.zprofile
 exec --no-startup-id systemctl --user start keybase
-exec --no-startup-id pulseaudio --start
+#exec --no-startup-id pulseaudio --start
 exec --no-startup-id fcitx-autostart
 exec --no-startup-id mako --anchor bottom-right --actions 0 --default-timeout 5000
 
@@ -31,6 +32,9 @@ output * bg /home/inux39/Pictures/wallpaper fill
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+
+#output LVDS-1 disable
+#output HDMI-A-1 resolution 1920x1080 position 0,0 dpms on
 
 ### Input configuration
 #
@@ -52,31 +56,18 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     accel_profile flat
 }
 
-input "1118:1970:Microsoft_Microsoft®_Nano_Transceiver" {
-    accel_profile flat
-}
-
-input "2:10:TPPS/2_IBM_TrackPoint" {
-    accel_profile flat
-}
-
 input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_layout jp
     xkb_options ctrl:nocaps
 }
 
-input "1133:4136:Logitech_M570" {
-#    left_handed enabled
-}
-
 input "2:10:TPPS/2_IBM_TrackPoint" {
     accel_profile flat
 }
 
-input "1133:4136:Logitech_M570" {
-    left_handed enabled
+input "1118:1970:Microsoft_Microsoft®_Nano_Transceiver_v1.0_Mouse" {
+    accel_profile flat
 }
-
 
 ### Key bindings
 #
@@ -84,6 +75,7 @@ input "1133:4136:Logitech_M570" {
 #
     # start a terminal
     bindsym $mod+Return exec $term
+    bindsym $mod+Shift+Return exec $term2
 
     # kill focused window
     bindsym $mod+Shift+q kill
@@ -104,11 +96,14 @@ input "1133:4136:Logitech_M570" {
     # exit sway (logs you out of your wayland session)
     bindsym $mod+Shift+e exit
 #    set $exit_command Exit (y)
-    bindsym $mod+Ctrl+l exec swaylock -e & \
+    bindsym $mod+Ctrl+l exec swaylock -e -i ~/.config/sway/lock.png & \
         sleep 1s && \
         swayidle -w \
         timeout 1 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on "; pkill -nx swayidle'
+    bindsym $mod+Shift+m exec swaylock -e -i ~/.config/sway/lock.png & \
+        sleep 1s && \
+        systemctl suspend
 
     # Custom Keybind
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
@@ -120,10 +115,10 @@ input "1133:4136:Logitech_M570" {
     # Application Keybind
     bindsym $mod+p exec grim $HOME/Downloads/`date +"%Y-%m-%d_%T"`.png
 #    bindsym $mod+Shift+p exec grim -f /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
-    bindsym $mod+Ctrl+f exec GDK_BACKEND=x11 firefox
+    bindsym $mod+Ctrl+f exec firefox-developer-edition
     bindsym $mod+Shift+f exec firefox -private-window
-    bindsym $mod+Ctrl+t exec GDK_BACKEND=x11 thunderbird
-    bindsym $mod+Ctrl+c exec GDK_BACKEND=x11 chromium
+    bindsym $mod+Ctrl+t exec thunderbird
+    bindsym $mod+Ctrl+c exec chromium
     bindsym $mod+Ctrl+d exec $filer
 #
 # Moving around:
@@ -254,7 +249,7 @@ bar {
     colors {
         statusline #ffffff
         background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+#        inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
 
