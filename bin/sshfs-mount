@@ -33,7 +33,7 @@ if [ $# = 0 ]; then
 elif [ $# = 2 ]; then
     if [ $1 = "remote" ]; then
         if [ $2 = "racoon" ]; then
-            rmount racoon.local $mount $mout
+            rmount remote.racoon $mount $mount
         fi
     fi
 fi
