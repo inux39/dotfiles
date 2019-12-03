@@ -22,5 +22,7 @@
     co = checkout
     diffs = diff --word-diff-regex=. --word-diff=color
     squash = merge --squash --ff
+    sw = switch
+    rs = restore
 [color]
     ui = auto
