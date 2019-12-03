@@ -1,4 +1,4 @@
-export PATH=$HOME/ffmpeg/bin:$HOME/bin:$HOME/.cargo/bin:"$PATH"
+export PATH=$HOME/bin:$HOME/.cargo/bin:"$PATH"
 export PROMPT="%K{105}[%n@%m %~]
 %(!.#.$)%k "
 autoload -U colors && colors
