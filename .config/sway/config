@@ -108,7 +108,7 @@ input "1118:1970:Microsoft_Microsoft®_Nano_Transceiver_v1.0_Mouse" {
     bindsym $mod+Shift+r reload
 
     # exit sway (logs you out of your wayland session)
-    bindsym $mod+Shift+e exit
+    bindsym $mod+Shift+Delete exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #    set $exit_command Exit (y)
     bindsym $mod+Ctrl+l exec swaylock -e -i ~/.config/sway/lock.png & \
         sleep 1s && \
