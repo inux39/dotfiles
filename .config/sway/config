@@ -129,8 +129,8 @@ input "1118:1970:Microsoft_Microsoft®_Nano_Transceiver_v1.0_Mouse" {
     # Application Keybind
     bindsym $mod+p exec grim $HOME/Downloads/`date +"%Y-%m-%d_%T"`.png
 #    bindsym $mod+Shift+p exec grim -f /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
-    bindsym $mod+Ctrl+f exec firefox-developer-edition
-    bindsym $mod+Shift+f exec firefox -private-window
+    bindsym $mod+Ctrl+f exec MOZ_ENABLE_WAYLAND=1 firefox-developer-edition
+    bindsym $mod+Shift+f exec MOZ_ENABLE_WAYLAND=1 firefox -private-window
     bindsym $mod+Ctrl+t exec thunderbird
     bindsym $mod+Ctrl+c exec chromium
     bindsym $mod+Ctrl+d exec $filer
