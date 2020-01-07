@@ -47,6 +47,7 @@ set fileformats=unix,dos,mac    "改行コードの自動認識(左から順に)
 "Indent
 set autoindent          "自動インデント
 set smartindent         "改行前の末尾に合わせてインデントを調整
+set softtabstop=4
 set tabstop=4           "タブサイズ
 set shiftwidth=4        "自動インデントのタブサイズ
 set expandtab           "タブスペース
