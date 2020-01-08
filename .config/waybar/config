@@ -17,7 +17,8 @@
         "temperature",
         "memory",
         "pulseaudio",
-        //"network",
+        "backlight",
+        "battery",
         "clock",
         "tray"
     ],
@@ -99,7 +100,7 @@
         "format-icons": ["", "", ""]
     },
     "backlight": {
-        // "device": "acpi_video1",
+        "device": "acpi_video0",
         "format": "{icon} {percent}%",
         "format-icons": ["", ""]
     },
