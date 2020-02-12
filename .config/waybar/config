@@ -18,6 +18,7 @@
         "memory",
         "pulseaudio",
         //"network",
+        "battery",
         "clock",
         "tray"
     ],
