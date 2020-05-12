@@ -1,23 +1,13 @@
 x265-params="ref=6:rd=5:max-merge=5:rect:amp:weightp:weightb"
 slices=4
-frame-parallel=1
-tile-columns=6
-lag-in-frames=25
 qmin=10
 qmax=55
 
 b_strategy=2
 coder=1
-rc_lookahead=25
-arnr_strength=0
-arnr-maxframes=0
-max-intra-rate=0
 me_range=16
-me_method=umh
 subq=7
 refs=6
 cmp=+chroma
-partitions=+parti8x8+parti4x4+partp8x8+partb8x8
 qcomp=0.6
-aq-strength=0.8
 
