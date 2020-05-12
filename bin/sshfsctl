@@ -1,0 +1,43 @@
+#!/bin/zsh
+set -Ceu
+server="racoon.local"
+server_10g="10G-racoon.local"
+mount_dir=("/mnt/array0")
+
+function mount() {
+    local _remote=$1
+    local _mountdir=$2
+    local _local=$3
+    sshfs -o allow_root -o reconnect $_remote:$_mountdir $_local
+}
+
+function mount_all() {
+    local _remote=$1
+    for i in "${mount_dir[@]}"; do
+        mount $_remote $i $i
+    done
+}
+
+function unmount_all() {
+    for i in "${mount_dir[@]}"; do
+        fusermount -uz $i
+    done
+}
+
+while getopts ":m:d" OPT
+do
+    case $OPT in
+        "m" )
+            if [ "$OPTARG" = "10g" ]; then
+                mount_all $server_10g
+            fi
+            ;;
+        ":" )
+            mount_all $server
+            ;;
+        "d" )
+            unmount_all
+            ;;
+    esac
+done
+

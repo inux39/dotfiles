@@ -93,7 +93,7 @@ input "1118:1970:Microsoft_Microsoft®_Nano_Transceiver_v1.0_Mouse" {
 #client.urgent              #2f343a #900000 #ffffff #900000 #900000
 #client.placeholder         #000000 #0c0c0c #ffffff #000000 #0c0c0c
 
-client.focused              #4c7899 #ffcc66ee #4c4c4c #2e9ef4 #285577
+client.focused              #4c7899 #f19072e0 #4c4c4c #2e9ef4 #285577
 client.focused_inactive     #333333 #888888a0 #ffffff #292d2e #222222
 client.unfocused            #333333 #888888a0 #ffffff #292d2e #222222
 
@@ -129,9 +129,9 @@ client.unfocused            #333333 #888888a0 #ffffff #292d2e #222222
         swayidle -w \
         timeout 1 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on "; pkill -nx swayidle'
-    #bindsym $mod+Shift+m exec swaylock -e -i ~/.config/sway/lock.png & \
-    #    sleep 1s && \
-    #    systemctl suspend
+    bindsym $mod+Shift+m exec swaylock -e -i ~/.config/sway/lock.png & \
+        sleep 1s && \
+        systemctl suspend
 
     # Custom Keybind
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
@@ -143,8 +143,8 @@ client.unfocused            #333333 #888888a0 #ffffff #292d2e #222222
     # Application Keybind
     bindsym $mod+p exec grim $HOME/Downloads/`date +"%Y-%m-%d_%T"`.png
 #    bindsym $mod+Shift+p exec grim -f /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
-    bindsym $mod+Ctrl+f exec MOZ_ENABLE_WAYLAND=1 firefox-developer-edition
-    bindsym $mod+Shift+f exec MOZ_ENABLE_WAYLAND=1 firefox -private-window
+    bindsym $mod+Ctrl+f exec firefox-developer-edition
+    bindsym $mod+Shift+f exec firefox -private-window
     bindsym $mod+Ctrl+t exec thunderbird
     bindsym $mod+Ctrl+c exec chromium
     bindsym $mod+Ctrl+d exec $filer
