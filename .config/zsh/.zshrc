@@ -1,6 +1,4 @@
 export PATH=$HOME/bin:$HOME/.cargo/bin:"$PATH"
-export PROMPT="%K{105}[%n@%m %~]
-%(!.#.$)%k "
 autoload -U colors && colors
 autoload -U compinit;   compinit -d $XDG_CACHE_HOME/zsh/.zcompdump
 zstyle ':completion:*' list-colors "${LS_COLORS}"

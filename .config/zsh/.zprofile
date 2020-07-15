@@ -24,3 +24,16 @@ setup $CACHE/vim/undo
 touch $CACHE/vim/viminfo.txt
 setup $CACHE/zsh
 
+if [ -e $CACHE/zsh/color ]; then
+    COLOR=$(<$CACHE/zsh/color)
+    BGCOLOR=$(($COLOR - 256))
+    BGCOLOR=${BGCOLOR#-}
+else
+    COLOR=$(($RANDOM % 256))
+    BGCOLOR=$(($COLOR - 256))
+    BGCOLOR=${BGCOLOR#-}
+    echo $COLOR>$CACHE/zsh/color
+fi
+export PROMPT="%F{$COLOR}%K{$BGCOLOR}[%n@%m %~]
+%(!.#.$)%f%k "
+
