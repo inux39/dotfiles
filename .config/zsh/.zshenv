@@ -4,6 +4,9 @@ export XDG_CACHE_HOME=$HOME/.cache
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export GOPATH=$HOME/.go
+export BROWSER="firefox-developer-edition"
+export BROWSER_SECRET="firefox -private-window"
+export TERMINAL="alacritty"
 
 # SHELL
 export ZDOTDIR=$HOME/.config/zsh
