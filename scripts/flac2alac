@@ -1,0 +1,16 @@
+#!/bin/zsh
+set -Ceu
+#IFS=$`\n`
+RUN=0
+
+for file in `find . -maxdepth 1 -name `*.flac``; do
+    ffmpeg -i "${file}" -vn -c:a alac "${file%flac}m4a"
+    if [ $RUN -eq 0 ]; then
+        ffmpeg -i ${file} artwork.jpg
+    fi
+    AtomicParsley "${file%flac}m4a" --artwork artwork.jpg --overWrite
+    RUN=1
+done
+
+rm artwork.jpg
+
