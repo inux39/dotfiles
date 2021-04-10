@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -Ceu
-server="racoon.local"
-server_10g="10G-racoon.local"
+server="raccoon.local"
+server_10g="10G-raccoon.local"
 mount_dir=("/mnt/array0")
 
 function mount() {
