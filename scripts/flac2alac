@@ -1,5 +1,5 @@
 #!/bin/zsh
-set -Ceu
+set -eu
 #IFS=$`\n`
 RUN=0
 
