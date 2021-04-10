@@ -26,3 +26,5 @@
     rs = restore
 [color]
     ui = auto
+[init]
+    defaultBranch = main
