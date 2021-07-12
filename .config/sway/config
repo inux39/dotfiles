@@ -11,16 +11,18 @@ set $down j
 set $up k
 set $right l
 # Applications
-set $term xfce4-terminal
-set $term2 WINIT_UNIX_BACKEND=x11 alacritty
+set $term2 xfce4-terminal
+set $term WINIT_UNIX_BACKEND=x11 alacritty
 set $menu rofi -show run -modi  #require `rofi`
 set $filer thunar
 ## Auto Run
 exec --no-startup-id source $HOME/.config/zsh/.zprofile
 exec --no-startup-id systemctl --user start keybase
 #exec --no-startup-id pulseaudio --start
-exec --no-startup-id fcitx-autostart
+exec --no-startup-id fcitx5
 exec --no-startup-id mako --anchor bottom-right --actions 0 --default-timeout 5000
+exec --no-startup-id bitwarden
+exec --no-startup-id slack --startup
 
 ## Font config
 font pango:"Source Han Sans JP Regular" 11
@@ -68,7 +70,7 @@ output * bg /home/inux39/Pictures/wallpaper fill
 input "2:7:SynPS/2_Synaptics_TouchPad" {
     tap disabled
     natural_scroll enabled
-    accel_profile flat
+#    accel_profile flat
 }
 
 input "1:1:AT_Translated_Set_2_keyboard" {
