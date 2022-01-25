@@ -4,6 +4,7 @@ export XDG_CACHE_HOME=$HOME/.cache
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 export GOPATH=$HOME/.go
+export DOCKER_CLI_EXPERIMENTAL=enabled
 
 # SHELL
 export ZDOTDIR=$HOME/.config/zsh
