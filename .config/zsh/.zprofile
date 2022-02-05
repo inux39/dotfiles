@@ -3,26 +3,16 @@
 DIR=/tmp/`whoami`
 CACHE=$DIR/.cache
 
-function setup() {
-    if [ ! -e $1 ]; then
-        mkdir $1
-    fi
-}
+install -o `whoami` -g `whoami` -m 700 -d $DIR
+install -o `whoami` -g `whoami` -m 700 -d $DIR/Downloads
+install -o `whoami` -g `whoami` -m 700 -d $CACHE
 
-function sec_setup() {
-    setup $1
-    chmod 700 $1
-}
-
-sec_setup $DIR
-sec_setup $DIR/Downloads
-sec_setup $CACHE
-setup $CACHE/vim
-setup $CACHE/vim/backup
-setup $CACHE/vim/swap
-setup $CACHE/vim/undo
+install -o `whoami` -g `whoami` -d $CACHE/vim
+install -o `whoami` -g `whoami` -d $CACHE/vim/backup
+install -o `whoami` -g `whoami` -d $CACHE/vim/swap
+install -o `whoami` -g `whoami` -d $CACHE/vim/undo
+install -o `whoami` -g `whoami` -d $CACHE/zsh
 touch $CACHE/vim/viminfo.txt
-setup $CACHE/zsh
 
 if [ -e $CACHE/zsh/color ]; then
     COLOR=$(<$CACHE/zsh/color)

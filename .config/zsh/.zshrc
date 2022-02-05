@@ -1,7 +1,7 @@
 export PATH=$HOME/bin:$HOME/.cargo/bin:"$PATH"
 autoload -U colors && colors
 autoload -U compinit;   compinit -d $XDG_CACHE_HOME/zsh/.zcompdump
-zstyle ':completion:*' list-colors "${LS_COLORS}"
+#zstyle ':completion:*' list-colors "${LS_COLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 ## alias
 alias ls='ls -alhF --color=auto'
