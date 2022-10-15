@@ -1,7 +1,0 @@
-[Unit]
-Description=Btrfs snapshot everyday
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/zsh /opt/btrfs-snapshot
-
