@@ -9,6 +9,6 @@ alias unzip+='unzip -O sjis'
     . /usr/share/bash-completion/bash_completion
 
 source <(kubectl completion bash)
-
+source <(helm completion bash)
 complete -F __start_kubectl k
 
