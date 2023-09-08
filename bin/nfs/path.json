@@ -1,0 +1,42 @@
+{
+  "option": "vers=4,rsize=1048576,wsize=1048576,hard,timeo=200,retrans=2,noresvport",
+  "soft": "vers=4,rsize=1048576,wsize=1048576,soft,timeo=600,retrans=2,noresvport",
+  "hard": "vers=4,rsize=1048576,wsize=1048576,hard,timeo=200,retrans=2,noresvport",
+  "shortname": [
+    {
+      "name": "pacman",
+      "host": "nfs.inux39.me",
+      "remote_path": "/share200",
+      "local_path": "/var/cache/pacman",
+      "option": null
+    },
+    {
+      "name": "share1",
+      "host": "nfs.inux39.me",
+      "remote_path": "/share100",
+      "local_path": "/mnt/share1",
+      "option": null
+    },
+    {
+      "name": "inux39",
+      "host": "nfs.inux39.me",
+      "remote_path": "/share300/inux39",
+      "local_path": "/home/inux39",
+      "option": null
+    },
+    {
+      "name": "yoshihiro",
+      "host": "nfs.inux39.me",
+      "remote_path": "/share300/yoshihiro",
+      "local_path": "/home/yoshihiro",
+      "option": null
+    },
+    {
+      "name": "zebra",
+      "host": "nfs.inux39.me",
+      "remote_path": "/share300/zebra",
+      "local_path": "/home/zebra",
+      "option": null
+    }
+  ]
+}

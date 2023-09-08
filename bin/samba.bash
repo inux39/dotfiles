@@ -7,8 +7,8 @@ BUF=8192
 
 OPT="guest,user=$_UID,uid=$_UID,gid=$_GID,rsize=$BUF,wsize=$BUF,cache=none"
 
-if [ ! $(whoami) = "root" ]; then
-    echo run as root.
+if [ ! $(whoami) == "root" ]; then
+    echo "Run as root."
     exit 1
 fi
 
@@ -19,12 +19,10 @@ function _mount() {
         umount $_LOCAL
         echo "[RT=$?] $_SERVER is already mounted. umount $_LOCAL"
     fi
-    if [ -e $_LOCAL ]; then
-        install -d -m 777 $_LOCAL
-    fi
     mount $_SERVER $_LOCAL -o $OPT
     echo "[RC=$?] mount $_SERVER to $_LOCAL"
 }
 
-_mount //$SERVER/share100 /mnt/share100
+_mount //$SERVER/share100 /mnt/share1
+_mount //$SERVER/share200 /var/cache/pacman/pkg
 

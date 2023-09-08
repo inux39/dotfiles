@@ -1,12 +1,7 @@
 #!/bin/bash
-SERVER=192.168.9.6
-_UID=inux39
-_GID=infra
-#BUF=16384
-BUF=8192
-
-OPT="guest,user=$_UID,uid=$_UID,gid=$_GID,rsize=$BUF,wsize=$BUF,cache=none"
-
+HARD_OPTION="vers=4,rsize=1048576,wsize=1048576,hard,timeo=200,retrans=2,noresvport"
+SOFT_OPTION="vers=4,rsize=1048576,wsize=1048576,soft,timeo=600,retrans=2,noresvport"
+OPTION=$HARD_OPTION
 if [ ! $(whoami) = "root" ]; then
     echo run as root.
     exit 1
@@ -19,10 +14,7 @@ function _mount() {
         umount $_LOCAL
         echo "[RT=$?] $_SERVER is already mounted. umount $_LOCAL"
     fi
-    mount $_SERVER $_LOCAL -o $OPT
+    mount -t nfs -o $OPTION $_SERVER $_LOCAL
     echo "[RC=$?] mount $_SERVER to $_LOCAL"
 }
-
-_mount //$SERVER/share100 /mnt/share1
-_mount //$SERVER/share200 /var/cache/pacman/pkg
 

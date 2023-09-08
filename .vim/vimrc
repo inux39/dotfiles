@@ -9,12 +9,12 @@ if &compatible
     set nocompatible
 endif
 
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
-let s:dein_path = expand('~/.vim/dein')
+set runtimepath+=~/.local/share/dein/repos/github.com/Shougo/dein.vim
+let s:dein_path = expand('~/.local/share/dein')
 let s:dein_repo_path = s:dein_path . '/repos/github.com/Shougo/dein.vim'
-if dein#load_state('~/.vim/dein')
-    call dein#begin('~/.vim/dein')
-    let g:config_dir = expand('~/dotfiles/.vim')
+if dein#load_state('~/.local/share/dein')
+    call dein#begin('~/.local/share/dein')
+    let g:config_dir = expand('~/.vim')
     let s:plugins = g:config_dir . '/plugins.toml'
     let s:plugins_lazy = g:config_dir . '/plugins_lazy.toml'
 
@@ -22,7 +22,7 @@ if dein#load_state('~/.vim/dein')
     call dein#load_toml(s:plugins_lazy, {'lazy': 1})
     " tomlの記述を変えたあと、うまく適用されない場合は
     " `call dein#recache_runtimepath()` をやるとよいぞ。
-    call dein#add('~/.vim/dein')
+    call dein#add('~/.local/share/dein')
     if !has('nvim')
         call dein#add('roxma/nvim-yarp')
         call dein#add('roxma/vim-hug-neovim-rpc')
@@ -38,6 +38,9 @@ endif
 filetype plugin indent on
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType markdown setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 "Color
 syntax on
 colorscheme molokai
