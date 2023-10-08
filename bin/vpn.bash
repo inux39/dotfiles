@@ -1,8 +1,12 @@
 #!/bin/bash
-if [ ! $(whoami) == "root" ]; then
-    echo "Run as root."
-    exit 1
-fi
-ip route add 192.168.0.0/16 via 192.168.10.1
-ip route
+function SUDO() {
+    if [ $(whoami) = "root" ]; then
+        $@
+    else
+        sudo su - -c "$*"
+    fi
+}
+
+SUDO ip route add 192.168.0.0/16 via 192.168.10.1
+SUDO ip route
 

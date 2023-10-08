@@ -1,5 +1,5 @@
 #!/bin/bash
-WORKDIR=$(pwd)
+WORKDIR=$(realpath $(pwd))
 if [ $# -gt 0 ]; then
     _DIR=$(cd "$1"; pwd) && WORKDIR="$_DIR"
 fi

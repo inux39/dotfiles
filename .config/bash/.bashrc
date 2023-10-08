@@ -1,8 +1,13 @@
 export XDG_CONFIG_HOME=$HOME/.config
 export HISTCONTROL=ignoreboth:erasedups
 export PATH=$HOME/bin:$PATH
+export EDITOR=vim
+export LESS='-R --use-color -Dd+r$Du+b'
 
 alias ls='ls -alhF --color=auto'
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias ip='ip -color=auto'
 alias k='kubectl'
 alias unzip+='unzip -O sjis'
 
