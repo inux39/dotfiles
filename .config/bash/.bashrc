@@ -2,7 +2,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export HISTCONTROL=ignoreboth:erasedups
 export PATH=$HOME/bin:$PATH
 export EDITOR=vim
-export LESS='-R --use-color -Dd+r$Du+b'
+#export LESS='-R --use-color -Dd+r$Du+b'
 
 alias ls='ls -alhF --color=auto'
 alias diff='diff --color=auto'
