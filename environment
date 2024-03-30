@@ -9,4 +9,5 @@ XMODIFIERS=@im=fcitx
 DefaultIMModule=fcitx
 MOZ_ENABLE_WAYLAND=1
 XDG_SESSION_TYPE=wayland
+QT_QPA_PLATFORM=wayland
 
