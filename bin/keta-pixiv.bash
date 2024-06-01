@@ -1,10 +1,8 @@
 #!/bin/bash
 WORKDIR=$(realpath $(pwd))
-P_KETA=2
-if [ $# -gt 0 ]; then
-    _DIR=$(cd "$1"; pwd) && WORKDIR="$_DIR"
-fi
+P_KETA=${1:-2}
 
+echo "Set keta: $P_KETA"
 # xxxxx_p10.yyy のファイルリストを取得する
 ## xxxxx_pN.yyy を出力、ファイル名変更前に確認
 # xxxxx_pN.yyy の N を3ケタ化 → 2ケタにして揃える
