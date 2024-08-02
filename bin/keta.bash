@@ -1,7 +1,7 @@
 #!/bin/bash
-WORKDIR=$(realpath $(pwd))
+WORKDIR=$(realpath "$(pwd)")
 if [ $# -gt 0 ]; then
-    _DIR=$(cd "$1"; pwd) && WORKDIR="$_DIR"
+    _DIR="$(cd "$1"; pwd)" && WORKDIR="$_DIR"
 fi
 
 function SEARCH() {
@@ -15,7 +15,7 @@ function SEARCH() {
         RENAME=$(echo "$PRE_RENAME" | sed -e 's/0*\([0-9]\{3\}\)/\1/g')
 
         if [ $EXEC = "true" ]; then
-            if [ $file != $RENAME ]; then
+            if [ "$file" != "$RENAME" ]; then
                 mv -v "$WORK/$file" "$WORK/$RENAME"
             fi
         else
