@@ -8,7 +8,7 @@ function SUDO() {
 }
 
 SUDO ip route
-VIA="192.168.80.1"
+VIA="192.168.10.1"
 echo -n "route add via $VIA [y/n]:"
 read CONTINUE
 if [ $CONTINUE = "y" ]; then
