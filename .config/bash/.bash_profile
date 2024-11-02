@@ -1,5 +1,8 @@
 ### 起動時に一度だけでも十分な設定をここに
-### 一時ディレクトリ作成
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_TEMPLATE_DIR="$HOME/Templates"
+
+## 一時ディレクトリ作成
 DIR="/tmp/$(whoami)"
 CACHE="$DIR/.cache"
 

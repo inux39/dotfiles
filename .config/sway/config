@@ -4,31 +4,32 @@ xwayland enable
 focus_follows_mouse no
 ### Variables
 # Logo key. Use Mod1 for Alt.
-set $mod Mod1
+set $mod Mod4
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
 # Applications
+set $term alacritty
 set $term2 xfce4-terminal
-set $term WINIT_UNIX_BACKEND=x11 alacritty
 set $menu rofi -show run -modi  #require `rofi`
 set $filer thunar
 ## Auto Run
-exec --no-startup-id source $HOME/.config/zsh/.zprofile
-exec --no-startup-id systemctl --user start keybase
+#exec --no-startup-id source $HOME/.config/zsh/.zprofile
+#exec --no-startup-id systemctl --user start keybase
 #exec --no-startup-id pulseaudio --start
 exec --no-startup-id fcitx5
 exec --no-startup-id mako --anchor bottom-right --actions 0 --default-timeout 5000
-exec --no-startup-id bitwarden
-exec --no-startup-id slack --startup
+#exec --no-startup-id bitwarden
+#exec --no-startup-id slack --startup
 
 ## Font config
-font pango:"Source Han Sans JP Regular" 11
+font pango:"sans-serif" 11
 
 ### Output configuration
 output * bg /home/inux39/Pictures/wallpaper fill
+
 #
 # Example configuration:
 #
@@ -73,17 +74,13 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 #    accel_profile flat
 }
 
-input "1:1:AT_Translated_Set_2_keyboard" {
-    xkb_layout jp
-    xkb_options ctrl:nocaps
-}
-
 input "2:10:TPPS/2_IBM_TrackPoint" {
     accel_profile flat
 }
 
-input "1118:1970:Microsoft_Microsoft®_Nano_Transceiver_v1.0_Mouse" {
-    accel_profile flat
+input * {
+    xkb_layout jp
+    xkb_options ctrl:nocaps
 }
 
 ### Color settings
@@ -136,9 +133,9 @@ client.unfocused            #333333 #888888a0 #ffffff #292d2e #222222
         systemctl suspend
 
     # Custom Keybind
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
-    bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SOURCE@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SOURCE@ -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SOURCE@ toggle
     bindsym XF86MonBrightnessDown exec dsplight down 5
     bindsym XF86MonBrightnessUp exec dsplight up 5
 

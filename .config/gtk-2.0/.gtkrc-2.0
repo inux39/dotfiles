@@ -2,4 +2,5 @@ gtk-icon-theme-name = "Numix"
 gtk-theme-name = "Adwaita"
 gtk-font-name = "BIZ UDPGothic 10"
 gtk-application-prefer-dark-theme = true
+gtk-recent-files-max-age=0
 
