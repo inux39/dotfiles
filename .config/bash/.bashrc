@@ -3,6 +3,7 @@ export HISTCONTROL=ignoreboth:erasedups
 export PATH=$HOME/bin:$PATH
 export EDITOR=vim
 #export LESS='-R --use-color -Dd+r$Du+b'
+export PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
 alias ls='ls -alhF --color=auto'
 alias diff='diff --color=auto'
