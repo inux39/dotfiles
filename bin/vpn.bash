@@ -1,17 +1,16 @@
 #!/bin/bash
-function SUDO() {
-    if [ $(whoami) = "root" ]; then
-        $@
-    else
-        sudo su - -c "$*"
-    fi
-}
+if [ "$(whoami)" != "root" ]; then
+    sudo bash -c "$0"
+    exit 0
+fi
 
-SUDO ip route
-VIA="192.168.10.1"
-echo -n "route add via $VIA [y/n]:"
+ip route
+IPADDR="$(hostname -i)"
+VIA="${IPADDR%.*}.1"
+CMD="ip route add 192.168.0.0/16 via $VIA"
+echo -n "RUN '$CMD' [y/n]:"
 read CONTINUE
 if [ $CONTINUE = "y" ]; then
-    SUDO ip route add 192.168.0.0/16 via $VIA
+    echo "$CMD" | bash
 fi
 
