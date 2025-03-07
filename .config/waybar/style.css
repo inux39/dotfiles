@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: monospace;
     font-size: 13px;
     min-height: 0;
 }
@@ -123,8 +123,24 @@ label:focus {
     color: #000000;
 }
 
+#cpu.warning {
+  background: orange;
+}
+
+#cpu.critical {
+  background: red;
+}
+
 #memory {
     background-color: #9b59b6;
+}
+
+#memory.warning {
+  background: orange;
+}
+
+#memory.critical {
+  background: red;
 }
 
 #backlight {

@@ -23,6 +23,8 @@ exec --no-startup-id fcitx5
 exec --no-startup-id mako --anchor bottom-right --actions 0 --default-timeout 5000
 #exec --no-startup-id bitwarden
 #exec --no-startup-id slack --startup
+exec swayidle -w \
+    before-sleep 'swaylock --image ~/.config/sway/lock.png --deamonize'
 
 ## Font config
 font pango:"sans-serif" 11
@@ -142,10 +144,11 @@ client.unfocused            #333333 #888888a0 #ffffff #292d2e #222222
     # Application Keybind
     bindsym $mod+p exec grim $HOME/Downloads/`date +"%Y-%m-%d_%T"`.png
 #    bindsym $mod+Shift+p exec grim -f /tmp/`whoami`/`date +"%Y-%m-%d_%T"`.png
-    bindsym $mod+Ctrl+f exec firefox-developer-edition
-    bindsym $mod+Shift+f exec firefox -private-window
+    bindsym $mod+Ctrl+f exec firefox
+    bindsym $mod+Shift+f exec firefox -P private -private-window
     bindsym $mod+Ctrl+t exec thunderbird
     bindsym $mod+Ctrl+c exec chromium
+    bindsym $mod+Ctrl+b exec brave
     bindsym $mod+Ctrl+d exec $filer
 #
 # Moving around:
