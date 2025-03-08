@@ -1,14 +1,11 @@
 #!/bin/bash
-
 DEF_START=65
 DEF_STOP=80
-function SUDO() {
-    if [ $(whoami) = "root" ]; then
-        $@
-    else
-        sudo su - -c "$*"
-    fi
-}
+OPTION=${1:-0}
+if [ "$(whoami)" != "root" ]; then
+    sudo su -c "$0"
+    exit 0
+fi
 
 function show_menu() {
     echo "0: バッテリーのステータス"
@@ -17,13 +14,15 @@ function show_menu() {
     echo "3: Set default"
 }
 
-show_menu
-echo -n "Select: "
-read OPTION
+if [ -z "$1" ]; then
+    show_menu
+    echo -n "Select: "
+    read OPTION
+fi
 
 case $OPTION in
     "0" )
-        SUDO tlp-stat -b
+        tlp-stat -b
         ;;
     "1" )
         echo -n "充電開始(%): "
@@ -32,14 +31,14 @@ case $OPTION in
         read END_CHARGE
         echo -n "Battery BAT[0-1]: "
         read $BATTERY
-        SUDO tlp setcharge $START_CHARGE $END_CHARGE $BATTERY
+        tlp setcharge $START_CHARGE $END_CHARGE $BATTERY
         ;;
     "2" )
-        SUDO tlp fullcharge
+        tlp fullcharge
         ;;
     "3" )
         echo "Set default BAT0"
-        SUDO tlp setcharge $DEF_START $DEF_STOP BAT0
+        tlp setcharge $DEF_START $DEF_STOP BAT0
         ;;
     "?" )
         show_menu ;;

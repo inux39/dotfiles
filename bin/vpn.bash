@@ -4,9 +4,11 @@ if [ "$(whoami)" != "root" ]; then
     exit 0
 fi
 
-ip route
 IPADDR="$(hostname -i)"
 VIA="${IPADDR%.*}.1"
+if [ "$(ip route | grep "192.168.0.0/16" | wc -l)" != 0 ]; then
+    exit 0
+fi
 CMD="ip route add 192.168.0.0/16 via $VIA"
 echo -n "RUN '$CMD' [y/n]:"
 read CONTINUE
