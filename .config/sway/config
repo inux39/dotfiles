@@ -24,7 +24,7 @@ exec --no-startup-id mako --anchor bottom-right --actions 0 --default-timeout 50
 #exec --no-startup-id bitwarden
 #exec --no-startup-id slack --startup
 exec swayidle -w \
-    before-sleep 'swaylock --image ~/.config/sway/lock.png --deamonize'
+    before-sleep 'swaylock --image ~/.config/sway/lock.png -f'
 # 画面共有
 #exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
@@ -34,6 +34,8 @@ font pango:"sans-serif" 12
 ### Output configuration
 output * bg /home/inux39/Pictures/wallpaper fill
 
+gaps outer 3
+gaps inner 15
 #
 # Example configuration:
 #

@@ -97,11 +97,8 @@ window#waybar.chromium {
     background-color: #26A65B;
 }
 
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+#battery.warning:not(.charging) {
+  background: orange;
 }
 
 #battery.critical:not(.charging) {
@@ -112,6 +109,13 @@ window#waybar.chromium {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
 }
 
 label:focus {

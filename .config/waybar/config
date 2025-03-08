@@ -6,8 +6,7 @@
     // Choose the order of the modules
     "modules-left": [
         "sway/workspaces",
-        "sway/mode"
-        //"custom/media"
+        "hyprland/workspaces"
     ],
 //    "modules-center": [
 //        "sway/window"
@@ -118,9 +117,9 @@
     },
     "battery": {
         "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 20
+            "good": 90,
+            "warning": 35,
+            "critical": 15
         },
         "format": "{icon} {capacity}%",
         "format-charging": "󰂄 {capacity}%",
