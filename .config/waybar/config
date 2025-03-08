@@ -6,8 +6,7 @@
     // Choose the order of the modules
     "modules-left": [
         "sway/workspaces",
-        "sway/mode"
-        //"custom/media"
+        "hyprland/workspaces"
     ],
 //    "modules-center": [
 //        "sway/window"
