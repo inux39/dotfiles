@@ -34,6 +34,8 @@ font pango:"sans-serif" 12
 ### Output configuration
 output * bg /home/inux39/Pictures/wallpaper fill
 
+gaps outer 3
+gaps inner 15
 #
 # Example configuration:
 #
