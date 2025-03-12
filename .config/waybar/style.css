@@ -38,6 +38,7 @@ window#waybar.chromium {
 }
 
 #workspaces button {
+    border-radius: 5;
     padding: 0 5px;
     background-color: transparent;
     color: #ffffff;
@@ -52,8 +53,8 @@ window#waybar.chromium {
 }
 
 #workspaces button.focused {
-    background-color: #727d64;
-    border-bottom: 3px solid #ffffff;
+    background-color: #f75c2f;
+    border-bottom: 3px solid #e79460;
 }
 
 #workspaces button.urgent {
@@ -84,11 +85,12 @@ window#waybar.chromium {
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: #3A8FB7;
+    color: #ffffff;
 }
 
 #battery {
-    background-color: #ffffff;
+    background-color: #B5CAA0;
     color: #000000;
 }
 
@@ -98,11 +100,11 @@ window#waybar.chromium {
 }
 
 #battery.warning:not(.charging) {
-  background: orange;
+  background: #FFB11B;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
+    background: #E83015;
     color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -128,11 +130,11 @@ label:focus {
 }
 
 #cpu.warning {
-  background: orange;
+  background: #FFB11B;
 }
 
 #cpu.critical {
-  background: red;
+  background: #E83015;
 }
 
 #memory {
@@ -140,11 +142,11 @@ label:focus {
 }
 
 #memory.warning {
-  background: orange;
+  background: #FFB11B;
 }
 
 #memory.critical {
-  background: red;
+  background: #E83015;
 }
 
 #backlight {
@@ -220,3 +222,4 @@ label:focus {
 #mpd.paused {
     background-color: #51a37a;
 }
+
