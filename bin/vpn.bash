@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ "$(whoami)" != "root" ]; then
-    sudo bash -c "$0"
+    sudo -Es "$(realpath "$0")" "$@"
     exit 0
 fi
 
